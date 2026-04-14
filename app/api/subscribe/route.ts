@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   try {
     await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "StudioWest3@proton.me",
+      to: "westaccounts@proton.me",
       subject: "New West Report Subscriber",
       html: `<p>New subscriber: <strong>${email}</strong></p>`,
     });
