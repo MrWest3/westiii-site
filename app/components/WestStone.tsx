@@ -11,17 +11,19 @@ type Asset = {
   city?: string;
 };
 
+const CDN = "https://westiii-media.atl1.digitaloceanspaces.com";
+
 const videos: Asset[] = [
-  { id: "olandria-trailer", thumb: "/weststone/Olandria-Visa-Trailer-thumb.jpg", video: "/weststone/Olandria-Visa-Trailer.mp4", alt: "Olandria Visa Trailer" },
-  { id: "atlanta-skyline", thumb: "/weststone/Atlanta-Skyline-Visa-Tap-Animation-thumb.jpg", video: "/weststone/Atlanta-Skyline-Visa-Tap-Animation.mp4", alt: "Atlanta Skyline Visa Tap", city: "Atlanta" },
-  { id: "cafe-tap", thumb: "/weststone/Cafe-Visa-Tap-Goal-Celebration-thumb.jpg", video: "/weststone/Cafe-Visa-Tap-Goal-Celebration.mp4", alt: "Cafe Visa Tap Goal Celebration" },
-  { id: "nyc-pigeon", thumb: "/weststone/NYC-Pigeon-Soccer-Animation-thumb.jpg", video: "/weststone/NYC-Pigeon-Soccer-Animation.mp4", alt: "NYC Pigeon Soccer Animation", city: "NYC" },
-  { id: "nyc-turnstile", thumb: "/weststone/NYC-Turnstile-Visa-Tap-thumb.jpg", video: "/weststone/NYC-Turnstile-Visa-Tap.mp4", alt: "NYC Turnstile Visa Tap", city: "NYC" },
-  { id: "streetwear-food", thumb: "/weststone/Streetwear-Guy-Visa-Tap-Food-Truck-thumb.jpg", video: "/weststone/Streetwear-Guy-Visa-Tap-Food-Truck.mp4", alt: "Streetwear Visa Tap Food Truck" },
-  { id: "crazy-tapin", thumb: "/weststone/CrazyStreetTapin-April26-thumb.jpg", video: "/weststone/CrazyStreetTapin-April26.mp4", alt: "Crazy Street Tap-In" },
-  { id: "global-tapin", thumb: "/weststone/GlobalTapinReel-April26-thumb.jpg", video: "/weststone/GlobalTapinReel-April26.mp4", alt: "Global Tap-In Reel" },
-  { id: "run-scream-1", thumb: "/weststone/RunScreamTapin-April26-thumb.jpg", video: "/weststone/RunScreamTapin-April26.mp4", alt: "Run Scream Tap-In" },
-  { id: "run-scream-2", thumb: "/weststone/RunScreamTapin2-April26-thumb.jpg", video: "/weststone/RunScreamTapin2-April26.mp4", alt: "Run Scream Tap-In 2" },
+  { id: "olandria-trailer", thumb: "/weststone/Olandria-Visa-Trailer-thumb.jpg", video: `${CDN}/weststone/Olandria-Visa-Trailer.mp4`, alt: "Olandria Visa Trailer" },
+  { id: "atlanta-skyline", thumb: "/weststone/Atlanta-Skyline-Visa-Tap-Animation-thumb.jpg", video: `${CDN}/weststone/Atlanta-Skyline-Visa-Tap-Animation.mp4`, alt: "Atlanta Skyline Visa Tap", city: "Atlanta" },
+  { id: "cafe-tap", thumb: "/weststone/Cafe-Visa-Tap-Goal-Celebration-thumb.jpg", video: `${CDN}/weststone/Cafe-Visa-Tap-Goal-Celebration.mp4`, alt: "Cafe Visa Tap Goal Celebration" },
+  { id: "nyc-pigeon", thumb: "/weststone/NYC-Pigeon-Soccer-Animation-thumb.jpg", video: `${CDN}/weststone/NYC-Pigeon-Soccer-Animation.mp4`, alt: "NYC Pigeon Soccer Animation", city: "NYC" },
+  { id: "nyc-turnstile", thumb: "/weststone/NYC-Turnstile-Visa-Tap-thumb.jpg", video: `${CDN}/weststone/NYC-Turnstile-Visa-Tap.mp4`, alt: "NYC Turnstile Visa Tap", city: "NYC" },
+  { id: "streetwear-food", thumb: "/weststone/Streetwear-Guy-Visa-Tap-Food-Truck-thumb.jpg", video: `${CDN}/weststone/Streetwear-Guy-Visa-Tap-Food-Truck.mp4`, alt: "Streetwear Visa Tap Food Truck" },
+  { id: "crazy-tapin", thumb: "/weststone/CrazyStreetTapin-April26-thumb.jpg", video: `${CDN}/weststone/CrazyStreetTapin-April26.mp4`, alt: "Crazy Street Tap-In" },
+  { id: "global-tapin", thumb: "/weststone/GlobalTapinReel-April26-thumb.jpg", video: `${CDN}/weststone/GlobalTapinReel-April26.mp4`, alt: "Global Tap-In Reel" },
+  { id: "run-scream-1", thumb: "/weststone/RunScreamTapin-April26-thumb.jpg", video: `${CDN}/weststone/RunScreamTapin-April26.mp4`, alt: "Run Scream Tap-In" },
+  { id: "run-scream-2", thumb: "/weststone/RunScreamTapin2-April26-thumb.jpg", video: `${CDN}/weststone/RunScreamTapin2-April26.mp4`, alt: "Run Scream Tap-In 2" },
 ];
 
 const illustrations: Asset[] = [
