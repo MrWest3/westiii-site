@@ -1,7 +1,6 @@
-import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const GHL_WEBHOOK = "https://services.leadconnectorhq.com/hooks/We47Ogqr3hMySU8CAGhM/webhook-trigger/g3sXeWsdUAV53yXh7GFm3";
 
 export async function POST(req: NextRequest) {
   const { email } = await req.json();
@@ -11,11 +10,10 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: "westaccounts@proton.me",
-      subject: "New West Report Subscriber",
-      html: `<p>New subscriber: <strong>${email}</strong></p>`,
+    await fetch(GHL_WEBHOOK, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
     });
 
     return NextResponse.json({ ok: true });
