@@ -32,7 +32,7 @@ export default function WebBuilds() {
         </AnimateIn>
         <AnimateIn delay={0.1}>
           <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[var(--ink)] mb-4 leading-tight">
-            Sites That Sell
+            Sites I&apos;ve Built
           </h2>
         </AnimateIn>
         <AnimateIn delay={0.15}>
