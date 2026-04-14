@@ -17,17 +17,17 @@ const CDN = "https://westiii-media.atl1.digitaloceanspaces.com";
 const igReels: GridItem[] = Array.from({ length: 10 }, (_, i) => ({
   id: `ig-${i + 1}`,
   thumb: `/creative/creative-${String(i + 1).padStart(2, "0")}.jpg`,
-  video: `${CDN}/creative/creative-${String(i + 1).padStart(2, "0")}.mp4`,
+  video: `${CDN}/creative-${String(i + 1).padStart(2, "0")}.mp4`,
   alt: `AI creative reel ${i + 1}`,
 }));
 
 const clientWork: GridItem[] = [
-  { id: "c-01", thumb: "/creative/client-01.jpg", video: `${CDN}/creative/client-01.mp4`, alt: "ADIO Commercial", client: "DataVault AI", deliverable: "Brand Commercial" },
-  { id: "c-02", thumb: "/creative/client-02.jpg", video: `${CDN}/creative/client-02.mp4`, alt: "Baby Gender Reveal", client: "Personal Client", deliverable: "Pixar-Style Gender Reveal" },
-  { id: "c-03", thumb: "/creative/client-03.jpg", video: `${CDN}/creative/client-03.mp4`, alt: "STYS Studio Video", client: "STYS", deliverable: "Studio Campaign Video" },
-  { id: "c-04", thumb: "/creative/client-04.jpg", video: `${CDN}/creative/client-04.mp4`, alt: "STYS Yellow Collection", client: "STYS", deliverable: "Collection Launch Video" },
-  { id: "c-05", thumb: "/creative/client-05.jpg", video: `${CDN}/creative/client-05.mp4`, alt: "The Lab Ad", client: "The Lab USA", deliverable: "Brand Commercial" },
-  { id: "c-06", thumb: "/creative/client-06.jpg", video: `${CDN}/creative/client-06.mp4`, alt: "VerifyU Commercial", client: "VerifyU", deliverable: "App Ad" },
+  { id: "c-01", thumb: "/creative/client-01.jpg", video: `${CDN}/client-01.mp4`, alt: "ADIO Commercial", client: "DataVault AI", deliverable: "Brand Commercial" },
+  { id: "c-02", thumb: "/creative/client-02.jpg", video: `${CDN}/client-02.mp4`, alt: "Baby Gender Reveal", client: "Personal Client", deliverable: "Pixar-Style Gender Reveal" },
+  { id: "c-03", thumb: "/creative/client-03.jpg", video: `${CDN}/client-03.mp4`, alt: "STYS Studio Video", client: "STYS", deliverable: "Studio Campaign Video" },
+  { id: "c-04", thumb: "/creative/client-04.jpg", video: `${CDN}/client-04.mp4`, alt: "STYS Yellow Collection", client: "STYS", deliverable: "Collection Launch Video" },
+  { id: "c-05", thumb: "/creative/client-05.jpg", video: `${CDN}/client-05.mp4`, alt: "The Lab Ad", client: "The Lab USA", deliverable: "Brand Commercial" },
+  { id: "c-06", thumb: "/creative/client-06.jpg", video: `${CDN}/client-06.mp4`, alt: "VerifyU Commercial", client: "VerifyU", deliverable: "App Ad" },
   { id: "c-07", thumb: "/creative/client-07.png", alt: "STYS Pro Model", client: "STYS", deliverable: "AI Virtual Photo Shoot" },
   { id: "c-08", thumb: "/creative/client-08.png", alt: "STYS Studio", client: "STYS", deliverable: "AI Virtual Photo Shoot" },
   { id: "c-09", thumb: "/creative/client-09.png", alt: "RevFit Ad", client: "Revenge Fitness", deliverable: "Logo Redesign" },
