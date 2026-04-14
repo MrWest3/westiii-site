@@ -1,8 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 pt-16 overflow-hidden">
       {/* Subtle background texture */}
@@ -93,19 +96,53 @@ export default function Hero() {
               <span className="font-semibold text-[var(--ink)]">The West Report</span> — AI, innovation, tech, and longevity.
               What I&apos;m building, what I&apos;m watching, what you need to know before everyone else does.
             </p>
-            <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="flex-1 px-4 py-2.5 border border-[var(--border)] rounded text-sm text-[var(--ink)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[var(--crimson)] transition-colors duration-200 bg-transparent"
-              />
-              <button
-                type="submit"
-                className="shrink-0 px-5 py-2.5 bg-[var(--ink)] text-white text-sm font-semibold rounded hover:bg-[var(--crimson)] transition-colors duration-200"
+            {status === "success" ? (
+              <p className="text-sm text-[var(--crimson)] font-semibold py-2.5">
+                You&apos;re in. First issue coming soon.
+              </p>
+            ) : (
+              <form
+                className="flex gap-2"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  setStatus("loading");
+                  try {
+                    const res = await fetch("/api/subscribe", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ email }),
+                    });
+                    if (res.ok) {
+                      setStatus("success");
+                      setEmail("");
+                    } else {
+                      setStatus("error");
+                    }
+                  } catch {
+                    setStatus("error");
+                  }
+                }}
               >
-                Subscribe
-              </button>
-            </form>
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="your@email.com"
+                  className="flex-1 px-4 py-2.5 border border-[var(--border)] rounded text-sm text-[var(--ink)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[var(--crimson)] transition-colors duration-200 bg-transparent"
+                />
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="shrink-0 px-5 py-2.5 bg-[var(--ink)] text-white text-sm font-semibold rounded hover:bg-[var(--crimson)] transition-colors duration-200 disabled:opacity-60"
+                >
+                  {status === "loading" ? "..." : "Subscribe"}
+                </button>
+              </form>
+            )}
+            {status === "error" && (
+              <p className="text-xs text-red-500 mt-1">Something went wrong. Try again.</p>
+            )}
           </motion.div>
 
           {/* Stats */}
