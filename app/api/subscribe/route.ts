@@ -12,14 +12,17 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    await fetch(GHL_WEBHOOK, {
+    const ghlRes = await fetch(GHL_WEBHOOK, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
     });
+    const ghlBody = await ghlRes.text();
+    console.log("[subscribe] GHL status:", ghlRes.status, "body:", ghlBody);
 
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (err) {
+    console.log("[subscribe] GHL fetch error:", err);
     return NextResponse.json({ error: "Failed to send" }, { status: 500 });
   }
 }
