@@ -5,6 +5,8 @@ const GHL_WEBHOOK = "https://services.leadconnectorhq.com/hooks/We47Ogqr3hMySU8C
 export async function POST(req: NextRequest) {
   const { email } = await req.json();
 
+  console.log("[subscribe] received email:", email);
+
   if (!email || !email.includes("@")) {
     return NextResponse.json({ error: "Invalid email" }, { status: 400 });
   }

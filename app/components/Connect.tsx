@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import AnimateIn from "./AnimateIn";
 
 const socials = [
@@ -15,6 +16,22 @@ const socials = [
 ];
 
 export default function Connect() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  async function handleSubscribe(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (res.ok) { setStatus("success"); setEmail(""); }
+      else { setStatus("error"); }
+    } catch { setStatus("error"); }
+  }
   return (
     <>
       <section id="connect" className="py-24 md:py-32 px-6">
@@ -108,19 +125,27 @@ export default function Connect() {
                     AI. Innovation. Tech. Longevity. What I&apos;m building, what I&apos;m watching, what you need to know.
                   </p>
                   <p className="text-white/40 text-xs mb-5">Drop your email. Stay ahead.</p>
-                  <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
-                    <input
-                      type="email"
-                      placeholder="your@email.com"
-                      className="flex-1 px-4 py-2.5 bg-white/10 border border-white/20 rounded text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-[var(--gold)] transition-colors duration-200"
-                    />
-                    <button
-                      type="submit"
-                      className="px-4 py-2.5 bg-[var(--crimson)] text-white text-sm font-semibold rounded hover:bg-[var(--crimson-light)] transition-colors duration-200 shrink-0"
-                    >
-                      Subscribe
-                    </button>
-                  </form>
+                  {status === "success" ? (
+                    <p className="text-[var(--crimson)] text-sm font-semibold py-2.5">You&apos;re in. First issue coming soon.</p>
+                  ) : (
+                    <form className="flex gap-2" onSubmit={handleSubscribe}>
+                      <input
+                        type="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="your@email.com"
+                        className="flex-1 px-4 py-2.5 bg-white/10 border border-white/20 rounded text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-[var(--gold)] transition-colors duration-200"
+                      />
+                      <button
+                        type="submit"
+                        disabled={status === "loading"}
+                        className="px-4 py-2.5 bg-[var(--crimson)] text-white text-sm font-semibold rounded hover:bg-[var(--crimson-light)] transition-colors duration-200 shrink-0 disabled:opacity-60"
+                      >
+                        {status === "loading" ? "..." : "Subscribe"}
+                      </button>
+                    </form>
+                  )}
                 </div>
               </AnimateIn>
             </div>
