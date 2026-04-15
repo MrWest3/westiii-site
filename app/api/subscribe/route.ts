@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const GHL_WEBHOOK = "https://services.leadconnectorhq.com/hooks/We47Ogqr3hMySU8CAGhM/webhook-trigger/g3sXeWsdUAV53yXh7GFm3";
+const GHL_API_KEY = process.env.GHL_API_KEY!;
+const GHL_LOCATION_ID = "We47Ogqr3hMySU8CAGhM";
 
 export async function POST(req: NextRequest) {
   const { email } = await req.json();
@@ -12,17 +13,30 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const ghlRes = await fetch(GHL_WEBHOOK, {
+    const res = await fetch("https://services.leadconnectorhq.com/contacts/", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email }),
+      headers: {
+        "Authorization": `Bearer ${GHL_API_KEY}`,
+        "Content-Type": "application/json",
+        "Version": "2021-07-28",
+      },
+      body: JSON.stringify({
+        locationId: GHL_LOCATION_ID,
+        email,
+        tags: ["west-report-subscriber"],
+      }),
     });
-    const ghlBody = await ghlRes.text();
-    console.log("[subscribe] GHL status:", ghlRes.status, "body:", ghlBody);
+
+    const body = await res.text();
+    console.log("[subscribe] GHL status:", res.status, body);
+
+    if (!res.ok) {
+      return NextResponse.json({ error: "GHL error" }, { status: 500 });
+    }
 
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.log("[subscribe] GHL fetch error:", err);
-    return NextResponse.json({ error: "Failed to send" }, { status: 500 });
+    console.log("[subscribe] error:", err);
+    return NextResponse.json({ error: "Failed" }, { status: 500 });
   }
 }
