@@ -7,6 +7,7 @@ import WestStone from "./components/WestStone";
 import WebBuilds from "./components/WebBuilds";
 import Building from "./components/Building";
 import YouTube from "./components/YouTube";
+import Testimonials from "./components/Testimonials";
 import Connect from "./components/Connect";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <WebBuilds />
       <Building />
       <YouTube />
+      <Testimonials />
       <Connect />
     </main>
   );
