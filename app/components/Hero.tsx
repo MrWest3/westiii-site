@@ -155,7 +155,7 @@ export default function Hero() {
             {[
               { value: "8+", label: "Years in Tech" },
               { value: "6M+", label: "Views in 6 Months" },
-              { value: "Visa", label: "Pitch in Progress" },
+              { value: "Fortune 500", label: "Pitch in Progress" },
               { value: "ATL", label: "Based" },
             ].map((stat) => (
               <div key={stat.label}>
