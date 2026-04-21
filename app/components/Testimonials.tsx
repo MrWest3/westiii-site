@@ -11,6 +11,13 @@ const testimonials = [
     project: "AI Gender Reveal Video",
     rating: 5,
   },
+  {
+    quote:
+      "The customer service was amazing and the project was done with efficiency. When David proposed the idea to me I couldn't turn it down because I knew what it could do for my business. I would recommend this to anyone who doesn't want to go through the hassle of a brand photoshoot!",
+    name: "Antreal Allen",
+    project: "AI Brand Photoshoot",
+    rating: 5,
+  },
 ];
 
 function Stars({ count = 5 }: { count?: number }) {
