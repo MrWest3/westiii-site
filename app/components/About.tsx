@@ -53,7 +53,7 @@ export default function About() {
                 </p>
                 <p>
                   But that&apos;s always been the day job. The real work has been building. I&apos;ve
-                  loved art my whole life: drawing, design, film, photography, every medium. When AI
+                  loved art my whole life: drawing, design, film, photography, music, every medium. When AI
                   tools started closing the gap between imagination and execution, I was already there.
                   A growing body of AI creative work. Content that has generated over 6 million views
                   across platforms, starting with viral AI art and building toward the systems underneath it.
