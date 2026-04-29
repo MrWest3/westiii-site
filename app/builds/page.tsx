@@ -107,7 +107,14 @@ const builds = [
 const reach = [
   { label: "Content reach (last 6 months)", value: "6M+", detail: "across IG, YouTube, X, LinkedIn, TikTok" },
   { label: "Skool community", value: "425+", detail: "Creative AI Education with West" },
-  { label: "Build-in-public handle", value: "@WestTech3", detail: "long-form content" },
+];
+
+const handles = [
+  { platform: "YouTube", handle: "@WestTech3", href: "https://www.youtube.com/@WestTech3" },
+  { platform: "Instagram", handle: "@__dw3", href: "https://www.instagram.com/__dw3/" },
+  { platform: "X", handle: "@___DW3", href: "https://x.com/___DW3" },
+  { platform: "TikTok", handle: "@___dw3", href: "https://www.tiktok.com/@___dw3" },
+  { platform: "LinkedIn", handle: "David West III", href: "https://www.linkedin.com/in/david-west-iii-289ba7148" },
 ];
 
 export default function BuildsPage() {
@@ -263,6 +270,26 @@ export default function BuildsPage() {
                 </p>
               </div>
             ))}
+            <div className="border border-[var(--border)] rounded-xl p-6 hover:border-[var(--crimson)] transition-colors duration-300">
+              <p className="text-xs font-semibold tracking-widest uppercase text-[var(--muted)] mb-3">
+                Find me on
+              </p>
+              <ul className="space-y-1.5">
+                {handles.map((h) => (
+                  <li key={h.platform} className="flex items-center justify-between gap-3 text-sm">
+                    <span className="text-[var(--muted)]">{h.platform}</span>
+                    <a
+                      href={h.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-[var(--ink)] hover:text-[var(--crimson)] transition-colors truncate"
+                    >
+                      {h.handle}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
