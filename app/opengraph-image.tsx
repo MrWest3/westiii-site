@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "David West III — AI Consultant & Systems Builder";
+export const alt = "David West III — Fractional CTO & AI Systems Builder";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -52,7 +52,7 @@ export default function OgImage() {
             marginTop: 36,
           }}
         >
-          AI Consultant. Systems Builder. Studio West Creatives.
+          Fractional CTO. AI Operating Systems. Working Agents.
         </div>
         <div
           style={{

@@ -61,10 +61,10 @@ export default function Connect() {
               <AnimateIn delay={0.2}>
                 <div className="space-y-3 mb-8">
                   {[
-                    "AI operating systems and automation for your business",
-                    "AI implementation audits and advisory",
+                    "Fractional CTO and ongoing AI leadership",
+                    "AI operating systems and working agents, deployed",
+                    "AI training for teams, workshops, and speaking",
                     "AI creative campaigns and brand content",
-                    "Speaking, workshops, and AI training",
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-3 text-sm text-[var(--ink-secondary)]">
                       <span className="w-1.5 h-1.5 rounded-full bg-[var(--crimson)] shrink-0" />

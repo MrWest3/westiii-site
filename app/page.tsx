@@ -1,5 +1,6 @@
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
+import WhatIDo from "./components/WhatIDo";
 import About from "./components/About";
 import CreativeGrid from "./components/CreativeGrid";
 import Work from "./components/Work";
@@ -15,6 +16,7 @@ export default function Home() {
     <main>
       <Nav />
       <Hero />
+      <WhatIDo />
       <About />
       <CreativeGrid />
       <Work />
