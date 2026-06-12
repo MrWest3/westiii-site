@@ -69,19 +69,19 @@ export default function Hero() {
             className="flex flex-wrap gap-4"
           >
             <a
-              href="#work"
+              href="/book"
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--crimson)] text-white font-semibold rounded hover:bg-[var(--crimson-light)] transition-colors duration-200 text-sm"
             >
-              See the Work
+              Book an AI Audit
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
             <a
-              href="#connect"
+              href="#work"
               className="inline-flex items-center gap-2 px-7 py-3.5 border border-[var(--border)] text-[var(--ink)] font-semibold rounded hover:border-[var(--crimson)] hover:text-[var(--crimson)] transition-colors duration-200 text-sm"
             >
-              Work With Me
+              See the Work
             </a>
           </motion.div>
 
@@ -155,7 +155,7 @@ export default function Hero() {
             {[
               { value: "8+", label: "Years in Tech" },
               { value: "6M+", label: "Views in 6 Months" },
-              { value: "Fortune 500", label: "Pitch in Progress" },
+              { value: "4+", label: "AI Systems in Production" },
               { value: "ATL", label: "Based" },
             ].map((stat) => (
               <div key={stat.label}>

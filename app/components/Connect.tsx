@@ -75,15 +75,23 @@ export default function Connect() {
               </AnimateIn>
 
               <AnimateIn delay={0.25}>
-                <a
-                  href="mailto:StudioWest3@proton.me"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--crimson)] text-white font-semibold rounded hover:bg-[var(--crimson-light)] transition-colors duration-200 text-sm"
-                >
-                  Send a Message
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
+                <div className="flex flex-wrap gap-4">
+                  <a
+                    href="/book"
+                    className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--crimson)] text-white font-semibold rounded hover:bg-[var(--crimson-light)] transition-colors duration-200 text-sm"
+                  >
+                    Book an AI Audit
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </a>
+                  <a
+                    href="mailto:StudioWest3@proton.me"
+                    className="inline-flex items-center gap-2 px-7 py-3.5 border border-[var(--border)] text-[var(--ink)] font-semibold rounded hover:border-[var(--crimson)] hover:text-[var(--crimson)] transition-colors duration-200 text-sm"
+                  >
+                    Send a Message
+                  </a>
+                </div>
               </AnimateIn>
             </div>
 

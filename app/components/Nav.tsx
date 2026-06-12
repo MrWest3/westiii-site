@@ -52,10 +52,10 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="#connect"
+            href="/book"
             className="text-sm font-semibold px-4 py-2 bg-[var(--crimson)] text-white rounded hover:bg-[var(--crimson-light)] transition-colors duration-200"
           >
-            Work With Me
+            Book an Audit
           </a>
         </nav>
 
@@ -85,11 +85,11 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="#connect"
+            href="/book"
             onClick={() => setMenuOpen(false)}
             className="text-sm font-semibold px-4 py-2 bg-[var(--crimson)] text-white rounded text-center"
           >
-            Work With Me
+            Book an Audit
           </a>
         </div>
       )}

@@ -3,8 +3,6 @@ import Link from "next/link";
 const tiers = [
   {
     name: "Foundation",
-    price: "$2,500",
-    implementation: "$2,000 one-time",
     tagline: "Everything you need to stop bleeding leads and start converting faster.",
     recommended: false,
     features: [
@@ -22,8 +20,6 @@ const tiers = [
   },
   {
     name: "Growth",
-    price: "$3,500",
-    implementation: "$3,000 one-time",
     tagline: "Everything in Foundation plus AI-powered content, expanded automation, and premium capabilities.",
     recommended: true,
     features: [
@@ -41,8 +37,6 @@ const tiers = [
   },
   {
     name: "Enterprise",
-    price: "$5,500",
-    implementation: "$3,500 one-time",
     tagline: "Full AI-powered operating system. Maximum automation, maximum leverage.",
     recommended: false,
     features: [
@@ -95,10 +89,10 @@ export default function ServicesPage() {
             Back
           </Link>
           <Link
-            href="/#connect"
+            href="/book"
             className="text-sm font-semibold px-4 py-2 bg-[var(--crimson)] text-white rounded hover:bg-[var(--crimson-light)] transition-colors"
           >
-            Work With Me
+            Book an Audit
           </Link>
         </div>
       </div>
@@ -253,7 +247,8 @@ export default function ServicesPage() {
             Choose Your System
           </h2>
           <p className="text-[var(--muted)] max-w-xl leading-relaxed mb-12">
-            Every tier is built and deployed custom. Reach out and we scope it together.
+            Every tier is built and deployed custom, and every engagement is scoped after an audit.
+            The audit comes first so you only buy what actually moves the numbers.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-6 mb-24">
@@ -294,14 +289,14 @@ export default function ServicesPage() {
 
               <div className="p-6 border-t border-[var(--border)]">
                 <Link
-                  href="/#connect"
+                  href="/book"
                   className={`w-full block text-center py-3 rounded font-semibold text-sm transition-colors ${
                     tier.recommended
                       ? "bg-[var(--crimson)] text-white hover:bg-[var(--crimson-light)]"
                       : "border border-[var(--border)] text-[var(--ink)] hover:border-[var(--crimson)] hover:text-[var(--crimson)]"
                   }`}
                 >
-                  Get Started
+                  Start With an Audit
                 </Link>
               </div>
             </div>
@@ -363,13 +358,14 @@ export default function ServicesPage() {
             Operating System.
           </h2>
           <p className="text-white/60 max-w-lg mx-auto mb-10 leading-relaxed">
-            Every system is scoped and built custom. Reach out and we&apos;ll map out exactly what your business needs.
+            Every system is scoped and built custom. The audit comes first: 60 minutes on your
+            business, three leverage points, and a 30-day playbook before you commit to anything.
           </p>
           <Link
-            href="/#connect"
+            href="/book"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--crimson)] text-white font-semibold rounded hover:bg-[var(--crimson-light)] transition-colors text-sm"
           >
-            Start the Conversation
+            Book Your Audit
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
