@@ -42,3 +42,7 @@ next-env.d.ts
 
 # Large media files — hosted on CDN
 public/**/*.mp4
+.env*.local
+
+# Claude Code local state
+.claude/

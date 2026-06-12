@@ -7,32 +7,26 @@ const videos = [
   {
     id: "UnX2neRbZ7o",
     title: "I Built an AI Operating System to Run My Business 24/7 (Here's How)",
-    views: "463 views",
   },
   {
     id: "W33ASlngzW8",
     title: "OpenClaw Explained: Origins, How It Works, Cost, and Real Use Cases",
-    views: "325 views",
   },
   {
     id: "bvQ6rIhWkTU",
     title: "This Looks Like a Real Coca-Cola Commercial (Made With AI)",
-    views: "118 views",
   },
   {
     id: "37ne0GgvHb8",
     title: "How to Build AI Characters & Visual Boards Using Freepik Spaces",
-    views: "1.6K views",
   },
   {
     id: "Y97Nr_uWb8E",
     title: "I Used AI to Create a Nintendo Switch Ad (Here's How I Did It)",
-    views: "156 views",
   },
   {
     id: "hc7RU5HwKiY",
     title: "HOW TO AI FACE SWAP",
-    views: "352 views",
   },
 ];
 
@@ -80,7 +74,6 @@ function FeaturedVideo({ video }: { video: (typeof videos)[0] }) {
       </div>
       <div className="mt-4">
         <p className="font-bold text-[var(--ink)] text-lg leading-snug">{video.title}</p>
-        <p className="text-sm text-[var(--muted)] mt-1">{video.views}</p>
       </div>
     </div>
   );
@@ -111,7 +104,6 @@ function VideoCard({ video }: { video: (typeof videos)[0] }) {
       <p className="text-sm font-semibold text-[var(--ink)] leading-snug group-hover:text-[var(--crimson)] transition-colors duration-200 line-clamp-2">
         {video.title}
       </p>
-      <p className="text-xs text-[var(--muted)] mt-1">{video.views}</p>
     </a>
   );
 }

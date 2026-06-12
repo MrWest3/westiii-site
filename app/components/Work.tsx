@@ -15,7 +15,7 @@ const featured = [
       { value: "11", label: "Animated Spots" },
       { value: "8", label: "Host Cities" },
     ],
-    status: "Active Pitch",
+    status: "Case Study",
     image: "/weststone/USA-Host-Cities-Map-Visa-Tap.png",
   },
   {
@@ -24,18 +24,18 @@ const featured = [
     title: "AI Operating System",
     client: "Multi-Location Enterprise Client",
     description:
-      "A full AI operating system proposal covering CRM, AI voice agents, content pipelines, membership platforms, automated lead follow-up, and workflow automation — unified into one system. Three deployment tiers built to consolidate your existing tools and deliver more capability across every function.",
+      "A full AI operating system covering CRM, AI voice agents, content pipelines, membership platforms, automated lead follow-up, and workflow automation — unified into one system. Three deployment tiers built to consolidate your existing tools and deliver more capability across every function. Every engagement is scoped after an audit.",
     tags: ["AI Agency", "Automation", "CRM", "Voice Agents", "Enterprise"],
     stats: [
       { value: "3", label: "Service Tiers" },
       { value: "6+", label: "AI Agents" },
       { value: "14 Days", label: "To Deploy" },
     ],
-    status: "Proposal Stage",
+    status: "Active Client Work",
     tiers: [
-      { name: "Foundation", price: "$2,500" },
-      { name: "Growth", price: "$3,500" },
-      { name: "Enterprise", price: "$5,500" },
+      { name: "Foundation" },
+      { name: "Growth" },
+      { name: "Enterprise" },
     ],
   },
 ];
