@@ -106,7 +106,7 @@ const builds = [
 
 const reach = [
   { label: "Content reach (last 6 months)", value: "6M+", detail: "across IG, YouTube, X, LinkedIn, TikTok" },
-  { label: "Skool community", value: "425+", detail: "Creative AI Education with West" },
+  { label: "Skool community", value: "435", detail: "West HQ — AI Everything" },
 ];
 
 const handles = [
