@@ -8,7 +8,7 @@ const featured = [
     title: "The WestStone Project",
     client: "Visa x FIFA World Cup 2026",
     description:
-      "A full AI-generated creative concept package built to compete with agency-level work — produced solo. 28 original illustrations spanning 8 host cities, 11 animated spots across 6 animation styles, and an original brand character. Pitched directly to Visa, with the IP now positioned for future campaign windows.",
+      "A full AI-generated creative concept package built to compete with agency-level work — produced solo. 28 original illustrations spanning 8 host cities, 11 animated spots across 6 animation styles, and an original brand character. Pitched directly to Visa.",
     tags: ["AI Creative", "Brand Campaign", "Kling", "NanoBanana Pro", "Seedance 2"],
     stats: [
       { value: "28", label: "Illustrations" },
