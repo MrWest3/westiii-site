@@ -4,30 +4,30 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 const collageLeft = [
-  { src: "/hero/Olandria-Yellow-Top-Portrait.jpg", alt: "Olandria portrait, AI illustration" },
-  { src: "/hero/NYC-Rainy-Night-Fan-Crowd.jpg", alt: "NYC rainy night fan crowd, AI illustration" },
-  { src: "/hero/Rio-Beach-Golden-Hour.jpg", alt: "Rio beach golden hour, AI illustration" },
+  { src: "/hero/client-09.jpg", alt: "Revenge Fitness brand identity" },
+  { src: "/hero/creative-03.jpg", alt: "AI fashion design concept" },
+  { src: "/hero/client-02.jpg", alt: "Pixar-style animated client video" },
 ];
 
 const collageRight = [
-  { src: "/hero/Atlanta-Beltline-Streetwear-Portrait.jpg", alt: "Atlanta Beltline streetwear, AI illustration" },
-  { src: "/hero/Tokyo-Night-Market-World-Cup.jpg", alt: "Tokyo night market, AI illustration" },
-  { src: "/hero/Olandria-Paris-Street-Walk.jpg", alt: "Olandria in Paris, AI illustration" },
+  { src: "/hero/client-07.jpg", alt: "STYS AI virtual photo shoot" },
+  { src: "/hero/creative-06.jpg", alt: "AI product commercial frame" },
+  { src: "/hero/client-04.jpg", alt: "STYS collection launch model" },
 ];
 
 const marquee = [
-  { src: "/hero/Atlanta-Skyline-Illustration-v1.jpg", alt: "Atlanta skyline" },
-  { src: "/hero/LA-Coliseum-Luxury-Box-Visa-Tap.jpg", alt: "LA Coliseum luxury box" },
-  { src: "/hero/London-Pub-Watch-Party-3D.jpg", alt: "London pub watch party" },
-  { src: "/hero/Fan-Crowd-Surf-Downtown.jpg", alt: "Fan crowd surf downtown" },
-  { src: "/hero/Atlanta-Stadium-Tunnel-Streamer-v1.jpg", alt: "Stadium tunnel streamers" },
-  { src: "/hero/NYC-Block-Party-Street-View.jpg", alt: "NYC block party" },
-  { src: "/hero/LA-Street-Food-Cart-v1.jpg", alt: "LA street food cart" },
-  { src: "/hero/Atlanta-Beltline-Street-Soccer.jpg", alt: "Atlanta Beltline street soccer" },
-  { src: "/hero/Olandria-Paris-Street-Walk.jpg", alt: "Olandria in Paris" },
-  { src: "/hero/Rio-Beach-Golden-Hour.jpg", alt: "Rio beach golden hour" },
-  { src: "/hero/Tokyo-Night-Market-World-Cup.jpg", alt: "Tokyo night market" },
-  { src: "/hero/NYC-Rainy-Night-Fan-Crowd.jpg", alt: "NYC rainy night crowd" },
+  { src: "/hero/client-01.jpg", alt: "DataVault AI brand commercial" },
+  { src: "/hero/creative-04.jpg", alt: "AI sneaker campaign concept" },
+  { src: "/hero/client-10.jpg", alt: "Revenge Fitness brand ad" },
+  { src: "/hero/client-06.jpg", alt: "VerifyU animated app ad" },
+  { src: "/hero/creative-02.jpg", alt: "West III holiday creative" },
+  { src: "/hero/client-08.jpg", alt: "STYS AI studio shoot" },
+  { src: "/hero/client-11.jpg", alt: "Revenge Fitness clothing mockup" },
+  { src: "/hero/creative-01.jpg", alt: "AI tech commercial recreation" },
+  { src: "/hero/client-03.jpg", alt: "STYS studio campaign video" },
+  { src: "/hero/client-05.jpg", alt: "The Lab USA brand commercial" },
+  { src: "/hero/creative-06.jpg", alt: "AI product commercial frame" },
+  { src: "/hero/client-04.jpg", alt: "STYS collection launch" },
 ];
 
 export default function Hero() {
