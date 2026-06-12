@@ -25,7 +25,7 @@ export default function Nav() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/95 backdrop-blur-sm border-b border-[var(--border)]" : "bg-transparent"
+        scrolled || menuOpen ? "bg-white/95 backdrop-blur-sm border-b border-[var(--border)]" : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -35,7 +35,7 @@ export default function Nav() {
             alt="West III"
             width={80}
             height={40}
-            className="object-contain"
+            className={`object-contain transition-all duration-300 ${scrolled || menuOpen ? "" : "brightness-0 invert"}`}
             priority
           />
         </a>
@@ -46,7 +46,11 @@ export default function Nav() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-[var(--ink-secondary)] hover:text-[var(--crimson)] transition-colors duration-200"
+              className={`text-sm font-medium transition-colors duration-200 ${
+                scrolled
+                  ? "text-[var(--ink-secondary)] hover:text-[var(--crimson)]"
+                  : "text-white/70 hover:text-white"
+              }`}
             >
               {l.label}
             </a>
@@ -65,9 +69,9 @@ export default function Nav() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <span className={`block w-6 h-0.5 bg-[var(--ink)] transition-all duration-200 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-[var(--ink)] transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-[var(--ink)] transition-all duration-200 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          <span className={`block w-6 h-0.5 transition-all duration-200 ${scrolled || menuOpen ? "bg-[var(--ink)]" : "bg-white"} ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`block w-6 h-0.5 transition-all duration-200 ${scrolled || menuOpen ? "bg-[var(--ink)]" : "bg-white"} ${menuOpen ? "opacity-0" : ""}`} />
+          <span className={`block w-6 h-0.5 transition-all duration-200 ${scrolled || menuOpen ? "bg-[var(--ink)]" : "bg-white"} ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
       </div>
 
