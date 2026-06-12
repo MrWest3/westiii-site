@@ -89,7 +89,7 @@ export default function Work() {
           {featured.map((project, i) => (
             <AnimateIn key={project.id} delay={i * 0.1}>
               <Link
-                href={project.id === "weststone" ? "#weststone" : "/services"}
+                href={project.id === "weststone" ? "/weststone" : "/services"}
                 className="block border border-[var(--border)] rounded-2xl overflow-hidden hover:border-[var(--crimson)] transition-colors duration-300 group cursor-pointer"
               >
 
