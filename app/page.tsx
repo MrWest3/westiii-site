@@ -1,9 +1,9 @@
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
+import WhatIDo from "./components/WhatIDo";
 import About from "./components/About";
 import CreativeGrid from "./components/CreativeGrid";
 import Work from "./components/Work";
-import WestStone from "./components/WestStone";
 import WebBuilds from "./components/WebBuilds";
 import Building from "./components/Building";
 import YouTube from "./components/YouTube";
@@ -15,10 +15,10 @@ export default function Home() {
     <main>
       <Nav />
       <Hero />
+      <WhatIDo />
       <About />
       <CreativeGrid />
       <Work />
-      <WestStone />
       <WebBuilds />
       <Building />
       <YouTube />

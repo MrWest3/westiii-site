@@ -13,18 +13,18 @@ const geist = Geist({
 export const metadata: Metadata = {
   metadataBase: new URL("https://westiii.com"),
   title: {
-    default: "David West III — AI Consultant & Systems Builder",
+    default: "David West III — Fractional CTO & AI Systems Builder",
     template: "%s | David West III",
   },
   description:
-    "AI consultant and systems builder in Atlanta. I build AI operating systems, agents, and automation for businesses, plus AI creative production. Founder of Studio West Creatives.",
+    "Fractional CTO and AI consultant in Atlanta. I build AI operating systems, deploy working agents for businesses, and train the teams that run them. Founder of Studio West Creatives.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "David West III — AI Consultant & Systems Builder",
+    title: "David West III — Fractional CTO & AI Systems Builder",
     description:
-      "AI operating systems, agents, and automation for businesses. AI creative production. Atlanta.",
+      "AI operating systems, working agents, and hands-on AI training for businesses. Atlanta.",
     url: "https://westiii.com",
     siteName: "David West III",
     type: "website",
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "David West III — AI Consultant & Systems Builder",
+    title: "David West III — Fractional CTO & AI Systems Builder",
     description:
-      "AI operating systems, agents, and automation for businesses. AI creative production. Atlanta.",
+      "AI operating systems, working agents, and hands-on AI training for businesses. Atlanta.",
     creator: "@___DW3",
   },
 };
@@ -45,7 +45,7 @@ const personSchema = {
   name: "David A. West III",
   alternateName: "David West III",
   url: "https://westiii.com",
-  jobTitle: "AI Consultant & Systems Builder",
+  jobTitle: "Fractional CTO & AI Consultant",
   worksFor: {
     "@type": "Organization",
     name: "Studio West Creatives",
@@ -65,9 +65,12 @@ const personSchema = {
     "https://github.com/MrWest3",
   ],
   knowsAbout: [
+    "Fractional CTO services",
     "AI implementation",
     "AI agents",
+    "AI operating systems",
     "Workflow automation",
+    "AI training and workshops",
     "AI creative production",
     "Solutions engineering",
     "Cybersecurity",
