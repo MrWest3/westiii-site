@@ -48,7 +48,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-xl md:text-2xl font-light text-[var(--ink-secondary)] mb-4 max-w-2xl"
           >
-            One Person. Full-Scale Creative, Powered by AI.
+            One Person. Full-Scale AI Systems and Creative.
           </motion.p>
 
           <motion.p
@@ -57,8 +57,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="text-base md:text-lg text-[var(--muted)] mb-10 max-w-xl leading-relaxed"
           >
-            AI creative campaigns for global brands. AI assistants and operating systems for
-            businesses that want to scale. Founder of Studio West Creatives.
+            AI operating systems, agents, and automation for businesses that want leverage.
+            AI creative campaigns for brands. Founder of Studio West Creatives.
           </motion.p>
 
           {/* CTAs */}
