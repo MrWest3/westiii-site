@@ -1,26 +1,20 @@
 import Hero from "./components/Hero";
-import WhatIDo from "./components/WhatIDo";
+import HowItWorks from "./components/HowItWorks";
+import Offers from "./components/Offers";
+import Proof from "./components/Work";
 import About from "./components/About";
-import CreativeGrid from "./components/CreativeGrid";
-import Work from "./components/Work";
-import WebBuilds from "./components/WebBuilds";
-import Building from "./components/Building";
-import YouTube from "./components/YouTube";
-import Testimonials from "./components/Testimonials";
+import WorkshopsStrip from "./components/WorkshopsStrip";
 import Connect from "./components/Connect";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <WhatIDo />
+      <HowItWorks />
+      <Offers />
+      <Proof />
       <About />
-      <CreativeGrid />
-      <Work />
-      <WebBuilds />
-      <Building />
-      <YouTube />
-      <Testimonials />
+      <WorkshopsStrip />
       <Connect />
     </main>
   );

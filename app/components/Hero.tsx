@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const collageLeft = [
   { src: "/hero/client-09.jpg", alt: "Revenge Fitness brand identity" },
@@ -31,10 +31,8 @@ const marquee = [
 ];
 
 export default function Hero() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   return (
-    <section className="relative min-h-screen flex flex-col justify-center bg-[var(--ink)] overflow-hidden">
+    <section className="relative min-h-svh flex flex-col justify-center bg-[var(--ink)] overflow-hidden">
       {/* Atmosphere */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -52,7 +50,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-6xl mx-auto w-full px-6 pt-24 pb-10 relative">
+      <div className="max-w-6xl mx-auto w-full px-6 pt-28 pb-10 relative">
         <div className="grid lg:grid-cols-[1fr_auto] gap-12 items-center">
           <div className="max-w-2xl">
             {/* Eyebrow */}
@@ -65,141 +63,49 @@ export default function Hero() {
               Atlanta, Georgia
             </motion.p>
 
-            {/* Name */}
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight leading-none text-white mb-6"
+              className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[0.95] text-white mb-6"
             >
-              David
-              <br />
-              <span className="text-[var(--crimson-light)]">West III</span>
+              AI that pays for itself{" "}
+              <span className="text-[var(--crimson-light)]">in a week.</span>
             </motion.h1>
 
-            {/* Tagline */}
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-xl md:text-2xl font-light text-white/85 mb-4 max-w-2xl"
+              className="text-base md:text-lg text-white/65 mb-8 max-w-xl leading-relaxed"
             >
-              Your Fractional CTO for the AI Era.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-base md:text-lg text-white/55 mb-10 max-w-xl leading-relaxed"
-            >
-              I build AI operating systems, deploy working agents, and train the teams that
-              run them. For businesses that want leverage, with creative firepower to match.
-              Founder of Studio West Creatives.
+              I&apos;m David West, the AI guy in Atlanta. I sit down with business owners,
+              find where AI saves them 5+ hours every week, and build it. If I can&apos;t
+              find the hours, you don&apos;t pay.
             </motion.p>
 
             {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-wrap gap-4"
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
             >
-              <a
+              <Link
                 href="/book"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--crimson)] text-white font-semibold rounded hover:bg-[var(--crimson-light)] transition-colors duration-200 text-sm"
+                className="inline-flex min-h-12 items-center justify-center gap-2 px-6 py-3.5 bg-[var(--crimson)] text-white font-semibold rounded hover:bg-[var(--crimson-light)] transition-colors duration-200 text-sm"
               >
-                Book an AI Audit
+                Book Your AI Assessment ($999)
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
+              </Link>
               <a
-                href="#work"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white font-semibold rounded hover:border-[var(--gold)] hover:text-[var(--gold)] transition-colors duration-200 text-sm"
+                href="#how-it-works"
+                className="inline-flex min-h-12 items-center justify-center gap-2 px-6 py-3.5 border border-white/20 text-white font-semibold rounded hover:border-[var(--gold)] hover:text-[var(--gold)] transition-colors duration-200 text-sm"
               >
-                See the Work
+                See how it works
               </a>
-            </motion.div>
-
-            {/* Newsletter */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.75 }}
-              className="mt-10 max-w-xl"
-            >
-              <p className="text-sm text-white/50 mb-3">
-                <span className="font-semibold text-white">The West Report</span> — AI, innovation, tech, and longevity.
-                What I&apos;m building, what I&apos;m watching, what you need to know before everyone else does.
-              </p>
-              {status === "success" ? (
-                <p className="text-sm text-[var(--gold)] font-semibold py-2.5">
-                  You&apos;re in. First issue coming soon.
-                </p>
-              ) : (
-                <form
-                  className="flex gap-2"
-                  onSubmit={async (e) => {
-                    e.preventDefault();
-                    setStatus("loading");
-                    try {
-                      const res = await fetch("/api/subscribe", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ email }),
-                      });
-                      if (res.ok) {
-                        setStatus("success");
-                        setEmail("");
-                      } else {
-                        setStatus("error");
-                      }
-                    } catch {
-                      setStatus("error");
-                    }
-                  }}
-                >
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="your@email.com"
-                    className="flex-1 px-4 py-2.5 bg-white/10 border border-white/15 rounded text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-[var(--gold)] transition-colors duration-200"
-                  />
-                  <button
-                    type="submit"
-                    disabled={status === "loading"}
-                    className="shrink-0 px-5 py-2.5 bg-white text-[var(--ink)] text-sm font-semibold rounded hover:bg-[var(--gold)] hover:text-[var(--ink)] transition-colors duration-200 disabled:opacity-60"
-                  >
-                    {status === "loading" ? "..." : "Subscribe"}
-                  </button>
-                </form>
-              )}
-              {status === "error" && (
-                <p className="text-xs text-red-400 mt-1">Something went wrong. Try again.</p>
-              )}
-            </motion.div>
-
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
-              className="flex flex-wrap gap-8 mt-14 pt-8 border-t border-white/10"
-            >
-              {[
-                { value: "8+", label: "Years in Tech" },
-                { value: "6M+", label: "Views in 6 Months" },
-                { value: "4+", label: "AI Systems in Production" },
-                { value: "ATL", label: "Based" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <p className="text-2xl md:text-3xl font-black text-white">{stat.value}</p>
-                  <p className="text-xs text-white/40 font-medium tracking-wide uppercase mt-0.5">{stat.label}</p>
-                </div>
-              ))}
             </motion.div>
           </div>
 
@@ -247,7 +153,7 @@ export default function Hero() {
         <div className="overflow-hidden relative">
           <div className="flex gap-3 w-max hero-marquee">
             {[...marquee, ...marquee].map((img, i) => (
-              <a key={`${img.src}-${i}`} href="#work" tabIndex={-1} aria-hidden={i >= marquee.length}>
+              <a key={`${img.src}-${i}`} href="#proof" tabIndex={-1} aria-hidden={i >= marquee.length}>
                 <img
                   src={img.src}
                   alt={img.alt}
@@ -261,7 +167,7 @@ export default function Hero() {
           <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[var(--ink)] to-transparent pointer-events-none" />
         </div>
         <p className="text-center text-xs text-white/30 tracking-widest uppercase mt-4">
-          Made with AI. Every frame.
+          Selected client work, made with AI.
         </p>
       </motion.div>
     </section>
