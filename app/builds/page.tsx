@@ -124,21 +124,21 @@ export default function BuildsPage() {
         {/* Header */}
         <div className="mb-20">
           <p className="text-xs font-semibold tracking-widest uppercase text-[var(--crimson)] mb-4">
-            Builds
+            David West. The AI guy in Atlanta.
           </p>
           <h1 className="text-5xl md:text-7xl font-black tracking-tight text-[var(--ink)] leading-none mb-6">
-            Production AI systems,
+            I find the wasted hours.
             <br />
-            <span className="text-[var(--crimson)]">shipped in public.</span>
+            <span className="text-[var(--crimson)]">Then I build the fix.</span>
           </h1>
           <p className="text-xl text-[var(--ink-secondary)] max-w-2xl leading-relaxed mb-8">
-            Multi-agent orchestration, command-center dashboards, AI agency
-            client work, and the video studio behind the content. Each one is
-            running today, not a roadmap.
+            I audit how the work gets done, then I build what the audit proves
+            you need. My day job is securing AI agents for enterprises at
+            BeyondTrust. These are the systems I have shipped.
           </p>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded-full text-sm text-[var(--ink-secondary)]">
             <span className="w-2 h-2 rounded-full bg-emerald-500" />
-            All systems live and running
+            Audit. Optimize. Automate.
           </div>
         </div>
 
