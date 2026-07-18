@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ReviewForm from "../components/ReviewForm";
 
 export const metadata = {
@@ -9,27 +8,6 @@ export const metadata = {
 export default function ReviewPage() {
   return (
     <main className="min-h-screen bg-[var(--ink)] flex flex-col">
-
-      {/* Minimal header */}
-      <header className="px-6 py-6 flex items-center justify-between max-w-2xl mx-auto w-full">
-        <a href="/" aria-label="Back to home">
-          <Image
-            src="/logo.png"
-            alt="West III"
-            width={72}
-            height={36}
-            className="object-contain brightness-0 invert"
-            priority
-          />
-        </a>
-        <a
-          href="/"
-          className="text-white/40 text-sm hover:text-white/80 transition-colors duration-200"
-        >
-          ← Back to site
-        </a>
-      </header>
-
       {/* Form */}
       <div className="flex-1 flex items-center justify-center px-6 py-12">
         <div className="w-full max-w-2xl">

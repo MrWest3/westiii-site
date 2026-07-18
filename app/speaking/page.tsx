@@ -58,32 +58,6 @@ const appearances = [
 export default function SpeakingPage() {
   return (
     <main className="min-h-screen bg-white">
-      <div className="border-b border-[var(--border)] px-6 py-4">
-        <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--ink-secondary)] transition-colors hover:text-[var(--crimson)]"
-          >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path
-                d="M13 8H3M7 4L3 8l4 4"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-              />
-            </svg>
-            Back
-          </Link>
-          <a
-            href={MAILTO}
-            className="rounded bg-[var(--crimson)] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[var(--crimson-light)]"
-          >
-            Book David
-          </a>
-        </div>
-      </div>
-
       <div className="mx-auto max-w-6xl px-6 py-20">
         {/* Hero */}
         <section className="mb-20">

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
 import "./globals.css";
 
 const geist = Geist({
@@ -89,7 +91,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
+        <Nav />
         {children}
+        <Footer />
         <Script
           src="https://link.msgsndr.com/js/external-tracking.js"
           data-tracking-id="tk_654d2a8260d3499dbd56e94a2f9ef659"

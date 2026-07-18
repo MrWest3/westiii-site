@@ -78,25 +78,6 @@ const capabilities = [
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-white">
-
-      {/* Nav bar */}
-      <div className="border-b border-[var(--border)] px-6 py-4">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-sm font-semibold text-[var(--ink-secondary)] hover:text-[var(--crimson)] transition-colors inline-flex items-center gap-2">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            Back
-          </Link>
-          <Link
-            href="/book"
-            className="text-sm font-semibold px-4 py-2 bg-[var(--crimson)] text-white rounded hover:bg-[var(--crimson-light)] transition-colors"
-          >
-            Book an Audit
-          </Link>
-        </div>
-      </div>
-
       <div className="max-w-6xl mx-auto px-6 py-20">
 
         {/* Header */}

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import AnimateIn from "./AnimateIn";
+import { useNewsletterSubscription } from "./useNewsletterSubscription";
 
 const socials = [
   { label: "YouTube", handle: "@WestTech3", href: "https://www.youtube.com/@WestTech3" },
@@ -16,22 +16,9 @@ const socials = [
 ];
 
 export default function Connect() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const { email, setEmail, status, handleSubscribe } =
+    useNewsletterSubscription();
 
-  async function handleSubscribe(e: React.FormEvent) {
-    e.preventDefault();
-    setStatus("loading");
-    try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      if (res.ok) { setStatus("success"); setEmail(""); }
-      else { setStatus("error"); }
-    } catch { setStatus("error"); }
-  }
   return (
     <>
       <section id="connect" className="py-24 md:py-32 px-6">

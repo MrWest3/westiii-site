@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { useMemo, useState } from "react";
 
@@ -405,22 +404,6 @@ export default function AiAgentsDemoClient() {
 
   return (
     <main className="min-h-screen bg-[#fbfaf7] text-stone-950">
-      <header className="border-b border-stone-200 bg-white/85 px-5 py-4 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-sm font-bold text-stone-600 transition-colors hover:text-[var(--crimson)]"
-          >
-            <span aria-hidden="true">←</span>
-            Studio West
-          </Link>
-          <div className="hidden items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-stone-500 sm:flex">
-            <span className="h-2 w-2 rounded-full bg-emerald-500" />
-            Local prototype
-          </div>
-        </div>
-      </header>
-
       <section className="border-b border-stone-200 bg-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-10 lg:grid-cols-[1.05fr_0.95fr] lg:py-14">
           <div>

@@ -1,4 +1,3 @@
-import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import WhatIDo from "./components/WhatIDo";
 import About from "./components/About";
@@ -13,7 +12,6 @@ import Connect from "./components/Connect";
 export default function Home() {
   return (
     <main>
-      <Nav />
       <Hero />
       <WhatIDo />
       <About />
