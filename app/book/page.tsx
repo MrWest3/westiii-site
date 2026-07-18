@@ -1,246 +1,296 @@
-import Link from "next/link";
+import AnimateIn from "../components/AnimateIn";
 
 export const metadata = {
-  title: "Book — David West III",
+  title: "Book | David West III",
   description:
-    "A paid 60-minute AI implementation audit. Honest answers to where AI actually fits in your business or career, and what to build first.",
+    "A $999 AI assessment for owner-operated businesses. I find you 5+ reclaimable hours a week or you don't pay.",
 };
 
 const CALENDLY_URL = "https://calendly.com/davidawest25/ai-audit";
 
-const youLeaveWith = [
+const deliverables = [
   {
-    title: "Three real leverage points",
-    body: "Specific to your business or career. The biggest leaks I see in your current setup and the AI moves that fix them.",
+    number: "01",
+    title: "45-minute discovery call",
+    body: "I look at your calendar, inbox, and workflows to find where your time is going.",
   },
   {
-    title: "A 30-day playbook",
-    body: "What to build, what to buy, what to ignore, and the order to do it in. Written for your specific situation.",
+    number: "02",
+    title: "Written AI playbook",
+    body: "Your pain points, the exact tools, cost, setup time, hours saved, and a 4-day quick start.",
   },
   {
-    title: "A follow-up note in 24 hours",
-    body: "Bulleted recap of the leverage points, the playbook, and any links or tools we discussed. Sent to your inbox.",
+    number: "03",
+    title: "30-minute review call",
+    body: "We walk through the playbook together. You leave knowing where to start.",
   },
   {
-    title: "Honest answers, no pitch",
-    body: "If a free tool solves your problem, I will tell you. If you do not need me, I will tell you that too. The call is the work.",
-  },
-];
-
-const builtFor = [
-  {
-    title: "Founders and operators",
-    body: "You run a business and you know AI should be doing more inside it. You want a clear next move, not a tool list.",
-  },
-  {
-    title: "Practice and clinic owners",
-    body: "You want the front desk, intake, follow-up, and recovery workflows to run on AI without breaking the patient experience.",
-  },
-  {
-    title: "Professionals at an inflection point",
-    body: "The career ladder is changing. You want a sober read on where your skills actually fit in an AI-shifted market.",
-  },
-  {
-    title: "Teams shipping with agents",
-    body: "You are building, but the workflow is brittle. You want a second set of eyes on the architecture before it scales.",
+    number: "04",
+    title: "100% money-back guarantee",
+    body: "I find you 5+ reclaimable hours a week or you don't pay.",
   },
 ];
 
-const bring = [
-  "One link, doc, or screenshot of the thing you want us to dig into",
-  "A specific decision, build, or problem you want help on",
-  "Sixty focused minutes. No multi-tasking; the call is the work",
+const faqItems = [
+  {
+    question: "What are the refund terms?",
+    answer:
+      "Cancel at least 24 hours before the call and I will issue a full refund. Inside 24 hours, you can reschedule your call.",
+  },
+  {
+    question: "What happens after the assessment?",
+    answer:
+      "I send your written playbook, then we meet for a 30-minute review call. You can run the plan yourself or ask me to build it with you. Every dollar of the assessment is credited toward that work.",
+  },
+  {
+    question: "Do I need to be technical?",
+    answer:
+      "No. I explain the tools and the setup in plain language. Your playbook gives you a clear first step.",
+  },
+  {
+    question: "What if I already use ChatGPT?",
+    answer:
+      "Good. This goes further. I look across your business and map AI to the work that takes your time every week.",
+  },
+  {
+    question: "How fast do I get the playbook?",
+    answer: "Within 48 hours of the discovery call.",
+  },
 ];
 
-const proof = [
-  { value: "8+", label: "years across cybersecurity, systems, and solutions engineering" },
-  { value: "6M+", label: "content views in 6 months across AI, creative, and systems work" },
-  { value: "435", label: "AI community members learning tools, workflows, and implementation" },
-  { value: "24h", label: "written follow-up note in your inbox after every call" },
-];
+function BookingButton({ label }: { label: string }) {
+  return (
+    <a
+      href={CALENDLY_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-[var(--crimson)] px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[var(--crimson-light)]"
+    >
+      {label}
+      <span aria-hidden="true">→</span>
+    </a>
+  );
+}
 
 export default function BookPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-20">
-        <section className="mb-20">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
-            Work With David
-          </p>
-          <h1 className="mb-6 max-w-5xl text-5xl font-black leading-none tracking-tight text-[var(--ink)] md:text-7xl">
-            A 60-minute{" "}
-            <span className="text-[var(--crimson)]">AI implementation audit.</span>
-          </h1>
-          <p className="mb-8 max-w-2xl text-xl leading-relaxed text-[var(--ink-secondary)]">
-            Honest answers to where AI actually fits in your business or career, and what
-            to build first. If we end up building together, the call fee is credited toward
-            the engagement.
-          </p>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded bg-[var(--crimson)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--crimson-light)]"
-            >
-              Book Your Audit ($297)
-            </a>
-            <Link
-              href="/builds"
-              className="inline-flex items-center justify-center rounded border border-[var(--border)] px-6 py-3 text-sm font-semibold text-[var(--ink)] transition-colors hover:border-[var(--crimson)] hover:text-[var(--crimson)]"
-            >
-              See Past Work
-            </Link>
-          </div>
-        </section>
-
-        <section className="mb-20 border-l-2 border-[var(--crimson)] pl-8">
-          <p className="mb-4 text-2xl font-black leading-snug text-[var(--ink)] md:text-3xl">
-            Most AI calls are sales calls. This one is a working session.
-          </p>
-          <p className="max-w-3xl text-lg leading-relaxed text-[var(--muted)]">
-            The next 60 minutes are spent on your specific situation. We map what is
-            working, what is leaking, what AI actually solves, and what you should build
-            first. You leave with a real plan, not a follow-up sequence.
-          </p>
-        </section>
-
-        <section className="mb-24">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
-            What You Leave With
-          </p>
-          <h2 className="mb-10 text-3xl font-black leading-tight text-[var(--ink)] md:text-4xl">
-            Four deliverables. One hour.
-          </h2>
-          <div className="grid gap-4 md:grid-cols-2">
-            {youLeaveWith.map((item) => (
-              <div key={item.title} className="rounded-lg border border-[var(--border)] p-7">
-                <h3 className="mb-3 text-xl font-black text-[var(--ink)]">{item.title}</h3>
-                <p className="leading-relaxed text-[var(--ink-secondary)]">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="mb-24 bg-[var(--surface)] px-6 py-12 md:px-10">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
-            Built For
-          </p>
-          <h2 className="mb-10 text-3xl font-black leading-tight text-[var(--ink)] md:text-4xl">
-            People who want a real answer, not a sales call.
-          </h2>
-          <div className="grid gap-4 md:grid-cols-2">
-            {builtFor.map((item) => (
-              <div key={item.title} className="rounded-lg border border-[var(--border)] bg-white p-7">
-                <h3 className="mb-3 text-xl font-black text-[var(--ink)]">{item.title}</h3>
-                <p className="leading-relaxed text-[var(--ink-secondary)]">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="mb-24">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
-            What To Bring
-          </p>
-          <h2 className="mb-10 text-3xl font-black leading-tight text-[var(--ink)] md:text-4xl">
-            Three things before we get on the call.
-          </h2>
-          <div className="space-y-4">
-            {bring.map((item, idx) => (
-              <div
-                key={item}
-                className="grid gap-4 rounded-lg border border-[var(--border)] p-6 md:grid-cols-[96px_1fr]"
-              >
-                <p className="text-xs font-black uppercase tracking-widest text-[var(--crimson)]">
-                  {String(idx + 1).padStart(2, "0")}
-                </p>
-                <p className="leading-relaxed text-[var(--ink-secondary)]">{item}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="mb-24 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {proof.map((item) => (
-            <div key={item.label} className="rounded-lg border border-[var(--border)] p-6">
-              <p className="mb-2 text-4xl font-black leading-none text-[var(--ink)]">
-                {item.value}
+    <main className="overflow-hidden bg-white">
+      <section className="border-b border-[var(--border)] px-6 py-10 sm:py-14 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <AnimateIn>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
+              AI Assessment
+            </p>
+          </AnimateIn>
+          <AnimateIn delay={0.08}>
+            <h1 className="max-w-4xl text-5xl font-black leading-[0.95] tracking-tight text-[var(--ink)] sm:text-6xl md:text-7xl">
+              The <span className="text-[var(--crimson)]">$999</span> AI Assessment.
+            </h1>
+          </AnimateIn>
+          <AnimateIn delay={0.14}>
+            <p className="mt-5 max-w-2xl text-lg font-medium leading-snug text-[var(--ink-secondary)] sm:text-xl md:mt-6 md:text-2xl">
+              45 minutes. I find you 5+ reclaimable hours a week or you don&apos;t pay.
+            </p>
+          </AnimateIn>
+          <AnimateIn delay={0.2}>
+            <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+              <BookingButton label="Book Your Assessment" />
+              <p className="text-center text-xs font-semibold uppercase tracking-widest text-[var(--muted)] sm:text-left">
+                One-time $999
               </p>
-              <p className="text-sm leading-relaxed text-[var(--ink-secondary)]">{item.label}</p>
             </div>
-          ))}
-        </section>
+          </AnimateIn>
+        </div>
+      </section>
 
-        <section className="mb-24 rounded-lg border border-[var(--border)] p-8 md:p-10">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
-            The Fine Print
-          </p>
-          <h2 className="mb-4 text-3xl font-black leading-tight text-[var(--ink)] md:text-4xl">
-            Refunds, rescheduling, and what is in scope.
-          </h2>
-          <ul className="max-w-3xl space-y-3 leading-relaxed text-[var(--ink-secondary)]">
-            <li className="flex gap-3">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--crimson)]" />
-              <span>
-                Reschedule freely up to 24 hours before the call. Inside 24 hours, no
-                refunds, but you can reschedule once.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--crimson)]" />
-              <span>
-                If we end up working together on an engagement, the $297 is credited
-                toward the project fee.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--crimson)]" />
-              <span>
-                The call is advisory. I do not deliver code, builds, or implementation
-                inside this 60 minutes. Those are scoped separately.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--crimson)]" />
-              <span>
-                Anything involving protected health information, regulated data, or
-                compliance review is scoped with the right tooling, not on this call.
-              </span>
-            </li>
-          </ul>
-        </section>
+      <section className="px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl">
+          <AnimateIn>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
+              What you get
+            </p>
+            <h2 className="mb-10 max-w-2xl text-4xl font-black leading-tight tracking-tight text-[var(--ink)] md:text-5xl">
+              Two calls. One plan you can use.
+            </h2>
+          </AnimateIn>
 
-        <section className="rounded-lg bg-[var(--ink)] p-10 text-center md:p-16">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
-            Book Your Audit
-          </p>
-          <h2 className="mx-auto mb-6 max-w-3xl text-4xl font-black leading-tight text-white md:text-5xl">
-            Pick a time. Pay. Show up with the thing you want to fix.
-          </h2>
-          <p className="mx-auto mb-10 max-w-xl leading-relaxed text-white/60">
-            One hour, $297, a working session you walk out of with a real plan and a
-            written follow-up the next day. Two slots open per day.
-          </p>
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded bg-[var(--crimson)] px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-[var(--crimson-light)]"
-          >
-            Book Your Audit
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path
-                d="M3 8h10M9 4l4 4-4 4"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-              />
-            </svg>
-          </a>
-        </section>
-      </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {deliverables.map((item, index) => (
+              <AnimateIn key={item.number} delay={index * 0.06}>
+                <article className="h-full rounded-2xl border border-[var(--border)] bg-white p-6 md:p-8">
+                  <p className="mb-7 text-xs font-bold tracking-widest text-[var(--gold)]">
+                    {item.number}
+                  </p>
+                  <h3 className="mb-3 text-xl font-black text-[var(--ink)] md:text-2xl">
+                    {item.title}
+                  </h3>
+                  <p className="leading-relaxed text-[var(--ink-secondary)]">{item.body}</p>
+                </article>
+              </AnimateIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[var(--surface)] px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl">
+          <AnimateIn>
+            <div className="max-w-4xl border-l-2 border-[var(--crimson)] pl-5 sm:pl-7">
+              <p className="text-xl font-semibold leading-relaxed text-[var(--ink)] md:text-2xl">
+                You know AI exists. You&apos;ve seen the demos. You&apos;ve tried ChatGPT. But
+                you&apos;re drowning in tools with no idea which ones solve your problems. You
+                don&apos;t need a developer or another course. You need someone to look at your
+                calendar, your inbox, and your workflows and say: this tool, this process,
+                this is where you start.
+              </p>
+            </div>
+          </AnimateIn>
+
+          <div className="mt-16 grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <AnimateIn>
+              <div>
+                <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
+                  The math
+                </p>
+                <h2 className="text-4xl font-black leading-tight tracking-tight text-[var(--ink)] md:text-5xl">
+                  6+ hours back every week.
+                </h2>
+              </div>
+            </AnimateIn>
+
+            <AnimateIn delay={0.1}>
+              <div className="rounded-2xl border border-[var(--border)] bg-white p-6 sm:p-8">
+                <p className="text-lg leading-relaxed text-[var(--ink-secondary)] md:text-xl">
+                  The average client reclaims 6+ hours a week for roughly $40 a month in
+                  tool costs. At $100 an hour of owner time, that is $2,400+ a month back,
+                  every month, for a one-time $999.
+                </p>
+                <p className="mt-6 border-t border-[var(--border)] pt-6 text-2xl font-black leading-tight text-[var(--crimson)] md:text-3xl">
+                  A 25x return on the assessment. Every single month.
+                </p>
+              </div>
+            </AnimateIn>
+          </div>
+
+          <AnimateIn delay={0.16}>
+            <div className="mt-8">
+              <BookingButton label="Book Your Assessment" />
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      <section className="px-6 py-12 md:py-16">
+        <div className="mx-auto max-w-6xl rounded-2xl border border-[var(--crimson)] bg-white p-7 sm:p-9 md:p-12">
+          <AnimateIn>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
+              Build credit
+            </p>
+            <p className="max-w-5xl text-3xl font-black leading-tight tracking-tight text-[var(--ink)] md:text-5xl">
+              Every dollar of the assessment is credited toward anything we build together
+              afterward.
+            </p>
+          </AnimateIn>
+        </div>
+      </section>
+
+      <section className="px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl">
+          <AnimateIn>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
+              Who it&apos;s for
+            </p>
+            <h2 className="mb-10 max-w-2xl text-4xl font-black leading-tight tracking-tight text-[var(--ink)] md:text-5xl">
+              Small teams. Busy owners.
+            </h2>
+          </AnimateIn>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            <AnimateIn>
+              <article className="h-full rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-7 md:p-9">
+                <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
+                  This is for you
+                </p>
+                <h3 className="mb-3 text-2xl font-black text-[var(--ink)]">
+                  Owner-operated businesses with 2 to 20 people.
+                </h3>
+                <p className="leading-relaxed text-[var(--ink-secondary)]">
+                  You know AI should be doing something in your business. You have not had
+                  time to figure out where it fits.
+                </p>
+              </article>
+            </AnimateIn>
+
+            <AnimateIn delay={0.08}>
+              <article className="h-full rounded-2xl border border-[var(--border)] bg-white p-7 md:p-9">
+                <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--crimson)]">
+                  This is not for you
+                </p>
+                <h3 className="mb-3 text-2xl font-black text-[var(--ink)]">
+                  Enterprises and magic-bullet shoppers.
+                </h3>
+                <p className="leading-relaxed text-[var(--ink-secondary)]">
+                  Enterprise AI is my day job. This assessment is for small business owners.
+                  It also requires a focused 45-minute conversation.
+                </p>
+              </article>
+            </AnimateIn>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[var(--surface)] px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-4xl">
+          <AnimateIn>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
+              FAQ
+            </p>
+            <h2 className="mb-10 text-4xl font-black leading-tight tracking-tight text-[var(--ink)] md:text-5xl">
+              Before you book.
+            </h2>
+          </AnimateIn>
+
+          <div className="divide-y divide-[var(--border)] border-y border-[var(--border)]">
+            {faqItems.map((item, index) => (
+              <AnimateIn key={item.question} delay={index * 0.04}>
+                <details className="group py-6">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg font-black text-[var(--ink)] marker:content-none">
+                    {item.question}
+                    <span
+                      className="text-2xl font-normal text-[var(--crimson)] transition-transform group-open:rotate-45"
+                      aria-hidden="true"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <p className="max-w-3xl pt-4 leading-relaxed text-[var(--ink-secondary)]">
+                    {item.answer}
+                  </p>
+                </details>
+              </AnimateIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-16 md:py-24">
+        <AnimateIn>
+          <div className="mx-auto max-w-6xl rounded-2xl bg-[var(--ink)] px-7 py-12 text-center sm:px-10 md:py-16">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
+              Start here
+            </p>
+            <h2 className="mx-auto max-w-3xl text-4xl font-black leading-tight tracking-tight text-white md:text-5xl">
+              Get 5+ hours back every week.
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/70">
+              45 minutes. One written playbook. $999. I find the hours or you don&apos;t pay.
+            </p>
+            <div className="mt-8 flex justify-center">
+              <BookingButton label="Book Your Assessment" />
+            </div>
+          </div>
+        </AnimateIn>
+      </section>
     </main>
   );
 }
