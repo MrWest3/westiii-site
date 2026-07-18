@@ -1,7 +1,7 @@
 import AnimateIn from "../components/AnimateIn";
 
 export const metadata = {
-  title: "Book | David West III",
+  title: "Book",
   description:
     "A $999 AI assessment for owner-operated businesses. I find you 5+ reclaimable hours a week or you don't pay.",
 };
