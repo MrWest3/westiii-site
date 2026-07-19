@@ -5,7 +5,7 @@ import AnimateIn from "../components/AnimateIn";
 export const metadata: Metadata = {
   title: "Offers",
   description:
-    "Start with a $999 AI Assessment, then build the systems the assessment proves your business needs.",
+    "My AI audit for small business starts with a $999 assessment, then moves into builds, Agent HQ, or fractional AI CTO support.",
 };
 
 const offers = [
@@ -95,7 +95,7 @@ export default function ServicesPage() {
           </AnimateIn>
           <AnimateIn delay={0.2}>
             <p className="mt-7 border-l-2 border-[var(--crimson)] pl-5 text-base font-semibold text-[var(--ink)] sm:text-lg">
-              Assessment first. I only build what the audit proves you need.
+              Assessment first. I only build what the assessment proves you need.
             </p>
           </AnimateIn>
         </div>

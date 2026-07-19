@@ -15,18 +15,18 @@ const geist = Geist({
 export const metadata: Metadata = {
   metadataBase: new URL("https://westiii.com"),
   title: {
-    default: "David West III — Fractional CTO & AI Systems Builder",
+    default: "David West | AI Consultant in Atlanta | AI Assessments for Small Business",
     template: "%s | David West III",
   },
   description:
-    "Fractional CTO and AI consultant in Atlanta. I build AI operating systems, deploy working agents for businesses, and train the teams that run them. Founder of Studio West Creatives.",
+    "I'm an AI consultant in Atlanta. My $999 assessment finds 5+ hours you can reclaim every week, or you don't pay.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "David West III — Fractional CTO & AI Systems Builder",
+    title: "David West | AI Consultant in Atlanta | AI Assessments for Small Business",
     description:
-      "AI operating systems, working agents, and hands-on AI training for businesses. Atlanta.",
+      "I'm an AI consultant in Atlanta. My $999 assessment finds 5+ hours you can reclaim every week, or you don't pay.",
     url: "https://westiii.com",
     siteName: "David West III",
     type: "website",
@@ -34,23 +34,25 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "David West III — Fractional CTO & AI Systems Builder",
+    title: "David West | AI Consultant in Atlanta | AI Assessments for Small Business",
     description:
-      "AI operating systems, working agents, and hands-on AI training for businesses. Atlanta.",
+      "I'm an AI consultant in Atlanta. My $999 assessment finds 5+ hours you can reclaim every week, or you don't pay.",
     creator: "@___DW3",
   },
 };
 
-const personSchema = {
+const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "David A. West III",
-  alternateName: "David West III",
+  "@type": "LocalBusiness",
+  "@id": "https://westiii.com/#business",
+  name: "Studio West Creatives",
+  alternateName: "David West",
+  description: "AI consultant serving small business owners in Atlanta.",
   url: "https://westiii.com",
-  jobTitle: "Fractional CTO & AI Consultant",
-  worksFor: {
-    "@type": "Organization",
-    name: "Studio West Creatives",
+  email: "StudioWest3@proton.me",
+  founder: {
+    "@type": "Person",
+    name: "David A. West III",
   },
   address: {
     "@type": "PostalAddress",
@@ -66,17 +68,6 @@ const personSchema = {
     "https://www.linkedin.com/in/david-west-iii-289ba7148",
     "https://github.com/MrWest3",
   ],
-  knowsAbout: [
-    "Fractional CTO services",
-    "AI implementation",
-    "AI agents",
-    "AI operating systems",
-    "Workflow automation",
-    "AI training and workshops",
-    "AI creative production",
-    "Solutions engineering",
-    "Cybersecurity",
-  ],
 };
 
 export default function RootLayout({
@@ -89,7 +80,7 @@ export default function RootLayout({
       <body className="min-h-full">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
         <Nav />
         {children}

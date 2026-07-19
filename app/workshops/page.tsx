@@ -4,7 +4,7 @@ import AnimateIn from "../components/AnimateIn";
 export const metadata: Metadata = {
   title: "Workshops",
   description:
-    "Hands-on AI workshops and training in Atlanta for teams, communities, and events.",
+    "I lead an AI workshop Atlanta teams can use the same day, with hands-on training built around their real work.",
 };
 
 const MAILTO =

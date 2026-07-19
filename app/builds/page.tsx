@@ -106,7 +106,7 @@ const builds = [
 
 const reach = [
   { label: "Content reach (last 6 months)", value: "6M+", detail: "across IG, YouTube, X, LinkedIn, TikTok" },
-  { label: "Skool community", value: "435", detail: "West HQ — AI Everything" },
+  { label: "Skool community", value: "435", detail: "West HQ: AI Everything" },
 ];
 
 const handles = [
@@ -132,7 +132,7 @@ export default function BuildsPage() {
             <span className="text-[var(--crimson)]">Then I build the fix.</span>
           </h1>
           <p className="text-xl text-[var(--ink-secondary)] max-w-2xl leading-relaxed mb-8">
-            I audit how the work gets done, then I build what the audit proves
+            I assess how the work gets done, then I build what the assessment proves
             you need. My day job is securing AI agents for enterprises at
             BeyondTrust. These are the systems I have shipped.
           </p>

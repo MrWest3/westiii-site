@@ -61,7 +61,7 @@ const system = [
 const packages = [
   {
     name: "Foundation Rebuild",
-    scope: "Scoped after audit",
+    scope: "Scoped after assessment",
     timeline: "About 3 weeks",
     tagline: "Fix the digital foundation.",
     features: [
@@ -74,7 +74,7 @@ const packages = [
   },
   {
     name: "Practice Growth System",
-    scope: "Scoped after audit",
+    scope: "Scoped after assessment",
     timeline: "14-21 days",
     tagline: "Build the front door that captures more opportunity.",
     features: [
@@ -89,7 +89,7 @@ const packages = [
   },
   {
     name: "Practice OS",
-    scope: "Scoped after audit",
+    scope: "Scoped after assessment",
     timeline: "21-30 days",
     tagline: "Install the practice command center.",
     features: [
@@ -315,7 +315,7 @@ export default function PracticeOSPage() {
             Process
           </p>
           <h2 className="mb-10 text-3xl font-black leading-tight text-[var(--ink)] md:text-4xl">
-            Four steps from audit to launch.
+            Four steps from assessment to launch.
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
             {process.map((step) => (

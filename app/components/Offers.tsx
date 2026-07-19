@@ -6,7 +6,7 @@ const offers = [
     number: "01",
     title: "AI Assessment",
     price: "$999",
-    body: "The 45-minute audit, a written playbook, and a review call. 5+ hours found or you don't pay.",
+    body: "The 45-minute assessment, a written playbook, and a review call. 5+ hours found or you don't pay.",
   },
   {
     number: "02",

@@ -49,7 +49,7 @@ export default function HowItWorks() {
 
         <AnimateIn delay={0.25}>
           <p className="mt-8 border-l-2 border-[var(--crimson)] pl-5 text-base font-semibold text-[var(--ink)] md:text-lg">
-            Assessment first. I only build what the audit proves you need.
+            Assessment first. I only build what the assessment proves you need.
           </p>
         </AnimateIn>
       </div>

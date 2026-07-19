@@ -1,12 +1,39 @@
+import type { Metadata } from "next";
 import AnimateIn from "../components/AnimateIn";
 
-export const metadata = {
-  title: "Book",
+export const metadata: Metadata = {
+  title: {
+    absolute: "The $999 AI Assessment | 5+ Hours Back Every Week or You Don't Pay",
+  },
   description:
-    "A $999 AI assessment for owner-operated businesses. I find you 5+ reclaimable hours a week or you don't pay.",
+    "Book my $999 AI assessment: a 45-minute call, written playbook, and review. I find 5+ hours a week, or you don't pay.",
 };
 
 const CALENDLY_URL = "https://calendly.com/davidawest25/ai-audit";
+
+const aiAssessmentSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://westiii.com/#ai-assessment",
+  name: "The $999 AI Assessment",
+  description:
+    "A 45-minute AI assessment with a written playbook and review call. I find 5+ reclaimable hours a week or you don't pay.",
+  provider: {
+    "@type": "LocalBusiness",
+    "@id": "https://westiii.com/#business",
+    name: "Studio West Creatives",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Atlanta",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "999",
+    priceCurrency: "USD",
+    url: "https://westiii.com/book",
+  },
+};
 
 const deliverables = [
   {
@@ -75,6 +102,10 @@ function BookingButton({ label }: { label: string }) {
 export default function BookPage() {
   return (
     <main className="overflow-hidden bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aiAssessmentSchema) }}
+      />
       <section className="border-b border-[var(--border)] px-6 py-10 sm:py-14 md:py-20">
         <div className="mx-auto max-w-6xl">
           <AnimateIn>

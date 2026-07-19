@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "David West III — Fractional CTO & AI Systems Builder";
+export const alt = "David West, the AI guy in Atlanta. $999 AI Assessment.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -52,7 +52,7 @@ export default function OgImage() {
             marginTop: 36,
           }}
         >
-          Fractional CTO. AI Operating Systems. Working Agents.
+          The AI guy in Atlanta. $999 AI Assessment.
         </div>
         <div
           style={{
@@ -61,7 +61,7 @@ export default function OgImage() {
             marginTop: 18,
           }}
         >
-          westiii.com
+          5+ hours a week or you don&apos;t pay.
         </div>
       </div>
     ),
