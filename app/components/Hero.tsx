@@ -1,33 +1,34 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 const collageLeft = [
-  { src: "/hero/client-09.jpg", alt: "Revenge Fitness brand identity" },
-  { src: "/hero/creative-03.jpg", alt: "AI fashion design concept" },
-  { src: "/hero/client-02.jpg", alt: "Pixar-style animated client video" },
+  { src: "/hero/client-09.jpg", alt: "Revenge Fitness brand identity", width: 357, height: 640 },
+  { src: "/hero/creative-03.jpg", alt: "AI fashion design concept", width: 360, height: 640 },
+  { src: "/hero/client-02.jpg", alt: "Pixar-style animated client video", width: 358, height: 640 },
 ];
 
 const collageRight = [
-  { src: "/hero/client-07.jpg", alt: "STYS AI virtual photo shoot" },
-  { src: "/hero/creative-06.jpg", alt: "AI product commercial frame" },
-  { src: "/hero/client-04.jpg", alt: "STYS collection launch model" },
+  { src: "/hero/client-07.jpg", alt: "STYS AI virtual photo shoot", width: 640, height: 556 },
+  { src: "/hero/creative-06.jpg", alt: "AI product commercial frame", width: 360, height: 640 },
+  { src: "/hero/client-04.jpg", alt: "STYS collection launch model", width: 640, height: 640 },
 ];
 
 const marquee = [
-  { src: "/hero/client-01.jpg", alt: "DataVault AI brand commercial" },
-  { src: "/hero/creative-04.jpg", alt: "AI sneaker campaign concept" },
-  { src: "/hero/client-10.jpg", alt: "Revenge Fitness brand ad" },
-  { src: "/hero/client-06.jpg", alt: "VerifyU animated app ad" },
-  { src: "/hero/creative-02.jpg", alt: "West III holiday creative" },
-  { src: "/hero/client-08.jpg", alt: "STYS AI studio shoot" },
-  { src: "/hero/client-11.jpg", alt: "Revenge Fitness clothing mockup" },
-  { src: "/hero/creative-01.jpg", alt: "AI tech commercial recreation" },
-  { src: "/hero/client-03.jpg", alt: "STYS studio campaign video" },
-  { src: "/hero/client-05.jpg", alt: "The Lab USA brand commercial" },
-  { src: "/hero/creative-06.jpg", alt: "AI product commercial frame" },
-  { src: "/hero/client-04.jpg", alt: "STYS collection launch" },
+  { src: "/hero/client-01.jpg", alt: "DataVault AI brand commercial", width: 640, height: 358 },
+  { src: "/hero/creative-04.jpg", alt: "AI sneaker campaign concept", width: 360, height: 640 },
+  { src: "/hero/client-10.jpg", alt: "Revenge Fitness brand ad", width: 357, height: 640 },
+  { src: "/hero/client-06.jpg", alt: "VerifyU animated app ad", width: 640, height: 357 },
+  { src: "/hero/creative-02.jpg", alt: "West III holiday creative", width: 360, height: 640 },
+  { src: "/hero/client-08.jpg", alt: "STYS AI studio shoot", width: 640, height: 640 },
+  { src: "/hero/client-11.jpg", alt: "Revenge Fitness clothing mockup", width: 357, height: 640 },
+  { src: "/hero/creative-01.jpg", alt: "AI tech commercial recreation", width: 360, height: 640 },
+  { src: "/hero/client-03.jpg", alt: "STYS studio campaign video", width: 640, height: 640 },
+  { src: "/hero/client-05.jpg", alt: "The Lab USA brand commercial", width: 358, height: 640 },
+  { src: "/hero/creative-06.jpg", alt: "AI product commercial frame", width: 360, height: 640 },
+  { src: "/hero/client-04.jpg", alt: "STYS collection launch", width: 640, height: 640 },
 ];
 
 export default function Hero() {
@@ -119,20 +120,26 @@ export default function Hero() {
           >
             <div className="flex flex-col gap-4 hero-drift-up">
               {collageLeft.map((img) => (
-                <img
+                <Image
                   key={img.src}
                   src={img.src}
                   alt={img.alt}
+                  width={img.width}
+                  height={img.height}
+                  sizes="176px"
                   className="w-44 rounded-xl border border-white/10 shadow-2xl shadow-black/50 object-cover"
                 />
               ))}
             </div>
             <div className="flex flex-col gap-4 mt-12 hero-drift-down">
               {collageRight.map((img) => (
-                <img
+                <Image
                   key={img.src}
                   src={img.src}
                   alt={img.alt}
+                  width={img.width}
+                  height={img.height}
+                  sizes="176px"
                   className="w-44 rounded-xl border border-white/10 shadow-2xl shadow-black/50 object-cover"
                 />
               ))}
@@ -154,10 +161,12 @@ export default function Hero() {
           <div className="flex gap-3 w-max hero-marquee">
             {[...marquee, ...marquee].map((img, i) => (
               <a key={`${img.src}-${i}`} href="#proof" tabIndex={-1} aria-hidden={i >= marquee.length}>
-                <img
+                <Image
                   src={img.src}
                   alt={img.alt}
-                  loading="lazy"
+                  width={img.width}
+                  height={img.height}
+                  sizes="176px"
                   className="h-24 w-auto rounded-lg border border-white/10 object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
                 />
               </a>

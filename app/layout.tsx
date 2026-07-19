@@ -88,7 +88,7 @@ export default function RootLayout({
         <Script
           src="https://link.msgsndr.com/js/external-tracking.js"
           data-tracking-id="tk_654d2a8260d3499dbd56e94a2f9ef659"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Analytics />
       </body>

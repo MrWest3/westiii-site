@@ -1,5 +1,6 @@
 import AnimateIn from "./AnimateIn";
 import Testimonials from "./Testimonials";
+import Image from "next/image";
 
 const selectedWork = [
   {
@@ -46,10 +47,12 @@ export default function Proof() {
         <AnimateIn delay={0.1}>
           <div className="mb-10 grid grid-cols-3 gap-2 overflow-hidden rounded-2xl bg-[var(--ink)] p-2">
             {selectedWork.map((item) => (
-              <div key={item.src} className="aspect-square overflow-hidden rounded-xl sm:aspect-[4/3]">
-                <img
+              <div key={item.src} className="relative aspect-square overflow-hidden rounded-xl sm:aspect-[4/3]">
+                <Image
                   src={item.src}
                   alt={item.alt}
+                  fill
+                  sizes="(max-width: 640px) 33vw, 400px"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
               </div>
