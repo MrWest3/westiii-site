@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Builds — David West III",
+  title: "Builds",
   description:
     "Production AI systems shipped in public: multi-agent orchestration, command-center dashboards, video studios, and live client work.",
 };

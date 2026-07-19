@@ -1,7 +1,7 @@
 import ReviewForm from "../components/ReviewForm";
 
 export const metadata = {
-  title: "Leave a Review — David West III",
+  title: "Leave a Review",
   description: "Share your experience working with David West III.",
 };
 

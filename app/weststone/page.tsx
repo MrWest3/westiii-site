@@ -30,7 +30,7 @@ export default function WestStonePage() {
             href="/book"
             className="inline-flex items-center gap-2 rounded bg-[var(--crimson)] px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-[var(--crimson-light)]"
           >
-            Book an AI Audit
+            Book Your AI Assessment
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path
                 d="M3 8h10M9 4l4 4-4 4"

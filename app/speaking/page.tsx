@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Speaking — David West III",
+  title: "Speaking",
   description:
     "Keynotes, fireside conversations, and hands-on AI workshops. David West III speaks on AI agents, implementation, creative AI, and career leverage in an AI-shifted market.",
 };
