@@ -56,8 +56,8 @@ export default function Hero() {
           <div className="max-w-2xl">
             {/* Eyebrow */}
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 16 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-sm font-semibold tracking-widest uppercase text-[var(--gold)] mb-6"
             >
@@ -65,8 +65,8 @@ export default function Hero() {
             </motion.p>
 
             <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 24 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[0.95] text-white mb-6"
             >
@@ -75,8 +75,8 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 16 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-base md:text-lg text-white/65 mb-8 max-w-xl leading-relaxed"
             >
@@ -87,8 +87,8 @@ export default function Hero() {
 
             {/* CTAs */}
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 16 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4"
             >
@@ -112,8 +112,8 @@ export default function Hero() {
 
           {/* Collage */}
           <motion.div
-            initial={{ opacity: 0, x: 32 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ x: 32 }}
+            animate={{ x: 0 }}
             transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="hidden lg:flex gap-4 relative"
             aria-hidden="true"
@@ -152,7 +152,7 @@ export default function Hero() {
 
       {/* Work marquee */}
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={false}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.1 }}
         className="relative mt-6 pb-8"
