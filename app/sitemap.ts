@@ -10,5 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/practice-os`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/services`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/speaking`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/workshops`, changeFrequency: "monthly", priority: 0.7 },
   ];
 }
