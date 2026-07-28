@@ -1,6 +1,18 @@
 "use client";
 
+import Link from "next/link";
 import { useNewsletterSubscription } from "./useNewsletterSubscription";
+
+const siteLinks = [
+  { label: "Offers", href: "/services" },
+  { label: "Hours Back Plan", href: "/book" },
+  { label: "Current State Assessment", href: "/assessment" },
+  { label: "Creative", href: "/creative" },
+  { label: "Workshops", href: "/workshops" },
+  { label: "Atlanta", href: "/atlanta" },
+  { label: "Builds", href: "/builds" },
+  { label: "Speaking", href: "/speaking" },
+];
 
 const socials = [
   {
@@ -119,7 +131,22 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-12 flex max-w-6xl flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
+      <nav
+        aria-label="Footer"
+        className="mx-auto mt-12 flex max-w-6xl flex-wrap gap-x-6 gap-y-3 border-t border-white/10 pt-8"
+      >
+        {siteLinks.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="text-sm text-white/55 transition-colors hover:text-[var(--gold)]"
+          >
+            {link.label}
+          </Link>
+        ))}
+      </nav>
+
+      <div className="mx-auto mt-8 flex max-w-6xl flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
         <p>&copy; {new Date().getFullYear()} Studio West Creatives LLC.</p>
         <p>David A. West III. Atlanta, Georgia.</p>
       </div>

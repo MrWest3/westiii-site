@@ -19,7 +19,7 @@ export default function Connect() {
         </AnimateIn>
         <AnimateIn delay={0.1}>
           <h2 className="mx-auto mb-5 max-w-3xl text-4xl font-black leading-tight tracking-tight text-white md:text-6xl">
-            I find you 5+ reclaimable hours a week or you don&apos;t pay.
+            I find you 5+ reclaimable hours a week, inside 48 hours, or you don&apos;t pay.
           </h2>
         </AnimateIn>
         <AnimateIn delay={0.2}>
@@ -32,7 +32,7 @@ export default function Connect() {
             href="/book"
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-[var(--crimson)] px-7 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[var(--crimson-light)]"
           >
-            Book Your AI Assessment ($999)
+            Book the Hours Back Plan ($999)
             <span aria-hidden="true">→</span>
           </Link>
         </AnimateIn>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AnimateIn from "../components/AnimateIn";
+import AtlantaMeetup from "../components/AtlantaMeetup";
 
 export const metadata: Metadata = {
   title: "Workshops",
@@ -70,6 +71,8 @@ export default function WorkshopsPage() {
           </AnimateIn>
         </div>
       </section>
+
+      <AtlantaMeetup />
 
       <section className="bg-[var(--surface)] px-6 py-16 md:py-24">
         <div className="mx-auto max-w-6xl">

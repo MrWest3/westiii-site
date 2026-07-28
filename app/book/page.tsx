@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import AnimateIn from "../components/AnimateIn";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "The $999 AI Assessment | 5+ Hours Back Every Week or You Don't Pay",
+    absolute: "The Hours Back Plan | $999 AI Assessment, 5+ Hours or You Don't Pay",
   },
   description:
-    "Book my $999 AI assessment: a 45-minute call, written playbook, and review. I find 5+ hours a week, or you don't pay.",
+    "The Hours Back Plan is my $999 AI assessment: a 45-minute call, a written plan in 48 hours, and a review call. I find 5+ hours a week, or you don't pay.",
 };
 
 const CALENDLY_URL = "https://calendly.com/davidawest25/ai-audit";
@@ -15,9 +16,9 @@ const aiAssessmentSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://westiii.com/#ai-assessment",
-  name: "The $999 AI Assessment",
+  name: "The Hours Back Plan",
   description:
-    "A 45-minute AI assessment with a written playbook and review call. I find 5+ reclaimable hours a week or you don't pay.",
+    "A 45-minute AI assessment with a written playbook in 48 hours and a review call. I find 5+ reclaimable hours a week or you don't pay.",
   provider: {
     "@type": "LocalBusiness",
     "@id": "https://westiii.com/#business",
@@ -54,7 +55,7 @@ const deliverables = [
   {
     number: "04",
     title: "100% money-back guarantee",
-    body: "I find you 5+ reclaimable hours a week or you don't pay.",
+    body: "I find you 5+ reclaimable hours a week, inside 48 hours, or you don't pay.",
   },
 ];
 
@@ -110,17 +111,20 @@ export default function BookPage() {
         <div className="mx-auto max-w-6xl">
           <AnimateIn>
             <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
-              AI Assessment
+              The Hours Back Plan · $999
             </p>
           </AnimateIn>
           <AnimateIn delay={0.08}>
             <h1 className="max-w-4xl text-5xl font-black leading-[0.95] tracking-tight text-[var(--ink)] sm:text-6xl md:text-7xl">
-              The <span className="text-[var(--crimson)]">$999</span> AI Assessment.
+              Find 5 hours a week in your business.{" "}
+              <span className="text-[var(--crimson)]">Or pay nothing.</span>
             </h1>
           </AnimateIn>
           <AnimateIn delay={0.14}>
             <p className="mt-5 max-w-2xl text-lg font-medium leading-snug text-[var(--ink-secondary)] sm:text-xl md:mt-6 md:text-2xl">
-              45 minutes. I find you 5+ reclaimable hours a week or you don&apos;t pay.
+              45 minutes on a call. A written playbook in 48 hours. A review call to walk it
+              through. If I can&apos;t find you 5+ reclaimable hours a week inside 48 hours,
+              you don&apos;t pay.
             </p>
           </AnimateIn>
           <AnimateIn delay={0.2}>
@@ -314,13 +318,43 @@ export default function BookPage() {
               Get 5+ hours back every week.
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/70">
-              45 minutes. One written playbook. $999. I find the hours or you don&apos;t pay.
+              45 minutes. A written playbook inside 48 hours. $999. I find the hours or you don&apos;t pay.
             </p>
             <div className="mt-8 flex justify-center">
               <BookingButton label="Book Your Assessment" />
             </div>
           </div>
         </AnimateIn>
+      </section>
+
+      <section className="border-t border-[var(--border)] bg-[var(--surface)] px-6 py-14 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <AnimateIn>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
+              Bigger operation?
+            </p>
+          </AnimateIn>
+          <AnimateIn delay={0.08}>
+            <h2 className="max-w-3xl text-3xl font-black leading-tight tracking-tight text-[var(--ink)] md:text-4xl">
+              Doing $2M or more a year?
+            </h2>
+          </AnimateIn>
+          <AnimateIn delay={0.14}>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--ink-secondary)]">
+              A tool list is not going to move your business. You need your operations mapped
+              and a system built. That is the Current State Assessment.
+            </p>
+          </AnimateIn>
+          <AnimateIn delay={0.2}>
+            <Link
+              href="/assessment"
+              className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded border border-[var(--ink)] px-6 py-3.5 text-sm font-semibold text-[var(--ink)] transition-colors duration-200 hover:border-[var(--crimson)] hover:text-[var(--crimson)]"
+            >
+              See the Current State Assessment
+              <span aria-hidden="true">→</span>
+            </Link>
+          </AnimateIn>
+        </div>
       </section>
     </main>
   );

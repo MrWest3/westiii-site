@@ -5,20 +5,33 @@ import AnimateIn from "../components/AnimateIn";
 export const metadata: Metadata = {
   title: "Offers",
   description:
-    "My AI audit for small business starts with a $999 assessment, then moves into builds, Agent HQ, or fractional AI CTO support.",
+    "Two ways in. The $999 Hours Back Plan for small businesses, or a $3,500 Current State Assessment for companies doing $2M to $50M. Then Agent HQ builds and an operating retainer.",
 };
 
-const offers = [
+type Offer = {
+  number: string;
+  name: string;
+  price: string;
+  who: string;
+  included: string[];
+  start: string;
+  cta: string;
+  dark: boolean;
+  href?: string;
+  muted?: boolean;
+};
+
+const offers: Offer[] = [
   {
     number: "01",
-    name: "AI Assessment",
+    name: "The Hours Back Plan",
     price: "$999",
     who: "Owner-operated businesses with 2 to 20 people that want to know where AI actually fits.",
     included: [
       "45-minute discovery call",
       "Written AI playbook with your pain points, exact tools, cost, setup time, hours saved, and a 4-day quick start",
       "30-minute review call",
-      "100% money-back guarantee. I find 5+ hours or you don't pay.",
+      "100% money-back guarantee. 5+ reclaimable hours found inside 48 hours, or you don't pay.",
     ],
     start: "Book it. We start with the 45-minute discovery call.",
     cta: "Book Your Assessment",
@@ -26,48 +39,86 @@ const offers = [
   },
   {
     number: "02",
-    name: "Builds",
-    price: "from $1,500",
-    who: "Assessment clients who want me to implement the playbook.",
+    name: "Current State Assessment",
+    price: "$3,500",
+    who: "Companies doing $2M to $50M that need their operations mapped, not a tool list.",
     included: [
-      "Automations",
-      "Knowledge systems",
-      "Custom workflows",
-      "Process redesign",
+      "Visual process maps for every major workflow you run",
+      "The cost of inaction, priced in your numbers",
+      "Architecture and data flow for the system that fixes it",
+      "A phased roadmap with deliverables week by week",
+      "Quantified ROI with a payback period",
+      "$50,000 in annualized reclaimable cost found in 14 days, or you don't pay",
     ],
-    start: "Assessment first. Then I build what the playbook proves you need.",
-    cta: "Start With an Assessment",
-    dark: false,
+    start: "Book a fit call. The assessment runs two to three weeks.",
+    cta: "See the Current State Assessment",
+    href: "/assessment",
+    dark: true,
   },
   {
     number: "03",
     name: "Agent HQ",
-    price: "scoped after assessment",
-    who: "Businesses that want a private AI operating system of their own.",
+    price: "from $15,000",
+    who: "Companies that want a private AI operating system of their own.",
     included: [
       "A full install built on your data",
       "Branded to you",
       "Connected to your real tools",
-      "Working agents",
+      "Working agents, automations, and custom workflows",
+      "Process redesign where the process is the problem",
       "A foundation session with your team",
     ],
-    start: "Assessment first. The playbook defines what Agent HQ needs to do.",
+    start: "Assessment first. The assessment defines what Agent HQ needs to do.",
     cta: "Start With an Assessment",
-    dark: true,
+    dark: false,
   },
   {
     number: "04",
     name: "Fractional AI CTO",
-    price: "monthly retainer, limited to 6 clients",
-    who: "Owners who want me in their corner month over month.",
+    price: "$1,500/mo",
+    who: "Owner-operated businesses under $2M who want me in their corner month over month.",
     included: [
-      "Two working sessions a month",
-      "Direct async access",
-      "The same loop every session: audit, optimize, automate",
+      "Two 45-minute working sessions a month",
+      "We build on your screen, in your tools, on your real workflows",
+      "The same loop every session: map, optimize, automate",
+      "Direct async access between sessions",
     ],
     start: "Assessment first. It gives us the baseline for the monthly work.",
     cta: "Start With an Assessment",
     dark: false,
+  },
+  {
+    number: "05",
+    name: "Operating Retainer",
+    price: "$3,000/mo, limited to 6 clients",
+    who: "Companies running an Agent HQ install who want it maintained, adopted, and growing.",
+    included: [
+      "Two working sessions a month",
+      "Direct async access, 12 business hour response",
+      "Adoption tracking. If your team is not using it, that is my problem to fix.",
+      "New capabilities as you ask for them",
+      "A monthly proof report: what the system handled, what needed a human, what improved",
+    ],
+    start: "Comes after the build. The install gives us the baseline for the monthly work.",
+    cta: "Start With an Assessment",
+    dark: false,
+  },
+  {
+    number: "06",
+    name: "Advisory Block",
+    price: "$2,500, four weekly calls",
+    who: "Companies that need direction before they need anything built.",
+    included: [
+      "Four calls, one a week, paid upfront",
+      "What changed this week, mapped against what you actually do",
+      "The two tools worth testing, the one to kill, the rest to ignore",
+      "The highest-ROI thing to build next",
+    ],
+    start: "Email me. This one is a conversation, not a booking link.",
+    cta: "Email Me About Advisory",
+    href: "mailto:StudioWest3@proton.me?subject=Advisory%20Block",
+    dark: false,
+    muted: true,
   },
 ];
 
@@ -88,9 +139,10 @@ export default function ServicesPage() {
           </AnimateIn>
           <AnimateIn delay={0.14}>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--ink-secondary)] sm:text-xl">
-              I start every engagement with a $999 AI Assessment. It shows us where AI fits,
-              what it costs, and how much time it saves. Use the playbook yourself or have me
-              build it with you.
+              Every engagement starts with an assessment. Under $2M, that is the $999 Hours
+              Back Plan: where AI fits, what it costs, how much time it saves. At $2M to
+              $50M, it is the Current State Assessment: your whole operation mapped and a
+              build plan priced. Use it yourself or have me build it with you.
             </p>
           </AnimateIn>
           <AnimateIn delay={0.2}>
@@ -174,8 +226,12 @@ export default function ServicesPage() {
                   </div>
 
                   <Link
-                    href="/book"
-                    className="mt-8 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded bg-[var(--crimson)] px-6 py-3.5 text-center text-sm font-semibold text-white transition-colors duration-200 hover:bg-[var(--crimson-light)] sm:w-auto"
+                    href={offer.href ?? "/book"}
+                    className={`mt-8 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded px-6 py-3.5 text-center text-sm font-semibold transition-colors duration-200 sm:w-auto ${
+                      offer.muted
+                        ? "border border-[var(--ink)] text-[var(--ink)] hover:border-[var(--crimson)] hover:text-[var(--crimson)]"
+                        : "bg-[var(--crimson)] text-white hover:bg-[var(--crimson-light)]"
+                    }`}
                   >
                     {offer.cta}
                     <span aria-hidden="true">→</span>

@@ -3,7 +3,7 @@ import AnimateIn from "./AnimateIn";
 const steps = [
   {
     number: "01",
-    title: "Audit",
+    title: "Map",
     body: "A 45-minute deep dive on how your business actually runs.",
   },
   {

@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 
-export function useNewsletterSubscription() {
+export function useNewsletterSubscription(list?: string) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
@@ -16,7 +16,7 @@ export function useNewsletterSubscription() {
       const response = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify(list ? { email, list } : { email }),
       });
 
       if (response.ok) {

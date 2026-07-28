@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     template: "%s | David West III",
   },
   description:
-    "I'm an AI consultant in Atlanta. My $999 assessment finds 5+ hours you can reclaim every week, or you don't pay.",
+    "I'm an AI consultant in Atlanta. My $999 assessment finds 5+ hours you can reclaim every week, in 48 hours, or you don't pay.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "David West | AI Consultant in Atlanta | AI Assessments for Small Business",
     description:
-      "I'm an AI consultant in Atlanta. My $999 assessment finds 5+ hours you can reclaim every week, or you don't pay.",
+      "I'm an AI consultant in Atlanta. My $999 assessment finds 5+ hours you can reclaim every week, in 48 hours, or you don't pay.",
     url: "https://westiii.com",
     siteName: "David West III",
     type: "website",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "David West | AI Consultant in Atlanta | AI Assessments for Small Business",
     description:
-      "I'm an AI consultant in Atlanta. My $999 assessment finds 5+ hours you can reclaim every week, or you don't pay.",
+      "I'm an AI consultant in Atlanta. My $999 assessment finds 5+ hours you can reclaim every week, in 48 hours, or you don't pay.",
     creator: "@___DW3",
   },
 };
@@ -60,6 +60,18 @@ const localBusinessSchema = {
     addressRegion: "GA",
     addressCountry: "US",
   },
+  areaServed: [
+    "Atlanta",
+    "Sandy Springs",
+    "Buckhead",
+    "Midtown Atlanta",
+    "Decatur",
+    "Marietta",
+    "Alpharetta",
+    "Dunwoody",
+    "Roswell",
+    "Smyrna",
+  ].map((name) => ({ "@type": "City", name })),
   sameAs: [
     "https://www.youtube.com/@WestTech3",
     "https://www.instagram.com/__dw3/",

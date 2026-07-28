@@ -114,7 +114,7 @@ const proof = [
 const process = [
   {
     day: "Day 1-2",
-    title: "Audit the front door",
+    title: "Map the front door",
     body: "Map inquiry sources, missed-call handling, forms, service paths, staff handoffs, and current follow-up.",
   },
   {
@@ -167,7 +167,7 @@ export default function PracticeOSPage() {
               href="/book"
               className="inline-flex items-center justify-center rounded bg-[var(--crimson)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--crimson-light)]"
             >
-              Book the $999 AI Assessment
+              Book the $999 Hours Back Plan
             </Link>
             <a
               href="#packages"
@@ -365,14 +365,14 @@ export default function PracticeOSPage() {
             Find the leak before you buy the system.
           </h2>
           <p className="mx-auto mb-10 max-w-xl leading-relaxed text-white/60">
-            The $999 AI Assessment maps your inquiry flow, follow-up gaps, intake friction,
+            The $999 Hours Back Plan maps your inquiry flow, follow-up gaps, intake friction,
             and highest-value automation opportunities before implementation begins.
           </p>
           <Link
             href="/book"
             className="inline-flex items-center gap-2 rounded bg-[var(--crimson)] px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-[var(--crimson-light)]"
           >
-            Book the $999 AI Assessment
+            Book the $999 Hours Back Plan
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path
                 d="M3 8h10M9 4l4 4-4 4"

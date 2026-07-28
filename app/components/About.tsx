@@ -3,18 +3,18 @@ import AnimateIn from "./AnimateIn";
 const beats = [
   {
     number: "01",
-    title: "I secure AI agents for enterprises.",
-    body: "I'm a BeyondTrust Solutions Engineer and a Black Hat 2026 presenter.",
+    title: "Weeks, not quarters.",
+    body: "I build with agents. A system that takes an agency a quarter takes me weeks, and you pay for the weeks.",
   },
   {
     number: "02",
-    title: "I build, teach, and show the work.",
-    body: "My AI content has reached 6M+ views across platforms.",
+    title: "I don't leave at handoff.",
+    body: "Most AI projects fail because nobody on the team uses what got built. I stay until they do.",
   },
   {
     number: "03",
-    title: "I'm here in Atlanta.",
-    body: "I'm in the rooms, across the table, and available in person.",
+    title: "I do this work every day.",
+    body: "BeyondTrust Solutions Engineer securing AI agents for enterprises. Black Hat 2026 presenter. 6M+ views running AI production pipelines. Based in Atlanta, across the table.",
   },
 ];
 
@@ -29,7 +29,7 @@ export default function About() {
         </AnimateIn>
         <AnimateIn delay={0.1}>
           <h2 className="mb-12 max-w-2xl text-4xl font-black leading-tight tracking-tight text-[var(--ink)] md:text-5xl">
-            I do this work every day.
+            Why me and not the other guy.
           </h2>
         </AnimateIn>
 

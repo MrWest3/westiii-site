@@ -6,6 +6,22 @@ export const metadata = {
     "Production AI systems shipped in public: multi-agent orchestration, command-center dashboards, video studios, and live client work.",
 };
 
+type ClientResult = {
+  business: string;
+  problem: string;
+  built: string;
+  number: string;
+  numberLabel: string;
+};
+
+/**
+ * Real delivered engagements only. Every entry needs a number the client would
+ * confirm out loud. This section does not render while the array is empty, and
+ * it never gets a placeholder. Under-promise: if the projection was $8k/mo and
+ * they saw $12k, publish the $12k. Never the other way around.
+ */
+const clientResults: ClientResult[] = [];
+
 const builds = [
   {
     number: "01",
@@ -138,9 +154,45 @@ export default function BuildsPage() {
           </p>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded-full text-sm text-[var(--ink-secondary)]">
             <span className="w-2 h-2 rounded-full bg-emerald-500" />
-            Audit. Optimize. Automate.
+            Map. Optimize. Automate.
           </div>
         </div>
+
+        {/* Client results. Renders only when a real, delivered number exists. */}
+        {clientResults.length > 0 && (
+          <div className="mb-24">
+            <p className="text-xs font-semibold tracking-widest uppercase text-[var(--crimson)] mb-4">
+              Client results
+            </p>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[var(--ink)] leading-tight mb-10">
+              What it did for their business.
+            </h2>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {clientResults.map((result) => (
+                <div
+                  key={result.business}
+                  className="h-full rounded-2xl border border-[var(--border)] bg-white p-6 md:p-8"
+                >
+                  <p className="text-3xl font-black tracking-tight text-[var(--crimson)]">
+                    {result.number}
+                  </p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-[var(--muted)]">
+                    {result.numberLabel}
+                  </p>
+                  <p className="mt-6 text-lg font-black leading-snug text-[var(--ink)]">
+                    {result.business}
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-[var(--ink-secondary)]">
+                    &ldquo;{result.problem}&rdquo;
+                  </p>
+                  <p className="mt-4 border-t border-[var(--border)] pt-4 text-sm leading-relaxed text-[var(--muted)]">
+                    {result.built}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Builds list */}
         <div className="space-y-12 mb-24">
