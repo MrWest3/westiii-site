@@ -3,6 +3,30 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const FALLBACK_EMAIL = "StudioWest3@proton.me";
+
+// If the API write fails we do not drop the referral on the floor. Somebody
+// spent effort vouching for me; the least the page can do is hand them a
+// prefilled email that carries everything they already typed.
+function buildFallbackMailto(fields: Record<string, string>) {
+  const body = [
+    `Referrer: ${fields.referrerName} (${fields.referrerEmail})`,
+    "",
+    `Who: ${fields.contactName}`,
+    `Company: ${fields.contactCompany || "not given"}`,
+    `Reach them at: ${fields.contactReach}`,
+    "",
+    "What is going on with them:",
+    fields.context,
+    "",
+    `Attribution: ${fields.attribution}`,
+  ].join("\n");
+
+  return `mailto:${FALLBACK_EMAIL}?subject=${encodeURIComponent(
+    `Referral from ${fields.referrerName}`
+  )}&body=${encodeURIComponent(body)}`;
+}
+
 const inputClass =
   "w-full rounded-xl border border-[var(--border)] bg-white px-4 py-3 text-sm text-[var(--ink)] transition-colors duration-200 placeholder:text-[var(--muted)] focus:border-[var(--crimson)] focus:outline-none";
 
@@ -191,9 +215,30 @@ export default function ReferralForm() {
           </div>
 
           {status === "error" && (
-            <p className="text-sm text-[var(--crimson)]">
-              Something went wrong. Text me instead and I will take it down manually.
-            </p>
+            <div className="rounded-xl border border-[var(--crimson)] bg-white p-5">
+              <p className="mb-3 text-sm font-bold text-[var(--ink)]">
+                My form is having a moment. Your referral is not lost.
+              </p>
+              <p className="mb-4 text-sm leading-relaxed text-[var(--ink-secondary)]">
+                Hit the button below and it opens an email to me with everything you
+                just typed already filled in. Send it and we are square.
+              </p>
+              <a
+                href={buildFallbackMailto({
+                  referrerName,
+                  referrerEmail,
+                  contactName,
+                  contactCompany,
+                  contactReach,
+                  context,
+                  attribution,
+                })}
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[var(--ink)] px-5 py-3 text-sm font-semibold text-[var(--ink)] transition-colors duration-200 hover:border-[var(--crimson)] hover:text-[var(--crimson)]"
+              >
+                Email it to me instead
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
           )}
 
           <button
