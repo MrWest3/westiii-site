@@ -397,9 +397,11 @@ export default function AssessmentPage() {
           <AnimateIn delay={0.16}>
             <p className="max-w-2xl text-lg leading-relaxed text-[var(--ink-secondary)]">
               That is the Agent HQ install, from $15,000, and your $3,500 comes off the top.
-              After it ships, the operating retainer keeps it maintained, adopted, and
-              growing. If the assessment says you are not ready to build, I will tell you
-              that too.
+              The assessment interviews also become your Company Brain: how your business
+              actually runs, structured, in a repo you own, so every AI employee we hire
+              works the way you do. After the build ships, the operating retainer keeps it
+              maintained, adopted, and growing. If the assessment says you are not ready to
+              build, I will tell you that too.
             </p>
           </AnimateIn>
           <AnimateIn delay={0.22}>

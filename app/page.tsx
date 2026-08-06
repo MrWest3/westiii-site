@@ -1,5 +1,6 @@
 import Hero from "./components/Hero";
 import HowItWorks from "./components/HowItWorks";
+import AiEmployees from "./components/AiEmployees";
 import CostOfInaction from "./components/CostOfInaction";
 import Offers from "./components/Offers";
 import Proof from "./components/Work";
@@ -55,6 +56,30 @@ const currentStateAssessmentSchema = {
   },
 };
 
+const firstEmployeeSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://westiii.com/#first-ai-employee",
+  name: "Your First AI Employee",
+  description:
+    "A managed AI employee that owns one clearly defined role: written job description, a Company Brain built from how the business runs, scoped tool access, approval gates, and a weekly value ledger.",
+  provider: {
+    "@type": "LocalBusiness",
+    "@id": "https://westiii.com/#business",
+    name: "Studio West Creatives",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Atlanta",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "2500",
+    priceCurrency: "USD",
+    url: "https://westiii.com/ai-employees",
+  },
+};
+
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
@@ -66,8 +91,13 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(currentStateAssessmentSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(firstEmployeeSchema) }}
+      />
       <Hero />
       <HowItWorks />
+      <AiEmployees />
       <CostOfInaction />
       <Offers />
       <Proof />

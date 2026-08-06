@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const proofPoints = [
   { value: "5+ hrs", label: "found every week, or you don't pay" },
-  { value: "48 hrs", label: "from our call to your written plan" },
+  { value: "1 role", label: "owned end to end by your first AI employee" },
   { value: "Atlanta", label: "in person, across the table" },
 ];
 
@@ -45,8 +45,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-4xl text-5xl font-black leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl"
         >
-          AI that pays for itself{" "}
-          <span className="text-[var(--crimson-light)]">in a week.</span>
+          Hire the employee{" "}
+          <span className="text-[var(--crimson-light)]">you can&apos;t find.</span>
         </motion.h1>
 
         <motion.p
@@ -55,10 +55,11 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-7 max-w-2xl text-base leading-relaxed text-white/65 md:text-lg"
         >
-          You know AI should be saving you time. You don&apos;t have a month to figure out
-          how. Give me 45 minutes, and inside 48 hours you&apos;ll have a written plan
-          showing where your week is going, what to fix first, and what it&apos;s worth.
-          Fewer than 5 hours found and you don&apos;t pay.
+          There is one job in your business nobody wants and nobody can hire for. I
+          install an AI employee that owns it: a real role with a job description, built
+          on how your business actually runs, managed by me every week. It starts with a
+          45-minute assessment. If I can&apos;t find you 5+ reclaimable hours a week, you
+          don&apos;t pay.
         </motion.p>
 
         <motion.div
@@ -83,10 +84,10 @@ export default function Hero() {
             </svg>
           </Link>
           <Link
-            href="/assessment"
+            href="/ai-employees"
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded border border-white/20 px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:border-[var(--gold)] hover:text-[var(--gold)]"
           >
-            Doing $2M+? Start here
+            Meet the AI employees
           </Link>
         </motion.div>
 

@@ -68,7 +68,7 @@ const faqItems = [
   {
     question: "What happens after the assessment?",
     answer:
-      "I send your written playbook, then we meet for a 30-minute review call. You can run the plan yourself or ask me to build it with you. Every dollar of the assessment is credited toward that work.",
+      "I send your written playbook, then we meet for a 30-minute review call. You can run the plan yourself, or do what most people do: hire your first AI employee off it, one managed role at $2,500 with your $999 credited toward the install.",
   },
   {
     question: "Do I need to be technical?",

@@ -5,7 +5,7 @@ import AnimateIn from "../components/AnimateIn";
 export const metadata: Metadata = {
   title: "Offers",
   description:
-    "Two ways in. The $999 Hours Back Plan for small businesses, or a $3,500 Current State Assessment for companies doing $2M to $50M. Then Agent HQ builds and an operating retainer.",
+    "Two ways in. The $999 Hours Back Plan for small businesses, or a $3,500 Current State Assessment for companies doing $2M to $50M. Then a managed AI employee at $2,500, Agent HQ builds from $15,000, and an operating retainer.",
 };
 
 type Offer = {
@@ -57,23 +57,41 @@ const offers: Offer[] = [
   },
   {
     number: "03",
+    name: "Your First AI Employee",
+    price: "$2,500 install + $750/mo managed",
+    who: "Businesses ready to take one role off the owner's plate and see it proven before going bigger.",
+    included: [
+      "One clearly defined role with a written job description",
+      "A starter Company Brain built from your assessment, in a repo you own",
+      "Scoped tool access and approval gates on anything consequential",
+      "A shared channel with you, the employee, and me. Telegram by default, Buzz if your team lives in a workspace.",
+      "Monitoring, repairs, and a monthly workflow review",
+      "A weekly value ledger: the hours returned and what they are worth, in your numbers",
+    ],
+    start: "Assessment first. It finds the role, and your $999 credits toward the install.",
+    cta: "See the AI Employees",
+    href: "/ai-employees",
+    dark: false,
+  },
+  {
+    number: "04",
     name: "Agent HQ",
     price: "from $15,000",
-    who: "Companies that want a private AI operating system of their own.",
+    who: "Companies that want the full AI team, working the way their business actually works.",
     included: [
-      "A full install built on your data",
-      "Branded to you",
-      "Connected to your real tools",
-      "Working agents, automations, and custom workflows",
+      "Named roles, each with its own job description",
+      "The full Company Brain: your services, processes, and voice, in a repo you own",
+      "Scoped access and approval gates across the whole team",
+      "Working automations and custom workflows",
       "Process redesign where the process is the problem",
-      "A foundation session with your team",
+      "A foundation session and training with your team",
     ],
     start: "Assessment first. The assessment defines what Agent HQ needs to do.",
     cta: "Start With an Assessment",
     dark: false,
   },
   {
-    number: "04",
+    number: "05",
     name: "Fractional AI CTO",
     price: "$1,500/mo",
     who: "Owner-operated businesses under $2M who want me in their corner month over month.",
@@ -88,23 +106,24 @@ const offers: Offer[] = [
     dark: false,
   },
   {
-    number: "05",
+    number: "06",
     name: "Operating Retainer",
     price: "$3,000/mo, limited to 6 clients",
     who: "Companies running an Agent HQ install who want it maintained, adopted, and growing.",
     included: [
       "Two working sessions a month",
       "Direct async access, 12 business hour response",
+      "A shared channel where your team and the AI team work in the open",
       "Adoption tracking. If your team is not using it, that is my problem to fix.",
       "New capabilities as you ask for them",
-      "A monthly proof report: what the system handled, what needed a human, what improved",
+      "The weekly value ledger: what the system handled, what needed a human, what it was worth",
     ],
     start: "Comes after the build. The install gives us the baseline for the monthly work.",
     cta: "Start With an Assessment",
     dark: false,
   },
   {
-    number: "06",
+    number: "07",
     name: "Advisory Block",
     price: "$2,500, four weekly calls",
     who: "Companies that need direction before they need anything built.",
@@ -142,7 +161,8 @@ export default function ServicesPage() {
               Every engagement starts with an assessment. Under $2M, that is the $999 Hours
               Back Plan: where AI fits, what it costs, how much time it saves. At $2M to
               $50M, it is the Current State Assessment: your whole operation mapped and a
-              build plan priced. Use it yourself or have me build it with you.
+              build plan priced. Then the hires: one managed AI employee first, the full
+              Agent HQ team when it has proven itself.
             </p>
           </AnimateIn>
           <AnimateIn delay={0.2}>

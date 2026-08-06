@@ -27,20 +27,27 @@ const offers: Offer[] = [
   },
   {
     number: "03",
-    title: "Agent HQ Install",
-    price: "from $15,000",
-    body: "Your own AI operating system. Built on your data, connected to your tools, branded to you.",
-    href: "/services",
+    title: "Your First AI Employee",
+    price: "$2,500 + $750/mo",
+    body: "One role, owned end to end. Job description, Company Brain, approval gates, and me managing it. Your assessment credits toward the install.",
+    href: "/ai-employees",
   },
   {
     number: "04",
+    title: "Agent HQ Install",
+    price: "from $15,000",
+    body: "The full AI team plus the full Company Brain. Built on your data, connected to your tools, branded to you.",
+    href: "/services",
+  },
+  {
+    number: "05",
     title: "Ongoing support",
     price: "$1,500 to $3,000/mo",
     body: "Fractional AI CTO for small businesses. Operating Retainer for companies running an Agent HQ install. Capped at 6.",
     href: "/services",
   },
   {
-    number: "05",
+    number: "06",
     title: "Advisory Block",
     price: "$2,500",
     body: "Four weekly calls, paid upfront. For companies that need direction before they need a build.",
@@ -65,12 +72,13 @@ export default function Offers() {
         </AnimateIn>
         <AnimateIn delay={0.16}>
           <p className="mb-12 max-w-2xl text-lg leading-relaxed text-white/60">
-            Two ways in, depending on your size. Everything after that comes out of what the
+            Two ways in, depending on your size. Then the hires: one AI employee first,
+            the full team when it has proven itself. Everything comes out of what the
             assessment finds.
           </p>
         </AnimateIn>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {offers
             .filter((offer) => !offer.muted)
             .map((offer, index) => (

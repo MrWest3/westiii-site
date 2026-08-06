@@ -31,7 +31,7 @@ const builds = [
     tagline: "Persistent multi-agent orchestration framework on Claude.",
     body: [
       "A persistent multi-agent system running on Claude Opus 4.7 and Sonnet 4.6, PM2-managed, with Telegram as the primary I/O surface. Designed around an orchestrator agent that delegates to specialized agents through a shared connector library, with structured eval, observability, and scheduled cron jobs.",
-      "Two production scout agents run a daily content-intelligence pipeline end-to-end: Apify pulls source content, ElevenLabs Scribe transcribes, FFmpeg extracts keyframes, Gemini runs structured analysis, results land in a per-agent JSONL state with a Telegram digest. Working hours, quiet hours, and per-agent KB scoping are all configurable.",
+      "A production intelligence agent runs a daily pipeline end-to-end: it scrapes job and company APIs across roughly 50 AI-first companies, scores fit against defined criteria with Gemini, drafts long-form outreach for anything scoring high, writes canonical dashboard state, and ships a Telegram digest before 8am. A daily-brief agent and a Telegram-native orchestrator run alongside it on the same framework.",
       "The framework is the substrate everything else runs on. Studio West client deliverables, content workflows, and the West HQ dashboard all read from the same agent state.",
     ],
     stack: [
@@ -77,7 +77,7 @@ const builds = [
     body: [
       "An AI agency with two service lines. The first delivers AI Operating Systems for small and mid-market businesses: Next.js + Vercel + GoHighLevel as the core stack, with custom CRM, lead capture, automated sequences, and Phase 2 agentic phone assistants integrated against the customer's system of record.",
       "The second is creative production: motion graphics, video, and generative imagery using Fal AI Seedance 2.0, Nano Banana, Veo 3.1, Kling, and ElevenLabs. The same engineering rigor applies on both sides. Every engagement starts with an outcome metric and a baseline before scope is locked.",
-      "Active engagement: a multi-location pediatric practice rebuild, with Phase 1 website + automation deployment and a Phase 2 AI phone assistant integrated against Athena Health.",
+      "Active engagement: a foreclosure-acquisition system for a real estate investment firm, shipped July 2026. Property scoring, lead routing, and outreach sequences built on GoHighLevel, with a live pilot running through August.",
     ],
     stack: [
       "Next.js",
@@ -85,8 +85,6 @@ const builds = [
       "GoHighLevel",
       "Claude",
       "Fal AI / Seedance 2.0",
-      "Athena Health (integration)",
-      "Twilio",
     ],
     metrics: [
       { label: "Founded", value: "Nov 2025" },
