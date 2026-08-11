@@ -67,13 +67,13 @@ const engineSteps = [
 const hires = [
   {
     number: "01",
-    title: "The New Client Finder",
-    body: "Searches daily for your ideal clients, builds the list, and drafts the outreach. Like a salesperson who prospects every single day and never asks for commission.",
+    title: "The Front Desk",
+    body: "Most callers who hit voicemail never leave a message. They call the next place. This answers every inquiry in minutes, day or night, books the appointment, sends the reminder. The 9pm caller becomes Monday's appointment instead of somebody else's customer.",
   },
   {
     number: "02",
-    title: "The Front Desk",
-    body: "Answers every inquiry in minutes, books the appointment, sends the reminder. Nobody who wants to give you money waits two days for a call back.",
+    title: "The New Client Finder",
+    body: "Searches daily for your ideal clients, builds the list, and drafts the outreach. Like a salesperson who prospects every single day and never asks for commission.",
   },
   {
     number: "03",

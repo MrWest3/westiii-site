@@ -27,6 +27,27 @@ Pricing inputs to collect before any quote: annual revenue, what one new client 
 - **Cedric (if split lands):** sales, customer support / first-line comms, relays build requests, learns the build over time. "Says yes, then brings it to engineering" — David holds veto on feasibility before anything is promised back to a client.
 - **Andrew:** brings the client, presents `/pitch`, presents pricing (his number), collects the intro info. Never on our internal calls.
 
+## 2b. Step 0: Partner Preview (the demo that sells)
+
+The prospect experiences an AI front desk trained on THEIR business before any pitch. Validated mechanic (Vendasta teardown 8-11, specs/BIZ-vendasta-teardown-blueprint.md): the demo does the selling, the partner just presents it.
+
+**Inputs required from the partner before anything gets built:**
+- [ ] Business name + website URL
+- [ ] The pain in the prospect's own words (one sentence is fine)
+- [ ] Confirmation a real conversation with the owner is scheduled or imminent. No scheduled conversation, no preview.
+
+**What David delivers, within 1 business day:**
+- [ ] Unlisted preview page at westiii.com/preview/{client} : chat front desk trained on their services, prices, hours, policies (scraped from their site). Pattern: `app/preview/vitamineral/` (page + client + API route + prompt). Clone the folder, rebuild the knowledge block in the prompt, done. ~1 hour.
+- [ ] Lead capture wired: name + phone captured in conversation → emailed to StudioWest3 via existing Resend notify. Forward to partner as proof ("it captured this lead while you watched").
+- [ ] Partner gets the link plus a 3-line presenting script: open it on the owner's phone, tell them to text it like a customer, ask "want this answering your actual phone line?"
+
+**Rules:**
+- Preview is chat only. Voice line comes with the Install, and is said that way: "this is the text version, the real one answers your phone."
+- Preview knowledge comes only from public info. Wrong prices on their site become wrong answers in the demo; that is a selling point, not a bug ("imagine it trained on your real menu at the sit-down").
+- No prices, no offer names on the preview page. Same rule as /pitch.
+- Previews expire: if no deal conversation within 30 days, page comes down (route deleted, one commit).
+- First one built 8-11: VitaMineral IV Therapy (Bellerose NY, Andrew's client) at /preview/vitamineral.
+
 ## 3. Pre-sale checklist (per client)
 
 - [ ] Annual revenue, value of one new client, budget (from Andrew)
