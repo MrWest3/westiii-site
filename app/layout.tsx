@@ -102,6 +102,14 @@ export default function RootLayout({
           data-tracking-id="tk_654d2a8260d3499dbd56e94a2f9ef659"
           strategy="lazyOnload"
         />
+        {/* GHL chat widget: SMS opt-in surface for A2P sole-prop registration (Studio West sub-account) */}
+        <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="6a8473fc56eb8ca703704c72"
+          data-source="WEB_USER"
+          strategy="lazyOnload"
+        />
         <Analytics />
       </body>
     </html>
