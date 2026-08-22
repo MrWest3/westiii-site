@@ -134,7 +134,7 @@ export default function WestStone() {
           </div>
           <AnimateIn delay={0.2}>
             <p className="text-[var(--muted)] max-w-2xl mb-14 leading-relaxed">
-              A full AI-generated creative campaign built to compete with agency-level work — produced solo.
+              A full AI-generated creative campaign built to compete with agency-level work, produced solo.
               Original brand character, city-specific illustrations, and animated spots across 8 World Cup host cities.
             </p>
           </AnimateIn>
@@ -156,7 +156,7 @@ export default function WestStone() {
           {/* Illustrations */}
           <AnimateIn>
             <p className="text-xs font-semibold tracking-widest uppercase text-[var(--muted)] mb-6">
-              Illustrations — 8 Host Cities
+              Illustrations, 8 Host Cities
             </p>
           </AnimateIn>
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">

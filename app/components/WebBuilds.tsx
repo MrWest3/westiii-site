@@ -5,7 +5,7 @@ const builds = [
     title: "PRAGMATIKO — SKY RUNNERS",
     category: "Concept Footwear Brand",
     description:
-      "A gallery-quality product site built to showcase a shoe as a design artifact. Cinematic hero, scroll-driven reveals, anatomy breakdowns. Positioned as art, not retail.",
+      "A gallery-quality product site built to showcase a shoe as a design artifact. Cinematic hero, scroll-driven reveals, anatomy breakdowns. The whole page treats the shoe like it belongs in a vitrine.",
     url: "https://coolshoez.netlify.app/",
     thumb: "/webbuilds/coolshoez-thumb.png",
     accent: "from-zinc-900 to-zinc-800",
@@ -91,7 +91,7 @@ export default function WebBuilds() {
             <p className="text-sm font-semibold text-[var(--ink)] mb-1">Need a site like this?</p>
             <p className="text-sm text-[var(--muted)]">
               I build product sites, brand experiences, and landing pages using AI-generated assets and custom development.
-              No templates. No agencies.{" "}
+              Every one is built from scratch, by me.{" "}
               <a href="mailto:StudioWest3@proton.me" className="text-[var(--crimson)] hover:underline font-medium">
                 Reach out to scope your project.
               </a>

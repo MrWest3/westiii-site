@@ -37,7 +37,7 @@ const steps = [
   {
     number: "01",
     title: "Map every workflow",
-    body: "With the people actually doing the work, not just leadership.",
+    body: "With the people actually doing the work, and with leadership.",
   },
   {
     number: "02",
@@ -47,7 +47,7 @@ const steps = [
   {
     number: "03",
     title: "Price the cost of inaction",
-    body: "In your numbers, pulled from your calls, not mine.",
+    body: "In your numbers, pulled from your own calls.",
   },
   {
     number: "04",

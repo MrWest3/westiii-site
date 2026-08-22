@@ -4,7 +4,7 @@ const ventures = [
   {
     title: "AI Operating System (AIOS)",
     description:
-      "A multi-agent AI system built in public — orchestrator, analyst, specialist agents running 24/7. The architecture behind how I build everything else.",
+      "A multi-agent AI system built in public. Orchestrator, analyst, and specialist agents running 24/7. The architecture behind how I build everything else.",
     status: "In Progress",
     statusColor: "text-emerald-600 bg-emerald-50",
     tags: ["Agents", "Claude", "Automation"],
@@ -12,7 +12,7 @@ const ventures = [
   {
     title: "AI Implementation Training",
     description:
-      "Hands-on training for teams that want to actually use AI, not just talk about it. Creative teams, business operations, agentic workflows. Built for companies of any size, from startups to enterprise.",
+      "Hands-on training for teams who want AI in their actual workday. Creative teams, business operations, agentic workflows. Built for companies of any size, from startups to enterprise.",
     status: "Building",
     statusColor: "text-amber-600 bg-amber-50",
     tags: ["Training", "Enterprise", "Creative AI", "Workshops"],
