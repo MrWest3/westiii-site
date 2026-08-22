@@ -112,7 +112,7 @@ const guardrails = [
   },
   {
     title: "Security is my day job",
-    body: "I am a Solutions Engineer at BeyondTrust, a cybersecurity company. Securing what AI agents can touch inside large enterprises is what I do all week. Your business gets the same treatment.",
+    body: "I work in cybersecurity, on AI agent security specifically. My job is learning how these agents break and showing companies how to lock them down. Your business gets the same treatment.",
   },
 ];
 

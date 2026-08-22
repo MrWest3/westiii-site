@@ -158,7 +158,7 @@ const faqItems = [
   {
     question: "Is my data safe?",
     answer:
-      "Securing AI agents is my day job at BeyondTrust. Your employee only reaches the tools its job needs, it asks you first before anything important, and its Company Brain lives in files that belong to you. You can see everything it knows and everything it did.",
+      "I work in cybersecurity, on AI agent security specifically. Your employee only reaches the tools its job needs, it asks you first before anything important, and its Company Brain lives in files that belong to you. You can see everything it knows and everything it did.",
   },
   {
     question: "What does it cost?",
@@ -506,13 +506,14 @@ export default function AiEmployeesPage() {
           </AnimateIn>
           <AnimateIn delay={0.1}>
             <p className="text-2xl font-black leading-snug text-white sm:text-3xl md:text-4xl">
-              Securing AI agents is my day job.
+              AI agent security is what I do all week.
             </p>
           </AnimateIn>
           <AnimateIn delay={0.18}>
             <p className="mt-6 text-lg leading-relaxed text-white/85">
-              I am a Solutions Engineer at BeyondTrust. Securing the access of AI agents
-              inside enterprises is what I do all week. Your AI employee gets the same
+              I work in cybersecurity, on AI agent security specifically. My job is
+              learning how these agents break and showing companies how to lock them
+              down. Your AI employee gets the same
               treatment: it only reaches the tools its job needs, it asks you first before
               anything consequential, and a human signs off where it counts. An employee
               you cannot trust with the keys is not an employee.

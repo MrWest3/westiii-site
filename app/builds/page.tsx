@@ -147,8 +147,8 @@ export default function BuildsPage() {
           </h1>
           <p className="text-xl text-[var(--ink-secondary)] max-w-2xl leading-relaxed mb-8">
             I assess how the work gets done, then I build what the assessment proves
-            you need. My day job is securing AI agents for enterprises at
-            BeyondTrust. These are the systems I have shipped.
+            you need. I work in cybersecurity, on AI agent security specifically.
+            These are the systems I have shipped.
           </p>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded-full text-sm text-[var(--ink-secondary)]">
             <span className="w-2 h-2 rounded-full bg-emerald-500" />
@@ -346,12 +346,12 @@ export default function BuildsPage() {
             Eight years across application security, privileged access management, and SOC operations.
           </p>
           <p className="text-lg text-[var(--muted)] leading-relaxed max-w-3xl">
-            Inside Solutions Engineer at BeyondTrust today. Solutions Engineer
-            at Snyk before that. Cyber SOC Security Analyst at Georgia State
-            University before that. The same engineering rigor that goes into
-            evaluating a customer's PAM architecture goes into the agent
-            systems above. Cybersecurity-grade reliability is not a marketing
-            line, it is the operating mode.
+            Solutions Engineer at a cybersecurity company today, working on AI
+            agent security. Solutions Engineer at Snyk before that. Cyber SOC
+            Security Analyst at Georgia State University before that. The same
+            engineering rigor that goes into evaluating a customer's PAM
+            architecture goes into the agent systems above. Cybersecurity-grade
+            reliability is not a marketing line, it is the operating mode.
           </p>
         </div>
 
