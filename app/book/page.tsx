@@ -4,42 +4,18 @@ import AnimateIn from "../components/AnimateIn";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "The Hours Back Plan | $999 AI Assessment, 5+ Hours or You Don't Pay",
+    absolute: "The $999 AI Assessment | 5+ Hours or You Don't Pay",
   },
   description:
-    "The Hours Back Plan is my $999 AI assessment: a 45-minute call, a written plan in 48 hours, and a review call. I find 5+ hours a week, or you don't pay.",
+    "The $999 AI Assessment is a 60-minute call, a written plan in 48 hours, and a review call. I find 5+ hours a week, or you don't pay.",
 };
 
 const CALENDLY_URL = "https://calendly.com/davidawest25/ai-audit";
 
-const aiAssessmentSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://westiii.com/#ai-assessment",
-  name: "The Hours Back Plan",
-  description:
-    "A 45-minute AI assessment with a written playbook in 48 hours and a review call. I find 5+ reclaimable hours a week or you don't pay.",
-  provider: {
-    "@type": "LocalBusiness",
-    "@id": "https://westiii.com/#business",
-    name: "Studio West Creatives",
-  },
-  areaServed: {
-    "@type": "City",
-    name: "Atlanta",
-  },
-  offers: {
-    "@type": "Offer",
-    price: "999",
-    priceCurrency: "USD",
-    url: "https://westiii.com/book",
-  },
-};
-
 const deliverables = [
   {
     number: "01",
-    title: "45-minute discovery call",
+    title: "60-minute discovery call",
     body: "I look at your calendar, inbox, and workflows to find where your time is going.",
   },
   {
@@ -68,7 +44,7 @@ const faqItems = [
   {
     question: "What happens after the assessment?",
     answer:
-      "I send your written playbook, then we meet for a 30-minute review call. You can run the plan yourself, or do what most people do: hire your first AI employee off it, one managed role at $2,500 with your $999 credited toward the install.",
+      "I send your written playbook, then we meet for a 30-minute review call. You can run the plan yourself, or hire your first AI employee off it. I scope that after the assessment and your $999 comes off the top.",
   },
   {
     question: "Do I need to be technical?",
@@ -103,15 +79,11 @@ function BookingButton({ label }: { label: string }) {
 export default function BookPage() {
   return (
     <main className="overflow-hidden bg-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(aiAssessmentSchema) }}
-      />
       <section className="border-b border-[var(--border)] px-6 py-10 sm:py-14 md:py-20">
         <div className="mx-auto max-w-6xl">
           <AnimateIn>
             <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
-              The Hours Back Plan · $999
+              The $999 AI Assessment
             </p>
           </AnimateIn>
           <AnimateIn delay={0.08}>
@@ -122,7 +94,7 @@ export default function BookPage() {
           </AnimateIn>
           <AnimateIn delay={0.14}>
             <p className="mt-5 max-w-2xl text-lg font-medium leading-snug text-[var(--ink-secondary)] sm:text-xl md:mt-6 md:text-2xl">
-              45 minutes on a call. A written playbook in 48 hours. A review call to walk it
+              60 minutes on a call. A written playbook in 48 hours. A review call to walk it
               through. If I can&apos;t find you 5+ reclaimable hours a week inside 48 hours,
               you don&apos;t pay.
             </p>
@@ -266,7 +238,7 @@ export default function BookPage() {
                 </h3>
                 <p className="leading-relaxed text-[var(--ink-secondary)]">
                   Enterprise AI is my day job. This assessment is for small business owners.
-                  It also requires a focused 45-minute conversation.
+                  It also requires a focused 60-minute conversation.
                 </p>
               </article>
             </AnimateIn>
@@ -318,7 +290,7 @@ export default function BookPage() {
               Get 5+ hours back every week.
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/70">
-              45 minutes. A written playbook inside 48 hours. $999. I find the hours or you don&apos;t pay.
+              60 minutes. A written playbook inside 48 hours. $999. I find the hours or you don&apos;t pay.
             </p>
             <div className="mt-8 flex justify-center">
               <BookingButton label="Book Your Assessment" />
@@ -331,26 +303,26 @@ export default function BookPage() {
         <div className="mx-auto max-w-6xl">
           <AnimateIn>
             <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
-              Bigger operation?
+              Ready to build?
             </p>
           </AnimateIn>
           <AnimateIn delay={0.08}>
             <h2 className="max-w-3xl text-3xl font-black leading-tight tracking-tight text-[var(--ink)] md:text-4xl">
-              Doing $2M or more a year?
+              The assessment comes first.
             </h2>
           </AnimateIn>
           <AnimateIn delay={0.14}>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--ink-secondary)]">
-              A tool list is not going to move your business. You need your operations mapped
-              and a system built. That is the Current State Assessment.
+              It shows us where your hours are going and what is worth building. I scope
+              anything we build after I know what the job is.
             </p>
           </AnimateIn>
           <AnimateIn delay={0.2}>
             <Link
-              href="/assessment"
+              href="/book"
               className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded border border-[var(--ink)] px-6 py-3.5 text-sm font-semibold text-[var(--ink)] transition-colors duration-200 hover:border-[var(--crimson)] hover:text-[var(--crimson)]"
             >
-              See the Current State Assessment
+              Book the $999 Assessment
               <span aria-hidden="true">→</span>
             </Link>
           </AnimateIn>

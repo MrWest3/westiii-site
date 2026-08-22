@@ -7,31 +7,7 @@ export const metadata: Metadata = {
     absolute: "Hire an AI Employee | Managed AI Employees for Your Business",
   },
   description:
-    "One clearly defined role, taken off your plate. Every AI employee comes with a job description, a Company Brain built from your business, scoped access, approval gates, and me managing it. $2,500 install, $750 a month, managed.",
-};
-
-const firstEmployeeSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://westiii.com/#first-ai-employee",
-  name: "Your First AI Employee",
-  description:
-    "A managed AI employee that owns one clearly defined role in your business: written job description, a Company Brain built from how your business runs, scoped tool access, approval gates, monitoring, and a weekly value ledger.",
-  provider: {
-    "@type": "LocalBusiness",
-    "@id": "https://westiii.com/#business",
-    name: "Studio West Creatives",
-  },
-  areaServed: {
-    "@type": "City",
-    name: "Atlanta",
-  },
-  offers: {
-    "@type": "Offer",
-    price: "2500",
-    priceCurrency: "USD",
-    url: "https://westiii.com/ai-employees",
-  },
+    "One clearly defined role, taken off your plate. Every AI employee comes with a job description, a Company Brain built from your business, scoped access, approval gates, and me managing it. Scoped after your $999 assessment.",
 };
 
 const shipsWith = [
@@ -47,13 +23,13 @@ const shipsWith = [
   },
   {
     number: "03",
-    title: "Scoped tool access",
-    body: "Only the tools the role needs. Nothing else is reachable.",
+    title: "Only the tools it needs",
+    body: "It only reaches the tools its job needs. Nothing else is reachable.",
   },
   {
     number: "04",
-    title: "Approval gates",
-    body: "Anything consequential waits for a human yes. Sending, spending, deleting: gated.",
+    title: "It asks you first",
+    body: "It asks you first before sending, spending, or deleting anything.",
   },
   {
     number: "05",
@@ -182,12 +158,12 @@ const faqItems = [
   {
     question: "Is my data safe?",
     answer:
-      "Securing AI agents is my day job at BeyondTrust. Your employee gets scoped access, approval gates, and a Company Brain that lives in a repository you own. You can see everything it knows and everything it did.",
+      "Securing AI agents is my day job at BeyondTrust. Your employee only reaches the tools its job needs, it asks you first before anything important, and its Company Brain lives in files that belong to you. You can see everything it knows and everything it did.",
   },
   {
     question: "What does it cost?",
     answer:
-      "$2,500 to install, $750 a month managed. Your $999 assessment is credited toward the install. When one employee proves itself and you want the full team, that is Agent HQ, from $15,000.",
+      "I scope it after the assessment, and your $999 comes off the top. When one employee proves itself and you want more of the job covered, we scope that the same way.",
   },
 ];
 
@@ -206,11 +182,6 @@ function CtaButton({ href, label }: { href: string; label: string }) {
 export default function AiEmployeesPage() {
   return (
     <main className="overflow-hidden bg-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(firstEmployeeSchema) }}
-      />
-
       {/* Hero */}
       <section className="border-b border-[var(--border)] px-6 py-10 sm:py-14 md:py-20">
         <div className="mx-auto max-w-6xl">
@@ -234,8 +205,7 @@ export default function AiEmployeesPage() {
           </AnimateIn>
           <AnimateIn delay={0.2}>
             <p className="mt-7 border-l-2 border-[var(--crimson)] pl-5 text-base font-semibold text-[var(--ink)] sm:text-lg">
-              $2,500 install. $750 a month, managed. Your $999 assessment comes off the
-              install.
+              Scoped after the assessment, and your $999 comes off the top.
             </p>
           </AnimateIn>
           <AnimateIn delay={0.26}>
@@ -412,7 +382,7 @@ export default function AiEmployeesPage() {
                   your people, the way you talk to customers.
                 </p>
                 <p>
-                  It lives in a GitHub repository you own. You can read every line it
+                  It lives in files that belong to you. You can read every line it
                   knows. Every AI employee you hire runs on it, which is why the second
                   hire trains faster than the first.
                 </p>
@@ -543,8 +513,8 @@ export default function AiEmployeesPage() {
             <p className="mt-6 text-lg leading-relaxed text-white/85">
               I am a Solutions Engineer at BeyondTrust. Securing the access of AI agents
               inside enterprises is what I do all week. Your AI employee gets the same
-              treatment: scoped access to only what its role needs, approval gates before
-              anything consequential, and a human sign-off where it counts. An employee
+              treatment: it only reaches the tools its job needs, it asks you first before
+              anything consequential, and a human signs off where it counts. An employee
               you cannot trust with the keys is not an employee.
             </p>
           </AnimateIn>
@@ -573,21 +543,14 @@ export default function AiEmployeesPage() {
                   Find the role.
                 </h3>
                 <p className="leading-relaxed text-[var(--ink-secondary)]">
-                  Under $2M, the{" "}
+                  Start with the{" "}
                   <Link
                     href="/book"
                     className="font-semibold text-[var(--crimson)] underline underline-offset-4"
                   >
                     $999 assessment
                   </Link>
-                  . Doing $2M to $50M, the{" "}
-                  <Link
-                    href="/assessment"
-                    className="font-semibold text-[var(--crimson)] underline underline-offset-4"
-                  >
-                    Current State Assessment
-                  </Link>
-                  . Either way, we find the function eating the most hours.
+                  . We find the function eating the most hours.
                 </p>
               </div>
             </AnimateIn>
@@ -598,8 +561,8 @@ export default function AiEmployeesPage() {
                   Hire your first AI employee.
                 </h3>
                 <p className="leading-relaxed text-[var(--ink-secondary)]">
-                  $2,500 install, $750 a month managed, assessment credited. One role,
-                  fully owned, proven on the ledger before we ever talk about a second.
+                  Scoped after the assessment. Your $999 comes off the top. One role,
+                  fully owned, proven on the ledger before we talk about a second.
                 </p>
               </div>
             </AnimateIn>
@@ -610,14 +573,8 @@ export default function AiEmployeesPage() {
                   Build the full team.
                 </h3>
                 <p className="leading-relaxed text-[var(--ink-secondary)]">
-                  When you are asking what else it can do, that is{" "}
-                  <Link
-                    href="/services"
-                    className="font-semibold text-[var(--crimson)] underline underline-offset-4"
-                  >
-                    Agent HQ
-                  </Link>
-                  , from $15,000: the full team plus the full Company Brain.
+                  Scoped after the assessment. When the first role proves itself, we use
+                  what we learned to scope the next one.
                 </p>
               </div>
             </AnimateIn>

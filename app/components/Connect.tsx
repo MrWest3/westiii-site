@@ -24,7 +24,7 @@ export default function Connect() {
         </AnimateIn>
         <AnimateIn delay={0.2}>
           <p className="mx-auto mb-8 max-w-xl text-base leading-relaxed text-white/60 md:text-lg">
-            One 45-minute conversation. One written playbook. A clear place to start.
+            One 60-minute conversation. One written playbook. A clear place to start.
           </p>
         </AnimateIn>
         <AnimateIn delay={0.25}>
@@ -32,7 +32,7 @@ export default function Connect() {
             href="/book"
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-[var(--crimson)] px-7 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[var(--crimson-light)]"
           >
-            Book the Hours Back Plan ($999)
+            Book the $999 Assessment
             <span aria-hidden="true">→</span>
           </Link>
         </AnimateIn>

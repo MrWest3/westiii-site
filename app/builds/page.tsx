@@ -156,6 +156,27 @@ export default function BuildsPage() {
           </div>
         </div>
 
+        <div className="mb-24">
+          <p className="text-xs font-semibold tracking-widest uppercase text-[var(--crimson)] mb-4">
+            What this looks like for a business owner
+          </p>
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[var(--ink)] leading-tight mb-10">
+            The work has to show up in the numbers.
+          </h2>
+          <p className="text-[var(--muted)] max-w-xl leading-relaxed mb-12">
+            I built a real estate investment firm a system that scored 500 foreclosure
+            addresses down to the 200 worth calling. Their team stopped guessing which
+            doors to knock on, and one extra close pays for the build ten times over.
+            Everything below is the engineering behind work like that.
+          </p>
+          <Link
+            href="/book"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--crimson)] text-white font-semibold rounded hover:bg-[var(--crimson-light)] transition-colors text-sm"
+          >
+            Book the $999 assessment
+          </Link>
+        </div>
+
         {/* Client results. Renders only when a real, delivered number exists. */}
         {clientResults.length > 0 && (
           <div className="mb-24">

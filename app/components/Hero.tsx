@@ -58,7 +58,7 @@ export default function Hero() {
           There is one job in your business nobody wants and nobody can hire for. I
           install an AI employee that owns it: a real role with a job description, built
           on how your business actually runs, managed by me every week. It starts with a
-          45-minute assessment. If I can&apos;t find you 5+ reclaimable hours a week, you
+          60-minute assessment. If I can&apos;t find you 5+ reclaimable hours a week, you
           don&apos;t pay.
         </motion.p>
 
@@ -72,7 +72,7 @@ export default function Hero() {
             href="/book"
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-[var(--crimson)] px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[var(--crimson-light)]"
           >
-            Book the Hours Back Plan ($999)
+            Book the $999 Assessment
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path
                 d="M3 8h10M9 4l4 4-4 4"

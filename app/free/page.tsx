@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
 };
 
-const CALENDLY_URL = "https://calendly.com/davidawest25/ai-audit";
+const CALENDLY_URL = "https://calendly.com/davidawest25/free-15-minute-ai-fit-call";
 
 const steps = [
   {

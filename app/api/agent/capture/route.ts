@@ -87,7 +87,7 @@ export async function POST(request: Request) {
 
     const response: CaptureResponse = {
       ok: true,
-      route: band === "under_2m" ? "/book" : "/assessment",
+      route: "/book",
     };
     return NextResponse.json(response);
   } catch (error) {

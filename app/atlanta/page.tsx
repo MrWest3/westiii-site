@@ -78,7 +78,7 @@ const faqItems = [
   {
     question: "How big does my business need to be?",
     answer:
-      "Under $2M, start with the $999 assessment. Doing $2M to $50M, the Current State Assessment is the right entry point. Either way, you leave with a plan you can act on.",
+      "Start with the $999 assessment. You leave with a plan you can act on whether or not you ever hire me to build it.",
   },
   {
     question: "What if I have already tried AI and it did not stick?",
@@ -125,12 +125,6 @@ export default function AtlantaPage() {
               >
                 Book the $999 Assessment
                 <span aria-hidden="true">→</span>
-              </Link>
-              <Link
-                href="/assessment"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded border border-[var(--ink)] px-6 py-3.5 text-sm font-semibold text-[var(--ink)] transition-colors duration-200 hover:border-[var(--crimson)] hover:text-[var(--crimson)]"
-              >
-                Doing $2M+? Start here
               </Link>
             </div>
           </AnimateIn>
@@ -216,19 +210,18 @@ export default function AtlantaPage() {
         <div className="mx-auto max-w-6xl">
           <AnimateIn>
             <h2 className="mb-12 max-w-2xl text-4xl font-black leading-tight tracking-tight text-[var(--ink)] md:text-5xl">
-              Two ways to start.
+              Start here. Build from the proof.
             </h2>
           </AnimateIn>
 
           <div className="grid gap-4 md:grid-cols-2">
             <AnimateIn>
               <div className="flex h-full flex-col rounded-2xl border border-[var(--border)] bg-white p-6 md:p-8">
-                <p className="mb-2 text-xl font-black text-[var(--ink)]">The Hours Back Plan</p>
+                <p className="mb-2 text-xl font-black text-[var(--ink)]">The $999 AI Assessment</p>
                 <p className="mb-4 text-lg font-bold text-[var(--crimson)]">$999</p>
                 <p className="mb-7 flex-1 leading-relaxed text-[var(--ink-secondary)]">
-                  For Atlanta businesses under $2M. A 45-minute call, a written playbook in
-                  48 hours, and a review call. I find 5+ reclaimable hours a week inside 48
-                  hours, or you don&apos;t pay.
+                  A 60-minute call, a written playbook in 48 hours, and a review call. I find
+                  5+ hours a week in 48 hours, or you don&apos;t pay.
                 </p>
                 <Link
                   href="/book"
@@ -243,19 +236,18 @@ export default function AtlantaPage() {
             <AnimateIn delay={0.1}>
               <div className="flex h-full flex-col rounded-2xl border border-[var(--border)] bg-white p-6 md:p-8">
                 <p className="mb-2 text-xl font-black text-[var(--ink)]">
-                  Current State Assessment
+                  Custom AI Employees
                 </p>
-                <p className="mb-4 text-lg font-bold text-[var(--crimson)]">$3,500</p>
+                <p className="mb-4 text-lg font-bold text-[var(--crimson)]">Scoped after the assessment</p>
                 <p className="mb-7 flex-1 leading-relaxed text-[var(--ink-secondary)]">
-                  For Atlanta companies doing $2M to $50M. Every workflow mapped, the cost of
-                  inaction priced, and a build plan you own. $50,000 found in 14 days or you
-                  don&apos;t pay.
+                  One role in your business, owned end to end. It has a job description, it
+                  knows how you work, and I manage it every week.
                 </p>
                 <Link
-                  href="/assessment"
+                  href="/book"
                   className="inline-flex min-h-12 items-center justify-center gap-2 rounded border border-[var(--ink)] px-6 py-3.5 text-sm font-semibold text-[var(--ink)] transition-colors duration-200 hover:border-[var(--crimson)] hover:text-[var(--crimson)]"
                 >
-                  See the Assessment
+                  Start With the Assessment
                   <span aria-hidden="true">→</span>
                 </Link>
               </div>

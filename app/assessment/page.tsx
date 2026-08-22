@@ -5,37 +5,20 @@ import CostOfInaction from "../components/CostOfInaction";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Current State Assessment | $50,000 Found in 14 Days or You Don't Pay",
+    absolute: "Current State Assessment",
   },
   description:
     "A Current State Assessment for Atlanta companies doing $2M to $50M. I map every workflow, price the cost of inaction, and hand you the build plan. $50,000 in annualized reclaimable cost found in 14 days, or you don't pay.",
+  // Deliberately noindexed. This is a private assessment link handed to
+  // qualified companies directly. It is not a public funnel entry and it
+  // must not compete with the $999 assessment in search.
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const CALENDLY_URL = "https://calendly.com/davidawest25/ai-audit";
-
-const currentStateAssessmentSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://westiii.com/#current-state-assessment",
-  name: "Current State Assessment",
-  description:
-    "A Current State Assessment for companies doing $2M to $50M. Every workflow mapped, the cost of inaction priced, and a phased build plan. I find at least $50,000 in annualized reclaimable cost in 14 days or you don't pay.",
-  provider: {
-    "@type": "LocalBusiness",
-    "@id": "https://westiii.com/#business",
-    name: "Studio West Creatives",
-  },
-  areaServed: {
-    "@type": "City",
-    name: "Atlanta",
-  },
-  offers: {
-    "@type": "Offer",
-    price: "3500",
-    priceCurrency: "USD",
-    url: "https://westiii.com/assessment",
-  },
-};
 
 const forYou = [
   "You do $2M to $50M a year.",
@@ -46,7 +29,6 @@ const forYou = [
 ];
 
 const notForYou = [
-  "You are under $2M. Start with the $999 assessment.",
   "You want someone to build one automation.",
   "You are shopping for the cheapest quote.",
 ];
@@ -172,13 +154,6 @@ function BookingButton({ label }: { label: string }) {
 export default function AssessmentPage() {
   return (
     <main className="overflow-hidden bg-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(currentStateAssessmentSchema),
-        }}
-      />
-
       {/* Hero */}
       <section className="border-b border-[var(--border)] px-6 py-10 sm:py-14 md:py-20">
         <div className="mx-auto max-w-6xl">
@@ -202,7 +177,7 @@ export default function AssessmentPage() {
           </AnimateIn>
           <AnimateIn delay={0.2}>
             <p className="mt-7 border-l-2 border-[var(--crimson)] pl-5 text-base font-semibold text-[var(--ink)] sm:text-lg">
-              $3,500, credited in full toward anything we build together.
+              Scoped after your $999 assessment, and credited in full toward anything we build.
             </p>
           </AnimateIn>
           <AnimateIn delay={0.26}>
@@ -264,16 +239,6 @@ export default function AssessmentPage() {
                     </li>
                   ))}
                 </ul>
-                <p className="mt-7 border-t border-[var(--border)] pt-6 text-sm leading-relaxed text-[var(--ink-secondary)]">
-                  Under $2M?{" "}
-                  <Link
-                    href="/book"
-                    className="font-semibold text-[var(--crimson)] underline underline-offset-4"
-                  >
-                    Start with the $999 assessment
-                  </Link>
-                  . Same thinking, right size.
-                </p>
               </div>
             </AnimateIn>
           </div>
@@ -373,7 +338,7 @@ export default function AssessmentPage() {
           </AnimateIn>
           <AnimateIn delay={0.18}>
             <p className="mt-6 text-lg leading-relaxed text-white/80">
-              And the $3,500 is credited in full toward anything we build together.
+              What you paid is credited in full toward anything we build together.
             </p>
           </AnimateIn>
         </div>
@@ -396,7 +361,7 @@ export default function AssessmentPage() {
           </AnimateIn>
           <AnimateIn delay={0.16}>
             <p className="max-w-2xl text-lg leading-relaxed text-[var(--ink-secondary)]">
-              That is the Agent HQ install, from $15,000, and your $3,500 comes off the top.
+              Whatever we build next gets scoped from what this finds, and what you paid comes off the top.
               The assessment interviews also become your Company Brain: how your business
               actually runs, structured, in a repo you own, so every AI employee we hire
               works the way you do. After the build ships, the operating retainer keeps it

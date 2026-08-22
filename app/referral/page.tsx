@@ -67,7 +67,7 @@ const ladder = [
     cut: "$200",
   },
   {
-    offer: "Current State Assessment",
+    offer: "Larger scoped assessment",
     who: "$2M to $50M in revenue",
     price: "$3,500",
     cut: "$700",
@@ -469,7 +469,7 @@ export default function ReferralPage() {
                 href="/services"
                 className="font-semibold text-white underline underline-offset-4"
               >
-                The full offer ladder
+                What they would actually be buying
               </Link>{" "}
               is here, and{" "}
               <Link

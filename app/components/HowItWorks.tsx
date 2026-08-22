@@ -4,7 +4,7 @@ const steps = [
   {
     number: "01",
     title: "Map",
-    body: "A 45-minute deep dive on how your business actually runs.",
+    body: "A 60-minute deep dive on how your business actually runs.",
   },
   {
     number: "02",

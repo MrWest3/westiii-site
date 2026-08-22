@@ -5,7 +5,7 @@ import AnimateIn from "../components/AnimateIn";
 export const metadata: Metadata = {
   title: "Offers",
   description:
-    "Two ways in. The $999 Hours Back Plan for small businesses, or a $3,500 Current State Assessment for companies doing $2M to $50M. Then a managed AI employee at $2,500, Agent HQ builds from $15,000, and an operating retainer.",
+    "One public price: the $999 AI Assessment. We map how your business runs, you get a written plan in 48 hours, and I find you 5+ hours a week or you don't pay. What I build after that is scoped on what the assessment finds.",
 };
 
 type Offer = {
@@ -24,120 +24,82 @@ type Offer = {
 const offers: Offer[] = [
   {
     number: "01",
-    name: "The Hours Back Plan",
+    name: "The $999 AI Assessment",
     price: "$999",
-    who: "Owner-operated businesses with 2 to 20 people that want to know where AI actually fits.",
+    who: "Owner-operated businesses that want to know where AI actually fits before they spend anything on building.",
     included: [
-      "45-minute discovery call",
-      "Written AI playbook with your pain points, exact tools, cost, setup time, hours saved, and a 4-day quick start",
-      "30-minute review call",
-      "100% money-back guarantee. 5+ reclaimable hours found inside 48 hours, or you don't pay.",
+      "A call where I map how your business runs right now",
+      "A written plan in 48 hours: your pain points, the exact tools, what they cost, how long setup takes, and the hours you get back",
+      "A 30-minute review call to walk you through it",
+      "100% money back. 5+ hours a week found in 48 hours, or you don't pay.",
     ],
-    start: "Book it. We start with the 45-minute discovery call.",
-    cta: "Book Your Assessment",
+    start: "Book it. We start on the call.",
+    cta: "Book the $999 Assessment",
     dark: false,
   },
   {
     number: "02",
-    name: "Current State Assessment",
-    price: "$3,500",
-    who: "Companies doing $2M to $50M that need their operations mapped, not a tool list.",
+    name: "AI Front Desk System",
+    price: "Scoped after the assessment",
+    who: "Businesses losing work because nobody gets to the phone, the inbox, or the web form fast enough.",
     included: [
-      "Visual process maps for every major workflow you run",
-      "The cost of inaction, priced in your numbers",
-      "Architecture and data flow for the system that fixes it",
-      "A phased roadmap with deliverables week by week",
-      "Quantified ROI with a payback period",
-      "$50,000 in annualized reclaimable cost found in 14 days, or you don't pay",
+      "Answers new inquiries in seconds, day or night",
+      "Asks the questions you would ask, in the way you would ask them",
+      "Books the ones worth booking straight onto your calendar",
+      "Hands you anything it should not answer on its own",
+      "Every conversation logged where you can read it",
     ],
-    start: "Book a fit call. The assessment runs two to three weeks.",
-    cta: "See the Current State Assessment",
-    href: "/assessment",
+    start: "Assessment first. It tells us what your front door actually needs.",
+    cta: "Start With the Assessment",
     dark: true,
   },
   {
     number: "03",
-    name: "Your First AI Employee",
-    price: "$2,500 install + $750/mo managed",
-    who: "Businesses ready to take one role off the owner's plate and see it proven before going bigger.",
+    name: "Follow-Up Engine",
+    price: "Scoped after the assessment",
+    who: "Businesses with leads going cold in an inbox because nobody has time to chase them.",
     included: [
-      "One clearly defined role with a written job description",
-      "A starter Company Brain built from your assessment, in a repo you own",
-      "Scoped tool access and approval gates on anything consequential",
-      "A shared channel with you, the employee, and me. Telegram by default, Buzz if your team lives in a workspace.",
-      "Monitoring, repairs, and a monthly workflow review",
-      "A weekly value ledger: the hours returned and what they are worth, in your numbers",
+      "Every new lead gets worked until they answer or tell you no",
+      "Text and email, written in your voice",
+      "Old leads reopened and worked again",
+      "You see who replied and who is worth a call",
     ],
-    start: "Assessment first. It finds the role, and your $999 credits toward the install.",
-    cta: "See the AI Employees",
-    href: "/ai-employees",
+    start: "Assessment first. It finds where your leads are dying.",
+    cta: "Start With the Assessment",
     dark: false,
   },
   {
     number: "04",
-    name: "Agent HQ",
-    price: "from $15,000",
-    who: "Companies that want the full AI team, working the way their business actually works.",
+    name: "Custom AI Employees",
+    price: "Scoped after the assessment",
+    who: "Owners ready to take one whole job off their plate and see it work before going bigger.",
     included: [
-      "Named roles, each with its own job description",
-      "The full Company Brain: your services, processes, and voice, in a repo you own",
-      "Scoped access and approval gates across the whole team",
-      "Working automations and custom workflows",
-      "Process redesign where the process is the problem",
-      "A foundation session and training with your team",
+      "One clearly defined role with a written job description",
+      "It learns your services, your customers, and how you talk, and that stays in files you own",
+      "It asks you before it does anything that matters",
+      "A shared chat with you, the employee, and me",
+      "I manage it, repair it, and review it with you every month",
+      "A weekly report: what it did, the hours it gave back, what that time is worth",
     ],
-    start: "Assessment first. The assessment defines what Agent HQ needs to do.",
-    cta: "Start With an Assessment",
+    start: "Assessment first. It finds the role worth hiring for.",
+    cta: "Start With the Assessment",
     dark: false,
   },
   {
     number: "05",
-    name: "Fractional AI CTO",
-    price: "$1,500/mo",
-    who: "Owner-operated businesses under $2M who want me in their corner month over month.",
+    name: "AI Practice OS",
+    price: "Scoped after the assessment",
+    who: "Dental and medical practices that want the front desk, intake, and follow-up handled as one system.",
     included: [
-      "Two 45-minute working sessions a month",
-      "We build on your screen, in your tools, on your real workflows",
-      "The same loop every session: map, optimize, automate",
-      "Direct async access between sessions",
+      "Every inquiry captured, no matter which way it came in",
+      "Intake and handoffs cleaned up so nothing gets retyped",
+      "Follow-up that reopens the patients who went quiet",
+      "One view of what is coming in and what is falling through",
     ],
-    start: "Assessment first. It gives us the baseline for the monthly work.",
-    cta: "Start With an Assessment",
+    start: "Assessment first. Same starting point as everyone else.",
+    cta: "See AI Practice OS",
+    href: "/practice-os",
     dark: false,
-  },
-  {
-    number: "06",
-    name: "Operating Retainer",
-    price: "$3,000/mo, limited to 6 clients",
-    who: "Companies running an Agent HQ install who want it maintained, adopted, and growing.",
-    included: [
-      "Two working sessions a month",
-      "Direct async access, 12 business hour response",
-      "A shared channel where your team and the AI team work in the open",
-      "Adoption tracking. If your team is not using it, that is my problem to fix.",
-      "New capabilities as you ask for them",
-      "The weekly value ledger: what the system handled, what needed a human, what it was worth",
-    ],
-    start: "Comes after the build. The install gives us the baseline for the monthly work.",
-    cta: "Start With an Assessment",
-    dark: false,
-  },
-  {
-    number: "07",
-    name: "Advisory Block",
-    price: "$2,500, four weekly calls",
-    who: "Companies that need direction before they need anything built.",
-    included: [
-      "Four calls, one a week, paid upfront",
-      "What changed this week, mapped against what you actually do",
-      "The two tools worth testing, the one to kill, the rest to ignore",
-      "The highest-ROI thing to build next",
-    ],
-    start: "Email me. This one is a conversation, not a booking link.",
-    cta: "Email Me About Advisory",
-    href: "mailto:StudioWest3@proton.me?subject=Advisory%20Block",
-    dark: false,
-    muted: true,
   },
 ];
 
@@ -158,11 +120,7 @@ export default function ServicesPage() {
           </AnimateIn>
           <AnimateIn delay={0.14}>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--ink-secondary)] sm:text-xl">
-              Every engagement starts with an assessment. Under $2M, that is the $999 Hours
-              Back Plan: where AI fits, what it costs, how much time it saves. At $2M to
-              $50M, it is the Current State Assessment: your whole operation mapped and a
-              build plan priced. Then the hires: one managed AI employee first, the full
-              Agent HQ team when it has proven itself.
+              Every engagement starts the same way, with the $999 assessment. It tells us where your hours are going and what is worth building. What comes after depends on what we find, so I scope and price that once I know what it is instead of guessing at it now.
             </p>
           </AnimateIn>
           <AnimateIn delay={0.2}>
@@ -263,35 +221,6 @@ export default function ServicesPage() {
         );
       })}
 
-      <section className="bg-[var(--surface)] px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
-          <AnimateIn>
-            <div className="rounded-2xl border border-[var(--crimson)] bg-white p-7 sm:p-10 md:p-12">
-              <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-                <div>
-                  <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
-                    Industry package
-                  </p>
-                  <h2 className="text-4xl font-black leading-tight tracking-tight text-[var(--ink)] md:text-5xl">
-                    Practice OS
-                  </h2>
-                  <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--ink-secondary)]">
-                    The packaged system for dental and medical practices. Capture inquiries,
-                    clean up intake and handoffs, and recover follow-up opportunities.
-                  </p>
-                </div>
-                <Link
-                  href="/practice-os"
-                  className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded border border-[var(--ink)] px-6 py-3.5 text-sm font-semibold text-[var(--ink)] transition-colors duration-200 hover:border-[var(--crimson)] hover:text-[var(--crimson)] sm:w-auto"
-                >
-                  See Practice OS
-                  <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
     </main>
   );
 }

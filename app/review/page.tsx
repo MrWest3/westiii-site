@@ -3,6 +3,9 @@ import ReviewForm from "../components/ReviewForm";
 export const metadata = {
   title: "Leave a Review",
   description: "Share your experience working with David West III.",
+  // Deliberately noindexed. This private form is sent directly to clients and
+  // should not appear in search results.
+  robots: { index: false, follow: true },
 };
 
 export default function ReviewPage() {

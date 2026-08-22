@@ -10,7 +10,7 @@ const beats = [
   {
     number: "02",
     title: "A Company Brain you own",
-    body: "Built from how your business actually runs, in a GitHub repo that belongs to you. It is why the work sounds like you.",
+    body: "Built from how your business actually runs, and it lives in files that belong to you. That is why the work sounds like you and not like a robot.",
   },
   {
     number: "03",
@@ -63,7 +63,7 @@ export default function AiEmployees() {
               href="/ai-employees"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-[var(--crimson)] px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[var(--crimson-light)]"
             >
-              See the roles and the price
+              See the roles
               <span aria-hidden="true">→</span>
             </Link>
             <Link

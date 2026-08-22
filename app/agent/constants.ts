@@ -22,7 +22,7 @@ export type CaptureRequest = {
   revenueBand: RevenueBand;
 };
 
-export type CaptureResponse = { ok: true; route: "/book" | "/assessment" };
+export type CaptureResponse = { ok: true; route: "/book" };
 
 export function parseReadback(text: string): {
   clean: string;

@@ -527,12 +527,10 @@ export default function AgentChatClient() {
                   </p>
                 </div>
                 <Link
-                  href={band === "2m_50m" ? "/assessment" : "/book"}
+                  href="/book"
                   className={`${primaryClass} w-full sm:w-auto`}
                 >
-                  {band === "2m_50m"
-                    ? "See the Current State Assessment"
-                    : "Book the $999 AI Assessment"}
+                  Book the $999 AI Assessment
                 </Link>
                 {captureFailed && <MailtoCard href={captureFallbackHref} />}
               </motion.div>

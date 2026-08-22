@@ -13,46 +13,31 @@ type Offer = {
 const offers: Offer[] = [
   {
     number: "01",
-    title: "The Hours Back Plan",
+    title: "The $999 AI Assessment",
     price: "$999",
-    body: "For businesses under $2M. A 45-minute call, a written playbook in 48 hours, and a review call. 5+ hours found in 48 hours or you don't pay.",
+    body: "We get on a call, I map how your business actually runs, and you get a written plan in 48 hours. I find you 5+ hours a week or you don't pay.",
     href: "/book",
   },
   {
     number: "02",
-    title: "Current State Assessment",
-    price: "$3,500",
-    body: "For companies doing $2M to $50M. Process maps, cost of inaction, architecture, and a priced build plan. $50,000 found or you don't pay.",
-    href: "/assessment",
+    title: "AI Front Desk System",
+    price: "Scoped after the assessment",
+    body: "Answers every new inquiry in seconds, day or night. Books the ones worth booking and hands you the rest.",
+    href: "/ai-employees",
   },
   {
     number: "03",
-    title: "Your First AI Employee",
-    price: "$2,500 + $750/mo",
-    body: "One role, owned end to end. Job description, Company Brain, approval gates, and me managing it. Your assessment credits toward the install.",
+    title: "Follow-Up Engine",
+    price: "Scoped after the assessment",
+    body: "Every lead gets worked until they answer. No more leads sitting in an inbox for two days.",
     href: "/ai-employees",
   },
   {
     number: "04",
-    title: "Agent HQ Install",
-    price: "from $15,000",
-    body: "The full AI team plus the full Company Brain. Built on your data, connected to your tools, branded to you.",
-    href: "/services",
-  },
-  {
-    number: "05",
-    title: "Ongoing support",
-    price: "$1,500 to $3,000/mo",
-    body: "Fractional AI CTO for small businesses. Operating Retainer for companies running an Agent HQ install. Capped at 6.",
-    href: "/services",
-  },
-  {
-    number: "06",
-    title: "Advisory Block",
-    price: "$2,500",
-    body: "Four weekly calls, paid upfront. For companies that need direction before they need a build.",
-    href: "/services",
-    muted: true,
+    title: "Custom AI Employees",
+    price: "Scoped after the assessment",
+    body: "One role in your business, owned end to end. It has a job description, it knows how you work, and I manage it every week.",
+    href: "/ai-employees",
   },
 ];
 
@@ -67,14 +52,12 @@ export default function Offers() {
         </AnimateIn>
         <AnimateIn delay={0.1}>
           <h2 className="mb-4 max-w-2xl text-4xl font-black leading-tight tracking-tight text-white md:text-5xl">
-            Start with one assessment. Build from the proof.
+            One price. Everything else gets scoped after.
           </h2>
         </AnimateIn>
         <AnimateIn delay={0.16}>
           <p className="mb-12 max-w-2xl text-lg leading-relaxed text-white/60">
-            Two ways in, depending on your size. Then the hires: one AI employee first,
-            the full team when it has proven itself. Everything comes out of what the
-            assessment finds.
+            The assessment tells us where your hours are going and what is worth building. I only build what it proves you need, so I price that part after I know what it is.
           </p>
         </AnimateIn>
 

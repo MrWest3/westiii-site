@@ -5,7 +5,6 @@ import { useId, useState } from "react";
 import AnimateIn from "./AnimateIn";
 
 const WEEKS_PER_YEAR = 50;
-const ROUTING_THRESHOLD = 50000;
 
 type Variant = "home" | "tier2";
 
@@ -75,7 +74,6 @@ export default function CostOfInaction({ variant = "home" }: CostOfInactionProps
 
   const annual = Math.round((hours * rate * people * WEEKS_PER_YEAR) / 100) * 100;
   const formatted = annual.toLocaleString("en-US");
-  const isBigLeak = annual >= ROUTING_THRESHOLD;
 
   return (
     <section
@@ -149,35 +147,16 @@ export default function CostOfInaction({ variant = "home" }: CostOfInactionProps
 
               {variant === "home" && (
                 <div className="mt-8 flex min-h-[196px] flex-col justify-start border-t border-[var(--border)] pt-7 sm:min-h-[152px]">
-                  {isBigLeak ? (
-                    <>
-                      <p className="mb-5 leading-relaxed text-[var(--ink-secondary)]">
-                        You are past the point where a tool list helps. Start with the
-                        Current State Assessment.
-                      </p>
-                      <Link
-                        href="/assessment"
-                        className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded bg-[var(--crimson)] px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[var(--crimson-light)] sm:w-auto"
-                      >
-                        See the Current State Assessment
-                        <span aria-hidden="true">→</span>
-                      </Link>
-                    </>
-                  ) : (
-                    <>
-                      <p className="mb-5 leading-relaxed text-[var(--ink-secondary)]">
-                        Start with the $999 assessment. I will find the tools that take the
-                        biggest piece of that back.
-                      </p>
-                      <Link
-                        href="/book"
-                        className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded bg-[var(--crimson)] px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[var(--crimson-light)] sm:w-auto"
-                      >
-                        Book the $999 Assessment
-                        <span aria-hidden="true">→</span>
-                      </Link>
-                    </>
-                  )}
+                  <p className="mb-5 leading-relaxed text-[var(--ink-secondary)]">
+                    Start with the $999 assessment. I will show you where the biggest piece of that is going and how to get it back.
+                  </p>
+                  <Link
+                    href="/book"
+                    className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded bg-[var(--crimson)] px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[var(--crimson-light)] sm:w-auto"
+                  >
+                    Book the $999 Assessment
+                    <span aria-hidden="true">→</span>
+                  </Link>
                 </div>
               )}
             </div>

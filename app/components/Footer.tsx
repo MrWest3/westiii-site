@@ -6,8 +6,7 @@ import { useNewsletterSubscription } from "./useNewsletterSubscription";
 const siteLinks = [
   { label: "AI Employees", href: "/ai-employees" },
   { label: "Offers", href: "/services" },
-  { label: "Hours Back Plan", href: "/book" },
-  { label: "Current State Assessment", href: "/assessment" },
+  { label: "The $999 Assessment", href: "/book" },
   { label: "Creative", href: "/creative" },
   { label: "Workshops", href: "/workshops" },
   { label: "Atlanta", href: "/atlanta" },
