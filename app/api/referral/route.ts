@@ -2,22 +2,42 @@ import { NextRequest, NextResponse } from "next/server";
 import { after } from "next/server";
 import { Redis } from "@upstash/redis";
 import { sendNotification } from "../../lib/notify";
+import {
+  cleanEmail,
+  cleanOptionalText,
+  cleanText,
+  invalid,
+  rateLimitForm,
+  readJson,
+} from "../../lib/formGuard";
 
 const redis = Redis.fromEnv();
 
 export async function POST(req: NextRequest) {
-  const {
-    referrerName,
-    referrerEmail,
-    contactName,
-    contactCompany,
-    contactReach,
-    context,
-    attribution,
-  } = await req.json();
+  const limited = await rateLimitForm(req);
+  if (limited) return limited;
+
+  const body = (await readJson(req)) as {
+    referrerName?: unknown;
+    referrerEmail?: unknown;
+    contactName?: unknown;
+    contactCompany?: unknown;
+    contactReach?: unknown;
+    context?: unknown;
+    attribution?: unknown;
+  };
+  if (!body) return invalid();
+
+  const referrerName = cleanText(body.referrerName, 120);
+  const referrerEmail = cleanEmail(body.referrerEmail);
+  const contactName = cleanText(body.contactName, 120);
+  const contactCompany = cleanOptionalText(body.contactCompany, 200);
+  const contactReach = cleanText(body.contactReach, 300);
+  const context = cleanText(body.context, 4000);
+  const attribution = cleanOptionalText(body.attribution, 300);
 
   if (!referrerName || !referrerEmail || !contactName || !contactReach || !context) {
-    return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    return invalid();
   }
 
   await redis.rpush(
@@ -49,7 +69,7 @@ export async function POST(req: NextRequest) {
         "WHAT IS GOING ON WITH THEM:",
         context,
         "",
-        `ATTRIBUTION: ${attribution}`,
+        `ATTRIBUTION: ${attribution || "not given"}`,
         "",
         `Referrer: ${referrerName} (${referrerEmail}). Reply to this email to answer them.`,
         "You said you would reach out within one business day.",

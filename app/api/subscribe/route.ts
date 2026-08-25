@@ -2,6 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { after } from "next/server";
 import { Redis } from "@upstash/redis";
 import { sendNotification } from "../../lib/notify";
+import {
+  cleanEmail,
+  invalid,
+  rateLimitForm,
+  readJson,
+} from "../../lib/formGuard";
 
 const redis = Redis.fromEnv();
 
@@ -19,13 +25,18 @@ const LIST_LABELS: Record<string, string> = {
 };
 
 export async function POST(req: NextRequest) {
-  const { email, list } = await req.json();
+  const limited = await rateLimitForm(req);
+  if (limited) return limited;
 
-  if (!email || !email.includes("@")) {
+  const body = (await readJson(req)) as { email?: unknown; list?: unknown };
+  if (!body) return invalid();
+
+  const email = cleanEmail(body.email);
+  if (!email) {
     return NextResponse.json({ error: "Invalid email" }, { status: 400 });
   }
 
-  const key = typeof list === "string" ? LISTS[list] : undefined;
+  const key = typeof body.list === "string" ? LISTS[body.list] : undefined;
   const resolvedKey = key ?? DEFAULT_LIST;
 
   const added = await redis.sadd(resolvedKey, email);
