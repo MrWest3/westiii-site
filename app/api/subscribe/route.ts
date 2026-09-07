@@ -17,11 +17,13 @@ const DEFAULT_LIST = "west-report-subscribers";
 const LISTS: Record<string, string> = {
   newsletter: DEFAULT_LIST,
   "atl-meetup": "atl-meetup-waitlist",
+  "paid-workshop": "paid-workshop-waitlist",
 };
 
 const LIST_LABELS: Record<string, string> = {
   [DEFAULT_LIST]: "West Report",
   "atl-meetup-waitlist": "ATL meetup waitlist",
+  "paid-workshop-waitlist": "Paid workshop waitlist",
 };
 
 export async function POST(req: NextRequest) {

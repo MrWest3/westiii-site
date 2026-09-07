@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     absolute: "The $999 AI Assessment | 5+ Hours or You Don't Pay",
   },
   description:
-    "The $999 AI Assessment is a 60-minute call, a written plan in 48 hours, and a review call. I find 5+ hours a week, or you don't pay.",
+    "The $999 AI Assessment is a 60-minute call, a written plan and a 7-minute video in 48 hours, and a review call. I find 5+ hours a week, or you don't pay.",
 };
 
 const CALENDLY_URL = "https://calendly.com/davidawest25/ai-audit";
@@ -16,22 +16,32 @@ const deliverables = [
   {
     number: "01",
     title: "60-minute discovery call",
-    body: "I look at your calendar, inbox, and workflows to find where your time is going.",
+    body: "Questions only, no pitching. Walk me through yesterday. I listen for where work piles up, what gets retyped, and what only lives in your head.",
   },
   {
     number: "02",
     title: "Written AI playbook",
-    body: "Your pain points, the exact tools, cost, setup time, hours saved, and a 4-day quick start.",
+    body: "3 to 7 opportunities, each scored on impact versus effort. The exact tools, what they cost, setup time, and the hours you get back, using the hourly value you gave me, not a number I made up.",
   },
   {
     number: "03",
-    title: "30-minute review call",
-    body: "We walk through the playbook together. You leave knowing where to start.",
+    title: "A 7-minute video of your plan",
+    body: "Your pain points in your own words, the fix for each, and the yearly number at the end. Forward it to your partner, your CPA, or whoever else has to say yes.",
   },
   {
     number: "04",
+    title: "30-minute review call",
+    body: "We walk the playbook point by point. You leave with a 4-day quick start and a clear first move.",
+  },
+  {
+    number: "05",
     title: "100% money-back guarantee",
     body: "I find you 5+ reclaimable hours a week, inside 48 hours, or you don't pay.",
+  },
+  {
+    number: "06",
+    title: "Full credit toward the build",
+    body: "Take the plan and run it yourself, hand it to anyone you trust, or hire me. If you hire me, the $999 comes off the top.",
   },
 ];
 
@@ -42,9 +52,14 @@ const faqItems = [
       "Cancel at least 24 hours before the call and I will issue a full refund. Inside 24 hours, you can reschedule your call.",
   },
   {
+    question: "What happens before the call?",
+    answer:
+      "You get a short intake form and one email that explains how the call runs, what to have open on your screen, and what the playbook will and will not include. The call should not be the first time you understand what you bought.",
+  },
+  {
     question: "What happens after the assessment?",
     answer:
-      "I send your written playbook, then we meet for a 30-minute review call. You can run the plan yourself, or hire your first AI employee off it. I scope that after the assessment and your $999 comes off the top.",
+      "I send the playbook and the video, then we meet for the 30-minute review. At the end you have two paths. Take the plan and implement it yourself or with anyone you trust, it is yours. Or hire me to build the first piece and manage it. Either answer is fine, and your $999 comes off the top if you pick the second.",
   },
   {
     question: "Do I need to be technical?",
@@ -117,11 +132,11 @@ export default function BookPage() {
               What you get
             </p>
             <h2 className="mb-10 max-w-2xl text-4xl font-black leading-tight tracking-tight text-[var(--ink)] md:text-5xl">
-              Two calls. One plan you can use.
+              Two calls. One plan you can hand to anyone.
             </h2>
           </AnimateIn>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {deliverables.map((item, index) => (
               <AnimateIn key={item.number} delay={index * 0.06}>
                 <article className="h-full rounded-2xl border border-[var(--border)] bg-white p-6 md:p-8">

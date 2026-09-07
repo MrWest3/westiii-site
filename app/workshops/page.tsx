@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import AnimateIn from "../components/AnimateIn";
 import AtlantaMeetup from "../components/AtlantaMeetup";
+import WorkshopLadder from "../components/WorkshopLadder";
 
 export const metadata: Metadata = {
   title: "Workshops",
   description:
-    "I lead an AI workshop Atlanta teams can use the same day, with hands-on training built around their real work.",
+    "Paid AI workshops in Atlanta. Four hours, 15 seats, everyone leaves with a working AI employee. Team sessions built on your real workflows.",
 };
 
 const MAILTO =
@@ -16,17 +17,17 @@ const formats = [
   {
     number: "01",
     title: "60 to 90 minute talk plus live build",
-    body: "I teach one useful workflow, then build it live. Your group sees the decisions, the setup, and the finished result.",
+    body: "For communities and events. I teach one useful workflow, then build it live. Your group sees the decisions, the setup, and the finished result.",
   },
   {
     number: "02",
-    title: "Half-day working session",
-    body: "I work with your team on the tasks they already do. We choose a real workflow, build it together, and leave with something they can use.",
+    title: "Half-day to two-day team session",
+    body: "I come to your office and work on the tasks your team already does. We build around the workflow the whole room complains about and leave with it running.",
   },
   {
     number: "03",
     title: "Recurring team enablement",
-    body: "I meet with your team on a schedule. Each session solves one current problem, builds one useful workflow, and keeps the work moving.",
+    body: "Twice a month on a schedule. Each session fixes one process before automating it, builds one useful workflow, and keeps the work moving. Accountability is most of the value.",
   },
 ];
 
@@ -65,12 +66,15 @@ export default function WorkshopsPage() {
           </AnimateIn>
           <AnimateIn delay={0.14}>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[var(--ink-secondary)] sm:text-xl">
-              I run hands-on workshops for teams, communities, and events. People go from
-              curious to using AI in their real work the same day.
+              I run working sessions, not slideshows. Public workshops in Atlanta, private
+              sessions for teams, and talks for communities and events. People leave with
+              something built, not a list of tools to look up later.
             </p>
           </AnimateIn>
         </div>
       </section>
+
+      <WorkshopLadder />
 
       <AtlantaMeetup />
 

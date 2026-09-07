@@ -29,7 +29,8 @@ const offers: Offer[] = [
     who: "Owner-operated businesses that want to know where AI actually fits before they spend anything on building.",
     included: [
       "A call where I map how your business runs right now",
-      "A written plan in 48 hours: your pain points, the exact tools, what they cost, how long setup takes, and the hours you get back",
+      "A written plan in 48 hours: 3 to 7 opportunities scored on impact versus effort, the exact tools, what they cost, how long setup takes, and the hours you get back",
+      "A 7-minute video of the plan you can forward to whoever else has to say yes",
       "A 30-minute review call to walk you through it",
       "100% money back. 5+ hours a week found in 48 hours, or you don't pay.",
     ],
@@ -43,7 +44,7 @@ const offers: Offer[] = [
     price: "Scoped after the assessment",
     who: "Businesses losing work because nobody gets to the phone, the inbox, or the web form fast enough.",
     included: [
-      "Answers new inquiries in seconds, day or night",
+      "Answers new inquiries in seconds, day or night. The average business takes 42 hours to answer a new lead, and Harvard Business Review found that answering inside an hour makes you 7 times more likely to qualify it.",
       "Asks the questions you would ask, in the way you would ask them",
       "Books the ones worth booking straight onto your calendar",
       "Hands you anything it should not answer on its own",

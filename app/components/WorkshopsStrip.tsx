@@ -7,7 +7,8 @@ export default function WorkshopsStrip() {
       <AnimateIn>
         <div className="mx-auto flex max-w-6xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xl font-black leading-snug text-[var(--ink)] md:text-2xl">
-            I also train teams. From curious to using AI the same day.
+            I also run workshops. Four hours, 15 seats, and everyone leaves with an AI
+            employee already working.
           </p>
           <Link
             href="/workshops"

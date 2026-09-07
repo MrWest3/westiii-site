@@ -59,6 +59,15 @@ const industries = [
   },
 ];
 
+const leaks = [
+  "A Google review that mentions slow responses or a call nobody returned.",
+  "A website form that asks for a name and an email and nothing else useful.",
+  "A PDF customers still print, fill out, and send back for intake.",
+  "Quote requests that take days to answer because one person writes every one.",
+  "After-hours calls that go to voicemail while the caller phones the next name on the list.",
+  "The answer to the same five questions typed out from scratch every week.",
+];
+
 const faqItems = [
   {
     question: "Do you meet in person?",
@@ -78,7 +87,7 @@ const faqItems = [
   {
     question: "How big does my business need to be?",
     answer:
-      "Start with the $999 assessment. You leave with a plan you can act on whether or not you ever hire me to build it.",
+      "The sweet spot is an owner-led business with 3 to 20 people and real revenue, roughly $500K to $10M a year. That is where the repetitive work is visible and the budget exists to fix it. If you are a solo operator, take the free 15-minute call instead of the assessment.",
   },
   {
     question: "What if I have already tried AI and it did not stick?",
@@ -162,6 +171,41 @@ export default function AtlantaPage() {
               </AnimateIn>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Signs */}
+      <section className="bg-[var(--surface)] px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl">
+          <AnimateIn>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
+              Where the money leaks
+            </p>
+          </AnimateIn>
+          <AnimateIn delay={0.1}>
+            <h2 className="mb-6 max-w-2xl text-4xl font-black leading-tight tracking-tight text-[var(--ink)] md:text-5xl">
+              You do not need AI. You need the leak found.
+            </h2>
+            <p className="mb-10 max-w-2xl text-lg leading-relaxed text-[var(--ink-secondary)]">
+              Every business I have worked with had one of these. Each one is a process
+              close to revenue that a person is holding together by hand. That is where I
+              start, and that is what the assessment is for.
+            </p>
+          </AnimateIn>
+
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {leaks.map((leak, index) => (
+              <AnimateIn key={leak} delay={index * 0.04}>
+                <li className="flex h-full gap-3 rounded-2xl border border-[var(--border)] bg-white p-5 leading-relaxed text-[var(--ink-secondary)]">
+                  <span
+                    className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--crimson)]"
+                    aria-hidden="true"
+                  />
+                  <span>{leak}</span>
+                </li>
+              </AnimateIn>
+            ))}
+          </ul>
         </div>
       </section>
 

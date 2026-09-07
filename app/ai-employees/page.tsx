@@ -165,6 +165,16 @@ const faqItems = [
     answer:
       "I scope it after the assessment, and your $999 comes off the top. When one employee proves itself and you want more of the job covered, we scope that the same way.",
   },
+  {
+    question: "Why pay monthly when Claude is $20 a month?",
+    answer:
+      "$20 buys a tool that knows nothing about your business. The monthly fee buys someone who hosts it, fixes it when it breaks at 11pm, ships the thing you asked for on Tuesday, and sits with you until you know what to ask it. Nobody is buying the software. They are buying the fact that it keeps working and they never have to think about it. Compare it to one part-time hire who takes vacation and quits.",
+  },
+  {
+    question: "How do I know it is ready?",
+    answer:
+      "Installation is not acceptance. Before you rely on it, I try to break it: missing information, conflicting instructions, a request outside its job, a dead connection, the wrong recipient, and a restart. It passes those on real work without taking live action, and then you see the same test results I do.",
+  },
 ];
 
 function CtaButton({ href, label }: { href: string; label: string }) {
