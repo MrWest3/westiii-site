@@ -463,6 +463,18 @@ export const deliverables: Deliverable[] = [
         profileHref: IG_PROFILE,
       },
       {
+        kind: "gallery",
+        intro: "And a skincare brand that already had a photographer. Their existing photos went in. Nothing was reshot.",
+        items: [
+          { src: "/r/beauty-drop/pt-scrub.jpg", alt: "Scrub and bottle in shallow water, still", cap: "Still", w: 720, h: 1280 },
+          { src: "/r/beauty-drop/pt-honey.jpg", alt: "Honey on a white surface, still", cap: "Still", w: 720, h: 1280 },
+          { src: "/r/beauty-drop/pt-ocean.jpg", alt: "Man at the shoreline, still", cap: "Still", w: 720, h: 1280 },
+          { src: "/r/beauty-drop/pt-scrub.mp4", alt: "The same scrub shot, water moving", cap: "Video", w: 720, h: 1280, video: true },
+          { src: "/r/beauty-drop/pt-honey.mp4", alt: "The same honey shot, pouring", cap: "Video", w: 720, h: 1280, video: true },
+          { src: "/r/beauty-drop/pt-ocean.mp4", alt: "The same shoreline shot, waves moving", cap: "Video", w: 720, h: 1280, video: true },
+        ],
+      },
+      {
         kind: "callout",
         label: "The part that matters",
         body: "Every shot is your actual product. Your bottle, your label, your colors. Not something that looks like it.",
