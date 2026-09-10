@@ -168,6 +168,9 @@ export default async function DeliverablePage({
   const d = getDeliverable(slug);
   if (!d) notFound();
 
+  // most of these come off a Make AI Easy reel. the ones that don't set their own.
+  const seriesNote = d.seriesNote ?? "Make AI Easy is a weekly breakdown.";
+
   return (
     <main className="min-h-screen bg-white">
       <div className="max-w-[680px] mx-auto px-6 pb-24">
@@ -190,7 +193,7 @@ export default async function DeliverablePage({
           <Link href="/" className="hover:text-[var(--crimson)]">
             David West III
           </Link>
-          {" · Make AI Easy is a weekly breakdown."}
+          {seriesNote ? ` · ${seriesNote}` : ""}
           {d.footnote ? ` ${d.footnote}` : ""}
         </footer>
       </div>
