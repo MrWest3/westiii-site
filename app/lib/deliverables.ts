@@ -25,7 +25,33 @@ export type Block =
     }
   | { kind: "callout"; label: string; body: string }
   | { kind: "prose"; body: string[] }
-  | { kind: "cta"; eyebrow: string; label: string; sub: string; href: string };
+  | {
+      kind: "gallery";
+      intro?: string;
+      items: {
+        src: string;
+        alt: string;
+        cap: string;
+        w: number;
+        h: number;
+        /** render as an autoplaying muted loop instead of an image */
+        video?: boolean;
+        /** crimson caption, for the "before" tile */
+        flag?: boolean;
+      }[];
+    }
+  | {
+      kind: "cta";
+      eyebrow: string;
+      label: string;
+      sub: string;
+      href: string;
+      /** full-width crimson block instead of the bordered card */
+      big?: boolean;
+      /** shown under a big cta as a plain profile link */
+      handle?: string;
+      profileHref?: string;
+    };
 
 export type Deliverable = {
   slug: string;
@@ -58,6 +84,8 @@ const ASSESSMENT = {
  */
 const CHECKOUT = "https://ig.me/m/__dw3";
 const CHECKOUT_SETUP = "https://ig.me/m/__dw3";
+const IG_HANDLE = "@__dw3";
+const IG_PROFILE = "https://www.instagram.com/__dw3/";
 
 export const deliverables: Deliverable[] = [
   {
@@ -400,8 +428,9 @@ export const deliverables: Deliverable[] = [
       "That link is a referral, so I get a free month too when you use it.",
   },
 
-  // Beauty Brand Blueprint talk, Sept 2026. This is the only paid entry here,
-  // so the CTA points at a Stripe Payment Link instead of /book.
+  // Beauty Brand Blueprint talk, Sept 2026. The only paid entry here. Both
+  // buttons open an Instagram DM tonight; swap CHECKOUT / CHECKOUT_SETUP to
+  // Stripe Payment Links when they exist and nothing else changes.
   {
     slug: "beauty-drop",
     eyebrow: "Beauty Brand Blueprint",
@@ -412,6 +441,27 @@ export const deliverables: Deliverable[] = [
     standfirst:
       "You send me photos of your product taken on your phone. 48 hours or less later you get twelve finished images and five short videos, sized and ready to post.",
     blocks: [
+      {
+        kind: "gallery",
+        intro: "Same bottle. My kitchen counter to a campaign, in about an hour.",
+        items: [
+          { src: "/r/beauty-drop/before.jpg", alt: "Coconut water bottle on a kitchen counter, phone photo", cap: "The phone photo", w: 750, h: 1000, flag: true },
+          { src: "/r/beauty-drop/packshot.jpg", alt: "The same bottle as a clean studio packshot", cap: "Packshot", w: 805, h: 1000 },
+          { src: "/r/beauty-drop/beach.jpg", alt: "The same bottle on a beach at golden hour", cap: "Beach", w: 558, h: 1000 },
+          { src: "/r/beauty-drop/gym.jpg", alt: "The same bottle on a gym bench", cap: "Gym", w: 805, h: 1000 },
+          { src: "/r/beauty-drop/beach.mp4", alt: "The beach image as a five-second video", cap: "Then it moves", w: 402, h: 720, video: true },
+        ],
+      },
+      {
+        kind: "cta",
+        big: true,
+        eyebrow: "$250 · twelve images · five videos · 48 hours or less",
+        label: "DM me DROP on Instagram",
+        sub: "Send two to four phone photos of your product in the same thread. That is the whole order form.",
+        href: CHECKOUT,
+        handle: IG_HANDLE,
+        profileHref: IG_PROFILE,
+      },
       {
         kind: "callout",
         label: "The part that matters",
@@ -487,61 +537,25 @@ export const deliverables: Deliverable[] = [
         ],
       },
       {
-        kind: "cta",
-        eyebrow: "$250, one product, twelve images and five videos",
-        label: "DM me DROP",
-        sub: "on Instagram, @__dw3. Send the photos in the same thread.",
-        href: CHECKOUT,
+        kind: "callout",
+        label: "Ten to fifteen spots",
+        body: "I deliver these myself in batches this month. I would rather turn people away than run late on you.",
       },
       {
         kind: "prose",
         body: [
-          "Or, if you would rather have the system than the folder, I get on a call and build it on your computer.",
-        ],
-      },
-      {
-        kind: "list",
-        intro: "The Setup Call:",
-        items: [
-          {
-            head: "Two hours, screen share",
-            body: [
-              "Claude or ChatGPT, whichever you already like. I build on either. You need a paid plan for one of them and a Higgsfield subscription, and both of those are yours, separate from this.",
-            ],
-          },
-          {
-            head: "We make your first batch together",
-            flag: true,
-            tag: "you leave with assets",
-            body: [
-              "By the end of the call your product has been through the whole thing once, with you driving. You finish holding real images and videos, not just a setup.",
-            ],
-          },
-          {
-            head: "My prompt library, per shot type",
-            body: [
-              "The exact lines I use. Packshot push-in. Liquid pour. Model holding the product. Two people, hold still. Yours to keep.",
-            ],
-          },
-          {
-            head: "Fourteen days of questions after",
-            body: [
-              "One thread, anything that breaks. After two weeks it either works or we talk about a retainer.",
-            ],
-          },
+          "Or, if you would rather never send me photos again: I get on a call, put the whole system on your machine, and we make your first batch together while I am there.",
         ],
       },
       {
         kind: "cta",
-        eyebrow: "$500, two hours, your machine, first batch included",
-        label: "DM me SETUP",
-        sub: "on Instagram, @__dw3. We pick the day in the thread.",
+        big: true,
+        eyebrow: "$500 · two hours · your machine · first batch included",
+        label: "DM me SETUP on Instagram",
+        sub: "We pick the day in the thread. You leave the call with the system installed and twelve images and five videos already made.",
         href: CHECKOUT_SETUP,
-      },
-      {
-        kind: "callout",
-        label: "Ten to fifteen spots, both offers combined",
-        body: "I deliver these myself this month. I would rather turn people away than run late on you.",
+        handle: IG_HANDLE,
+        profileHref: IG_PROFILE,
       },
       {
         kind: "cta",
@@ -556,7 +570,6 @@ export const deliverables: Deliverable[] = [
       "Everything you get back is yours to keep and use anywhere. Instagram, TikTok, your Shopify page, paid ads.",
   },
 
-  // The free leave-behind from the Beauty Brand Blueprint talk. Reference, not a pitch.
   {
     slug: "model-guide",
     eyebrow: "Beauty Brand Blueprint",

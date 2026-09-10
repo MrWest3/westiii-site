@@ -56,6 +56,84 @@ function Blocks({ blocks }: { blocks: Block[] }) {
           );
         }
 
+        if (block.kind === "gallery") {
+          return (
+            <div key={i} className="mt-12">
+              {block.intro ? (
+                <p className="text-lg leading-relaxed text-[var(--ink-secondary)] mb-6 max-w-[46ch]">
+                  {block.intro}
+                </p>
+              ) : null}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {block.items.map((it, j) => (
+                  <figure key={j} className="m-0">
+                    <div className="aspect-[9/16] overflow-hidden rounded-md border border-[var(--border)] bg-[var(--surface)]">
+                      {it.video ? (
+                        // raw tag so `muted` lands in the HTML; React drops it on SSR
+                        <div
+                          className="w-full h-full"
+                          dangerouslySetInnerHTML={{
+                            __html: `<video src="${it.src}" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover"></video>`,
+                          }}
+                        />
+                      ) : (
+                        <img
+                          src={it.src}
+                          alt={it.alt}
+                          width={it.w}
+                          height={it.h}
+                          loading={j < 3 ? "eager" : "lazy"}
+                          className="w-full h-full object-cover"
+                        />
+                      )}
+                    </div>
+                    <figcaption
+                      className={`mt-2 text-[11px] font-bold tracking-[0.16em] uppercase ${
+                        it.flag ? "text-[var(--crimson)]" : "text-[var(--muted)]"
+                      }`}
+                    >
+                      {it.cap}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          );
+        }
+
+        if (block.kind === "cta" && block.big) {
+          return (
+            <div key={i} className="mt-12">
+              <a
+                href={block.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-lg bg-[var(--crimson)] text-white p-7 md:p-9 hover:bg-[var(--crimson-light)] transition-colors duration-200"
+              >
+                <span className="block text-[11px] font-bold tracking-[0.2em] uppercase opacity-80">
+                  {block.eyebrow}
+                </span>
+                <span className="block text-3xl md:text-[40px] font-black mt-2 leading-[1.05] text-balance">
+                  {block.label}
+                </span>
+                <span className="block text-base md:text-lg mt-3 opacity-90 max-w-[40ch]">
+                  {block.sub}
+                </span>
+              </a>
+              {block.profileHref ? (
+                <a
+                  href={block.profileHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block text-lg font-bold text-[var(--ink)] underline decoration-[var(--gold)] decoration-2 underline-offset-4 hover:text-[var(--crimson)]"
+                >
+                  Or open my Instagram: {block.handle}
+                </a>
+              ) : null}
+            </div>
+          );
+        }
+
         if (block.kind === "cta") {
           const external = block.href.startsWith("http");
           const inner = (
