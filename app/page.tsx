@@ -1,4 +1,5 @@
-import Hero from "./components/Hero";
+import IdentityHero from "./components/IdentityHero";
+import Lanes from "./components/Lanes";
 import HowItWorks from "./components/HowItWorks";
 import AiEmployees from "./components/AiEmployees";
 import CostOfInaction from "./components/CostOfInaction";
@@ -39,7 +40,8 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aiAssessmentSchema) }}
       />
-      <Hero />
+      <IdentityHero />
+      <Lanes />
       <HowItWorks />
       <AiEmployees />
       <CostOfInaction />
