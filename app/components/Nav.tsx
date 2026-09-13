@@ -12,6 +12,7 @@ const links = [
   { label: "Creative", href: "/creative" },
   { label: "Workshops", href: "/workshops" },
   { label: "Atlanta", href: "/atlanta" },
+  { label: "Hope", href: "/hope" },
 ];
 
 export default function Nav() {
