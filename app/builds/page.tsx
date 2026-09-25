@@ -116,6 +116,32 @@ const builds = [
       { label: "Output", value: "Editorial-ready cuts" },
     ],
   },
+  {
+    number: "05",
+    name: "The Last Economy Countdown",
+    status: "Live, local",
+    statusColor: "bg-emerald-500",
+    tagline: "A book fact-checked by an orchestrator-worker pipeline, measured with an eval, turned into a dashboard.",
+    body: [
+      "Emad Mostaque's The Last Economy bets that the rules of the economy lock in within a thousand days of publication. I read all of it, then built the checking as code: an orchestrator fans reader workers out over chapters, each returning claims through a strict tool call, and a verifier worker searches the web and records a verdict the same way. Hand-written against the Messages API, the way Anthropic's Building Effective Agents recommends.",
+      "The site shows the argument as a graph you can click through, a board of nine indicators that would prove the author right or wrong by May 2028, and the pipeline's own run manifests. Under it, an eval: 25 claims I labelled by hand, the verifier run blind, agreement and a confusion matrix published, every miss named. The checking found the author's flagship example had inverted and that chapter 18 describes his own undisclosed token.",
+      "The last route is a personal dashboard built from the one operational idea in the book, four capitals against the same clock, reading local files that never ship.",
+    ],
+    stack: [
+      "Next.js 16",
+      "React Flow + dagre",
+      "@anthropic-ai/sdk",
+      "Claude Opus 5",
+      "web_search server tool",
+      "recharts",
+      "JSON / JSONL state",
+    ],
+    metrics: [
+      { label: "Claims graphed", value: "37" },
+      { label: "Chapters read by the engine", value: "5 of 21, so far" },
+      { label: "Eval", value: "25 hand-labelled claims" },
+    ],
+  },
 ];
 
 const reach = [
