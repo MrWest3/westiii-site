@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { FREE_CALL_URL, socials } from "../lib/links";
+import LoopClip from "./LoopClip";
 
 const rise = (delay: number) => ({
   initial: { y: 16 },
@@ -97,6 +98,12 @@ export default function IdentityHero() {
           priority
           sizes="100vw"
           className="object-cover object-[60%_50%]"
+        />
+        <LoopClip
+          src="/robot/loop-hero-wave.mp4"
+          poster="/robot/hero-wave.webp"
+          label="The West Robot waving from an Atlanta rooftop"
+          className="absolute inset-0 h-full w-full object-cover object-[60%_50%]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--ink)] via-transparent to-transparent md:bg-gradient-to-r md:from-[var(--ink)] md:via-[rgba(10,10,10,0.25)] md:via-25% md:to-transparent md:to-55%" />
       </div>

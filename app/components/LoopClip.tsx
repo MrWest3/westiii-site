@@ -24,18 +24,30 @@ export default function LoopClip({
     if (!video) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
+    let inView = false;
+    const sync = () => {
+      if (inView && document.visibilityState === "visible") {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
+        inView = entry.isIntersecting;
+        sync();
       },
       { threshold: 0.25 },
     );
     observer.observe(video);
-    return () => observer.disconnect();
+    // A play() attempted while the tab was in the background is refused, so
+    // retry when the tab comes back.
+    document.addEventListener("visibilitychange", sync);
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", sync);
+    };
   }, []);
 
   return (

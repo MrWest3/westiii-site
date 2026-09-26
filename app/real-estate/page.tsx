@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AnimateIn from "../components/AnimateIn";
 import BeforeAfter, { type Comparison } from "../components/BeforeAfter";
+import ListingChat from "../components/ListingChat";
 import LoopClip from "../components/LoopClip";
 import { FREE_CALL_URL, LAUREL_HOUSE_URL, PENTHOUSE_URL } from "../lib/links";
 
@@ -122,6 +123,7 @@ const groups: {
         name: "Listing Q&A Assistant",
         body: "Answers buyer questions about a listing from its details and documents, then sends you the buyers who are ready to see it.",
         forWho: ["Brokerages", "Teams"],
+        links: [{ label: "Try the demo", href: "#ask" }],
       },
       {
         name: "AI Front Desk System",
@@ -208,6 +210,12 @@ export default function RealEstatePage() {
             priority
             sizes="100vw"
             className="object-cover object-[60%_50%]"
+          />
+          <LoopClip
+            src="/robot/loop-keys.mp4"
+            poster="/robot/keys.webp"
+            label="The West Robot holding out house keys at twilight"
+            className="absolute inset-0 h-full w-full object-cover object-[60%_50%]"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--ink)] via-transparent to-transparent md:bg-gradient-to-r md:from-[var(--ink)] md:via-[rgba(10,10,10,0.6)] md:via-35% md:to-transparent md:to-70%" />
         </div>
@@ -321,6 +329,33 @@ export default function RealEstatePage() {
         </div>
       </section>
 
+      {/* ask the listing */}
+      <section id="ask" className="scroll-mt-20 px-6 py-16 md:py-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+          <AnimateIn>
+            <p className={eyebrow}>Ask the listing</p>
+            <h2 className={h2}>Buyers ask at midnight. This answers.</h2>
+            <p className={lede}>
+              This is the Listing Q&amp;A Assistant, live, loaded with the Laurel House details. Ask
+              it what a buyer would ask. When it doesn&apos;t know something, it says so and
+              hands the buyer to the agent.
+            </p>
+            <div className="relative mt-8 hidden aspect-[16/10] overflow-hidden rounded-2xl lg:block">
+              <Image
+                src="/robot/answering.webp"
+                alt="The West Robot at a laptop working through a stack of messages"
+                fill
+                sizes="480px"
+                className="object-cover"
+              />
+            </div>
+          </AnimateIn>
+          <AnimateIn delay={0.08}>
+            <ListingChat />
+          </AnimateIn>
+        </div>
+      </section>
+
       {/* what I build */}
       <section id="what-i-build" className="scroll-mt-20 px-6 py-16 md:py-24">
         <div className="mx-auto max-w-6xl">
@@ -379,8 +414,9 @@ export default function RealEstatePage() {
                                 <a
                                   key={l.href}
                                   href={l.href}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
+                                  {...(l.href.startsWith("#")
+                                    ? {}
+                                    : { target: "_blank", rel: "noopener noreferrer" })}
                                   className="text-sm font-bold text-[var(--crimson)] hover:text-[var(--crimson-light)]"
                                 >
                                   {l.label} <span aria-hidden="true">→</span>

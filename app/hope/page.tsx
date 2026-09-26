@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import AnimateIn from "../components/AnimateIn";
+import LoopClip from "../components/LoopClip";
 import HopeSubscribe from "./HopeSubscribe";
 import ReelGate from "./ReelGate";
 import WatchCard from "./WatchCard";
@@ -114,6 +115,12 @@ export default async function HopePage() {
                 priority
                 sizes="(min-width: 1024px) 560px, 92vw"
                 className="object-cover"
+              />
+              <LoopClip
+                src="/robot/loop-sunrise.mp4"
+                poster="/robot/sunrise.webp"
+                label="The West Robot watching the sun rise over Atlanta"
+                className="absolute inset-0 h-full w-full object-cover"
               />
             </div>
           </AnimateIn>

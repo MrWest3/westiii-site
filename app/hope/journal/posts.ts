@@ -1,8 +1,8 @@
 /**
  * westiii.com/hope/journal: essays behind the Hope page.
  *
- * Both posts are drafts pending David's approval. Flip a post's status to
- * "published" once he signs off on the copy.
+ * A post shows on the live site when its status is "published". Drafts render
+ * in `next dev` only.
  */
 
 export type Block =
@@ -32,11 +32,11 @@ export const posts: Post[] = [
     readMinutes: 4,
     image: "/robot/sunrise.webp",
     imageAlt: "A crowned red and white robot sits on a rooftop ledge, watching the sun come up over a city skyline",
-    status: "draft",
+    status: "published",
     blocks: [
       {
         type: "p",
-        text: "Recently, a former Anthropic and OpenAI researcher named Jacob Coxon went on CNN. The banner under him read: AI could \"kill us all by the end of the decade.\" If you saw that and it made you worried, good. If that's what it takes for you to take this seriously and actually pay attention, I'll take it.",
+        text: "Recently, a former Anthropic researcher went on CNN. The banner under him read: AI could \"kill us all by the end of the decade.\" If you saw that and it made you worried, good. If that's what it takes for you to take this seriously and actually pay attention, I'll take it.",
       },
       {
         type: "p",
@@ -146,7 +146,7 @@ export const posts: Post[] = [
     readMinutes: 5,
     image: "/robot/books.webp",
     imageAlt: "A crowned red and white robot sits on a stack of old books in a library, reading by lamplight",
-    status: "draft",
+    status: "published",
     blocks: [
       {
         type: "p",
@@ -190,7 +190,7 @@ export const posts: Post[] = [
       },
       {
         type: "p",
-        text: "In August 2026 the Stanford Digital Economy Lab found that workers aged 22 to 25 in the jobs most exposed to AI saw employment drop about 11% since late 2022. In less exposed jobs it grew about 10%. Experienced workers show no gap like that. It's coming from companies hiring fewer young people, and the authors say they don't see economy-wide job loss yet.",
+        text: "Research from the Stanford Digital Economy Lab found that since late 2022, workers aged 22 to 25 in the jobs most exposed to AI have been losing ground, while young workers in less exposed jobs kept growing. Experienced workers show no gap like that. It's coming from companies hiring fewer young people, and the authors say they don't see economy-wide job loss yet.",
       },
       {
         type: "p",
@@ -202,7 +202,7 @@ export const posts: Post[] = [
       },
       {
         type: "p",
-        text: "The date. He never shows the math behind a thousand days, which is how it can stretch from 800 to 1,200. His flagship example of a job AI makes obsolete is radiology. Geoffrey Hinton said in 2016 to stop training radiologists. In 2025 the average radiologist made $571,000, up 9% in a year, and the U.S. is short on them.",
+        text: "The date. He never shows the math behind a thousand days, which is how it can stretch from 800 to 1,200. His flagship example of a job AI makes obsolete is radiology. Geoffrey Hinton said in 2016 to stop training radiologists. Nearly ten years later, the U.S. is still short on them.",
       },
       {
         type: "p",

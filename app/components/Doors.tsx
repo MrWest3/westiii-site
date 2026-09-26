@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import AnimateIn from "./AnimateIn";
+import LoopClip from "./LoopClip";
 
 const doors = [
   {
@@ -9,6 +10,7 @@ const doors = [
     body: "One-on-one sessions with me. Bring your business or your job, and leave with the tools picked, set up, and a plan for next week.",
     stop: "It starts with a free 15-minute call: one thing you're stuck on, one fix.",
     image: "/robot/coaching.webp",
+    loop: "/robot/loop-coaching.mp4",
     imageAlt: "The West Robot coaching a business owner at her laptop",
     cta: { label: "How coaching works", href: "/coaching" },
   },
@@ -18,6 +20,7 @@ const doors = [
     body: "I find the hours your week is losing, then build AI that does that work. If the $999 assessment doesn't find you 5+ hours a week, you don't pay.",
     stop: "The $999 buys the full plan: every leak, what fixes it, and what it's worth in your own numbers.",
     image: "/robot/workbench.webp",
+    loop: "/robot/loop-workbench.mp4",
     imageAlt: "The West Robot building a small helper robot on a workbench",
     cta: { label: "See services", href: "/services" },
   },
@@ -47,6 +50,12 @@ export default function Doors() {
                     fill
                     sizes="(min-width: 768px) 560px, 92vw"
                     className="object-cover"
+                  />
+                  <LoopClip
+                    src={door.loop}
+                    poster={door.image}
+                    label={door.imageAlt}
+                    className="absolute inset-0 h-full w-full object-cover"
                   />
                 </div>
                 <div className="flex flex-1 flex-col gap-3 p-6 md:p-8">
