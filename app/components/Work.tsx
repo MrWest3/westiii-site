@@ -15,7 +15,7 @@ export default function Proof() {
             </AnimateIn>
             <AnimateIn delay={0.1}>
               <h2 className="max-w-2xl text-4xl font-black leading-tight tracking-tight text-[var(--ink)] md:text-5xl">
-                The work ships. The numbers hold up.
+                The work ships.
               </h2>
             </AnimateIn>
           </div>
@@ -30,9 +30,9 @@ export default function Proof() {
             </AnimateIn>
             <AnimateIn delay={0.15} direction="right">
               <div className="min-w-52 border-l-2 border-[var(--crimson)] pl-5">
-                <p className="text-4xl font-black text-[var(--ink)]">500</p>
+                <p className="text-4xl font-black text-[var(--ink)]">5</p>
                 <p className="mt-1 max-w-44 text-xs font-medium uppercase tracking-wide text-[var(--muted)]">
-                  Foreclosure addresses scored down to the 200 worth calling
+                  AI systems shipped and written up
                 </p>
               </div>
             </AnimateIn>
@@ -43,12 +43,19 @@ export default function Proof() {
 
         <AnimateIn delay={0.1}>
           <p className="mt-10 text-base text-[var(--ink-secondary)]">
-            I built a real estate investment firm a system that scored 500 foreclosure addresses down to the 200 worth calling. One extra close pays for it ten times over.{" "}
+            For a real estate investor, I built a system that checks every new foreclosure filing and ranks them, so the team starts each morning with a short list worth driving to.{" "}
+            <Link
+              href="/real-estate"
+              className="font-semibold text-[var(--crimson)] underline underline-offset-4"
+            >
+              See the real estate work
+            </Link>
+            {" "}or{" "}
             <Link
               href="/builds"
               className="font-semibold text-[var(--crimson)] underline underline-offset-4"
             >
-              See the builds
+              all the builds
             </Link>
             .
           </p>

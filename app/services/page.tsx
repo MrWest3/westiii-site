@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import AnimateIn from "../components/AnimateIn";
+import CostOfInaction from "../components/CostOfInaction";
 
 export const metadata: Metadata = {
-  title: "Offers",
+  title: "Services",
   description:
     "One public price: the $999 AI Assessment. We map how your business runs, you get a written plan in 48 hours, and I find you 5+ hours a week or you don't pay. What I build after that is scoped on what the assessment finds.",
+  openGraph: {
+    title: "Services | David West III",
+    url: "https://westiii.com/services",
+    images: [{ url: "/og/services.jpg", width: 1200, height: 630 }],
+  },
 };
 
 type Offer = {
@@ -19,6 +26,8 @@ type Offer = {
   dark: boolean;
   href?: string;
   muted?: boolean;
+  image: string;
+  imageAlt: string;
 };
 
 const offers: Offer[] = [
@@ -37,6 +46,9 @@ const offers: Offer[] = [
     start: "Book it. We start on the call.",
     cta: "Book the $999 Assessment",
     dark: false,
+
+    image: "/robot/magnify.webp",
+    imageAlt: "The West Robot studying a desk of clocks and paperwork through a magnifying glass",
   },
   {
     number: "02",
@@ -53,6 +65,9 @@ const offers: Offer[] = [
     start: "Assessment first. It tells us what your front door actually needs.",
     cta: "Start With the Assessment",
     dark: true,
+
+    image: "/robot/frontdesk.webp",
+    imageAlt: "The West Robot wearing a headset at a front desk",
   },
   {
     number: "03",
@@ -68,6 +83,9 @@ const offers: Offer[] = [
     start: "Assessment first. It finds where your leads are dying.",
     cta: "Start With the Assessment",
     dark: false,
+
+    image: "/robot/answering.webp",
+    imageAlt: "The West Robot at a laptop working through a stack of messages",
   },
   {
     number: "04",
@@ -85,6 +103,9 @@ const offers: Offer[] = [
     start: "Assessment first. It finds the role worth hiring for.",
     cta: "Start With the Assessment",
     dark: false,
+
+    image: "/robot/workbench.webp",
+    imageAlt: "The West Robot building a small helper robot on a workbench",
   },
   {
     number: "05",
@@ -101,6 +122,24 @@ const offers: Offer[] = [
     cta: "See AI Practice OS",
     href: "/practice-os",
     dark: false,
+
+    image: "/robot/whiteboard.webp",
+    imageAlt: "The West Robot teaching a small team at a whiteboard",
+  },
+];
+
+const prescriptions = [
+  {
+    title: "A tool that already exists",
+    body: "Sometimes the fix is an app you can buy today. I tell you which one and how to set it up.",
+  },
+  {
+    title: "AI that knows your business",
+    body: "Often the fix is Claude or ChatGPT set up with your services, customers, and voice, in files you own.",
+  },
+  {
+    title: "A custom build",
+    body: "When the job needs more, I quote it separately, and the $999 comes off the price.",
   },
 ];
 
@@ -111,7 +150,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-6xl">
           <AnimateIn>
             <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
-              Offers
+              Services
             </p>
           </AnimateIn>
           <AnimateIn delay={0.08}>
@@ -127,6 +166,41 @@ export default function ServicesPage() {
           <AnimateIn delay={0.2}>
             <p className="mt-7 border-l-2 border-[var(--crimson)] pl-5 text-base font-semibold text-[var(--ink)] sm:text-lg">
               Assessment first. I only build what the assessment proves you need.
+            </p>
+          </AnimateIn>
+        </div>
+      </section>
+
+      <section className="bg-[var(--surface)] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <AnimateIn>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
+              What the assessment prescribes
+            </p>
+            <h2 className="max-w-3xl text-4xl font-black leading-tight tracking-tight text-[var(--ink)] md:text-5xl">
+              Every fix lands in one of three buckets.
+            </h2>
+          </AnimateIn>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {prescriptions.map((item, index) => (
+              <AnimateIn key={item.title} delay={index * 0.06} className="h-full">
+                <div className="h-full rounded-2xl border border-[var(--border)] bg-white p-6">
+                  <h3 className="text-xl font-black text-[var(--ink)]">{item.title}</h3>
+                  <p className="mt-2 leading-relaxed text-[var(--ink-secondary)]">{item.body}</p>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+          <AnimateIn delay={0.1}>
+            <p className="mt-8 text-base text-[var(--ink-secondary)]">
+              Work in real estate?{" "}
+              <Link
+                href="/real-estate"
+                className="font-semibold text-[var(--crimson)] underline underline-offset-4"
+              >
+                See what I build for brokerages, builders, and investors
+              </Link>
+              .
             </p>
           </AnimateIn>
         </div>
@@ -162,6 +236,16 @@ export default function ServicesPage() {
                   <p className="mt-3 text-lg font-bold text-[var(--crimson-light)]">
                     {offer.price}
                   </p>
+
+                  <div className="relative mt-8 aspect-[16/10] overflow-hidden rounded-2xl">
+                    <Image
+                      src={offer.image}
+                      alt={offer.imageAlt}
+                      fill
+                      sizes="(min-width: 1024px) 460px, 92vw"
+                      className="object-cover"
+                    />
+                  </div>
 
                   <div className={`mt-9 border-t pt-7 ${borderColor}`}>
                     <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
@@ -222,6 +306,7 @@ export default function ServicesPage() {
         );
       })}
 
+      <CostOfInaction />
     </main>
   );
 }

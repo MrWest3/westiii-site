@@ -6,9 +6,12 @@
  * to three sentences, and keep every claim about a book to what it argues.
  */
 
-export const LAST_UPDATED = "September 13, 2026";
+export const LAST_UPDATED = "September 26, 2026";
 
-/** Swap for the reel's own URL once it is posted. */
+/**
+ * Swap for the reel's own URL once it is posted. The reel card only renders
+ * for visitors who arrive on /hope?ref=hope-reel (the comment-to-DM link).
+ */
 export const REEL_URL = "https://www.instagram.com/__dw3/";
 
 export type WatchItem = {
@@ -244,7 +247,7 @@ export type Idea = { line: string; note: string };
 export const ideas: Idea[] = [
   {
     line: "Anything over 1% is grounds for caution.",
-    note: "From the reel. Taking the risk seriously and staying hopeful are the same job.",
+    note: "From my P(doom) video. Taking the risk seriously and staying hopeful are the same job.",
   },
   {
     line: "Learn AI. Make others aware. Adapt. Prepare.",

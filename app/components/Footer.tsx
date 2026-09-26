@@ -4,14 +4,17 @@ import Link from "next/link";
 import { useNewsletterSubscription } from "./useNewsletterSubscription";
 
 const siteLinks = [
-  { label: "AI Employees", href: "/ai-employees" },
-  { label: "Offers", href: "/services" },
+  { label: "Coaching", href: "/coaching" },
+  { label: "Services", href: "/services" },
   { label: "The $999 Assessment", href: "/book" },
+  { label: "Real Estate", href: "/real-estate" },
+  { label: "AI Employees", href: "/ai-employees" },
   { label: "Creative", href: "/creative" },
   { label: "Workshops", href: "/workshops" },
+  { label: "Speaking", href: "/speaking" },
   { label: "Atlanta", href: "/atlanta" },
   { label: "Builds", href: "/builds" },
-  { label: "Speaking", href: "/speaking" },
+  { label: "Hope", href: "/hope" },
 ];
 
 const socials = [

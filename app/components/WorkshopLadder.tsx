@@ -18,9 +18,9 @@ const rungs = [
   {
     number: "01",
     title: "Public workshop",
-    price: "$495 a seat",
+    price: "Dates announced to the waitlist",
     body: "Four hours in Atlanta, 15 seats, laptop required. Everyone builds one working AI employee for the task they hate most, sets up one recurring job, and leaves with the exact setup in a shared doc.",
-    note: "Or the virtual version: three hours online, $97. Same build, smaller room.",
+    note: "There is a virtual version too: three hours online, same build, smaller room.",
   },
   {
     number: "02",
@@ -98,7 +98,7 @@ export default function WorkshopLadder() {
                 >
                   free 15-minute bottleneck call
                 </Link>{" "}
-                afterward, and the seat price is credited toward the{" "}
+                afterward, and what you paid for the seat is credited toward the{" "}
                 <Link
                   href="/book"
                   className="font-semibold text-[var(--ink)] underline decoration-[var(--crimson)] decoration-2 underline-offset-4 hover:text-[var(--crimson)]"

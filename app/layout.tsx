@@ -15,29 +15,31 @@ const geist = Geist({
 export const metadata: Metadata = {
   metadataBase: new URL("https://westiii.com"),
   title: {
-    default: "David West | AI Consultant in Atlanta | AI Assessments for Small Business",
+    default: "David West III | AI Coach and Consultant in Atlanta",
     template: "%s | David West III",
   },
   description:
-    "I'm an AI consultant in Atlanta. My $999 assessment finds 5+ hours you can reclaim every week, in 48 hours, or you don't pay.",
+    "I make AI easy. One-on-one AI coaching, and AI built for your business, starting with a $999 assessment that finds you 5+ hours a week or you don't pay.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "David West | AI Consultant in Atlanta | AI Assessments for Small Business",
+    title: "David West III | AI Coach and Consultant in Atlanta",
     description:
-      "I'm an AI consultant in Atlanta. My $999 assessment finds 5+ hours you can reclaim every week, in 48 hours, or you don't pay.",
+      "I make AI easy. One-on-one AI coaching, and AI built for your business, starting with a $999 assessment that finds you 5+ hours a week or you don't pay.",
     url: "https://westiii.com",
     siteName: "David West III",
     type: "website",
     locale: "en_US",
+    images: [{ url: "/og/home.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "David West | AI Consultant in Atlanta | AI Assessments for Small Business",
+    title: "David West III | AI Coach and Consultant in Atlanta",
     description:
-      "I'm an AI consultant in Atlanta. My $999 assessment finds 5+ hours you can reclaim every week, in 48 hours, or you don't pay.",
+      "I make AI easy. One-on-one AI coaching, and AI built for your business, starting with a $999 assessment that finds you 5+ hours a week or you don't pay.",
     creator: "@___DW3",
+    images: ["/og/home.jpg"],
   },
 };
 

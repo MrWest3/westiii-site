@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import AnimateIn from "../components/AnimateIn";
 import HopeSubscribe from "./HopeSubscribe";
+import ReelGate from "./ReelGate";
+import WatchCard from "./WatchCard";
+import { formatDate, visiblePosts } from "./journal/lib";
 import { fetchLatest } from "./latest";
 import {
-  AI_2040_URL,
   LAST_UPDATED,
   books,
   channels,
@@ -25,6 +28,7 @@ export const metadata: Metadata = {
     description:
       "The podcasts, books, people, and ideas that let me picture a good future with AI.",
     url: "https://westiii.com/hope",
+    images: [{ url: "/og/hope.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -33,6 +37,7 @@ const eyebrow =
 const h2 =
   "max-w-3xl text-4xl font-black leading-tight tracking-tight text-[var(--ink)] md:text-5xl";
 const card = "rounded-2xl border border-[var(--border)] bg-white";
+const [reelItem, ...watchItems] = startHere;
 const outLink =
   "inline-flex items-center gap-1 text-sm font-bold text-[var(--crimson)] transition-colors hover:text-[var(--crimson-light)]";
 
@@ -54,48 +59,63 @@ function External({
 
 export default async function HopePage() {
   const latest = await Promise.all(channels.map((c) => fetchLatest(c.channelId)));
+  const posts = visiblePosts();
 
   return (
     <main className="overflow-hidden bg-white">
       {/* hero */}
-      <section className="border-b border-[var(--border)] px-6 py-14 sm:py-16 md:py-20">
-        <div className="mx-auto max-w-6xl">
-          <AnimateIn>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
-              westiii.com/hope
-            </p>
-          </AnimateIn>
-          <AnimateIn delay={0.08}>
-            <h1 className="max-w-4xl text-5xl font-black leading-[0.95] tracking-tight text-[var(--ink)] sm:text-6xl md:text-7xl">
-              The blueprint to a{" "}
-              <span className="text-[var(--crimson)]">desirable future.</span>
-            </h1>
-          </AnimateIn>
-          <AnimateIn delay={0.14}>
-            <p className="mt-5 max-w-2xl text-lg font-medium leading-snug text-[var(--ink-secondary)] sm:text-xl md:mt-6 md:text-2xl">
-              The future you can picture is the only one you can build. This page is the
-              feed that lets me picture a good one. Podcasts, books, people, and ideas,
-              updated as I find them.
-            </p>
-          </AnimateIn>
-          <AnimateIn delay={0.2}>
-            <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
-              <a
-                href="#start"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-[var(--crimson)] px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[var(--crimson-light)]"
-              >
-                Start here <span aria-hidden="true">→</span>
-              </a>
-              <a
-                href="#entries"
-                className="inline-flex min-h-12 items-center justify-center rounded border border-[var(--border)] px-6 py-3.5 text-sm font-semibold text-[var(--ink)] transition-colors hover:border-[var(--gold)]"
-              >
-                Get new entries by email
-              </a>
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#1b0d08] via-[#3b1a0e] to-[#8a4a1f] px-6 py-14 text-white sm:py-16 md:py-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
+          <div>
+            <AnimateIn>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
+                Hope
+              </p>
+            </AnimateIn>
+            <AnimateIn delay={0.08}>
+              <h1 className="max-w-3xl text-5xl font-black leading-[0.95] tracking-tight sm:text-6xl md:text-7xl">
+                The blueprint to a{" "}
+                <span className="text-[var(--gold)]">desirable future.</span>
+              </h1>
+            </AnimateIn>
+            <AnimateIn delay={0.14}>
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/80 md:mt-6 md:text-xl">
+                The future you can picture is the only one you can build. This is the feed that
+                lets me picture a good one: podcasts, books, people, ideas, and a journal on
+                where AI is taking us.
+              </p>
+            </AnimateIn>
+            <AnimateIn delay={0.2}>
+              <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+                <a
+                  href="#start"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-[var(--gold)] px-6 py-3.5 text-sm font-bold text-[var(--ink)] transition-opacity hover:opacity-90"
+                >
+                  Start here <span aria-hidden="true">→</span>
+                </a>
+                <a
+                  href={posts.length > 0 ? "#journal" : "#entries"}
+                  className="inline-flex min-h-12 items-center justify-center rounded border border-white/30 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:border-[var(--gold)] hover:text-[var(--gold)]"
+                >
+                  {posts.length > 0 ? "Read the journal" : "Get new entries by email"}
+                </a>
+              </div>
+              <p className="mt-5 text-xs font-semibold uppercase tracking-widest text-white/50">
+                Last entry added {LAST_UPDATED}
+              </p>
+            </AnimateIn>
+          </div>
+          <AnimateIn delay={0.1} direction="right">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-2xl">
+              <Image
+                src="/robot/sunrise.webp"
+                alt="The West Robot sitting on a rooftop ledge, watching the sun rise over Atlanta"
+                fill
+                priority
+                sizes="(min-width: 1024px) 560px, 92vw"
+                className="object-cover"
+              />
             </div>
-            <p className="mt-5 text-xs font-semibold uppercase tracking-widest text-[var(--muted)]">
-              Last entry added {LAST_UPDATED}
-            </p>
           </AnimateIn>
         </div>
       </section>
@@ -132,92 +152,72 @@ export default async function HopePage() {
         </div>
       </section>
 
+      {/* journal */}
+      {posts.length > 0 && (
+        <section id="journal" className="scroll-mt-20 px-6 py-16 md:py-24">
+          <div className="mx-auto max-w-6xl">
+            <AnimateIn>
+              <p className={eyebrow}>Journal</p>
+              <h2 className={`${h2} mb-10`}>Where I think this is going.</h2>
+            </AnimateIn>
+            <div className="grid gap-5 md:grid-cols-2">
+              {posts.map((post, index) => (
+                <AnimateIn key={post.slug} delay={index * 0.06} className="h-full">
+                  <Link
+                    href={`/hope/journal/${post.slug}`}
+                    className={`${card} group flex h-full flex-col overflow-hidden transition-colors hover:border-[var(--crimson)]`}
+                  >
+                    <div className="relative aspect-[16/8]">
+                      <Image
+                        src={post.image}
+                        alt={post.imageAlt}
+                        fill
+                        sizes="(min-width: 768px) 560px, 92vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="flex flex-1 flex-col gap-2 p-6">
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-[var(--muted)]">
+                        {formatDate(post.date)} · {post.readMinutes} min read
+                        {post.status === "draft" && (
+                          <span className="ml-2 rounded bg-[var(--gold)] px-1.5 py-0.5 text-[var(--ink)]">
+                            Draft
+                          </span>
+                        )}
+                      </p>
+                      <h3 className="text-2xl font-black leading-tight text-[var(--ink)] group-hover:text-[var(--crimson)]">
+                        {post.title}
+                      </h3>
+                      <p className="leading-relaxed text-[var(--ink-secondary)]">{post.dek}</p>
+                    </div>
+                  </Link>
+                </AnimateIn>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* start here */}
       <section id="start" className="scroll-mt-20 px-6 py-16 md:py-24">
         <div className="mx-auto max-w-6xl">
           <AnimateIn>
             <p className={eyebrow}>Start here</p>
-            <h2 className={`${h2} mb-10`}>Four things to watch before you read anything.</h2>
+            <h2 className={`${h2} mb-10`}>Watch these before you read anything.</h2>
           </AnimateIn>
+          <Suspense fallback={null}>
+            <ReelGate>
+              <WatchCard item={reelItem} />
+            </ReelGate>
+          </Suspense>
           <div className="grid gap-5 md:grid-cols-2">
-            {startHere.map((item, index) => (
-              <AnimateIn key={item.title} delay={index * 0.06}>
-                <article className={`${card} flex h-full flex-col gap-4 p-5`}>
-                  {item.layout === "portrait" ? (
-                    <div className="flex flex-col gap-5 sm:flex-row">
-                      <div className="relative aspect-video w-full overflow-hidden rounded-xl sm:aspect-auto sm:h-[268px] sm:w-[152px] sm:shrink-0">
-                        <Image
-                          src={item.image}
-                          alt={item.imageAlt}
-                          fill
-                          sizes="(min-width: 640px) 152px, 90vw"
-                          priority
-                          className="object-cover object-[50%_45%]"
-                        />
-                      </div>
-                      <div className="flex flex-col justify-center gap-3">
-                        <p className="text-[11px] font-bold uppercase tracking-widest text-[var(--gold)]">
-                          {item.kind}
-                        </p>
-                        <h3 className="text-2xl font-black leading-tight text-[var(--ink)]">
-                          {item.title}
-                        </h3>
-                        <p className="leading-relaxed text-[var(--ink-secondary)]">{item.body}</p>
-                        <External href={item.href} className={outLink}>
-                          {item.linkLabel} <span aria-hidden="true">→</span>
-                        </External>
-                      </div>
-                    </div>
-                  ) : (
-                    <>
-                      {item.layout === "pair" && item.secondImage ? (
-                        <div className="grid grid-cols-2 gap-2">
-                          {[item.image, item.secondImage].map((src) => (
-                            <div
-                              key={src}
-                              className="relative aspect-[4/3] overflow-hidden rounded-lg border border-[var(--border)]"
-                            >
-                              <Image
-                                src={src}
-                                alt={item.imageAlt}
-                                fill
-                                sizes="(min-width: 768px) 280px, 45vw"
-                                className="object-cover object-left-top"
-                              />
-                            </div>
-                          ))}
-                        </div>
-                      ) : (
-                        <div className="relative aspect-video overflow-hidden rounded-lg">
-                          <Image
-                            src={item.image}
-                            alt={item.imageAlt}
-                            fill
-                            sizes="(min-width: 768px) 560px, 90vw"
-                            className="object-cover"
-                          />
-                        </div>
-                      )}
-                      <p className="text-[11px] font-bold uppercase tracking-widest text-[var(--gold)]">
-                        {item.kind}
-                      </p>
-                      <h3 className="text-xl font-black leading-tight text-[var(--ink)] md:text-2xl">
-                        {item.title}
-                      </h3>
-                      <p className="leading-relaxed text-[var(--ink-secondary)]">{item.body}</p>
-                      <div className="flex flex-wrap gap-x-6 gap-y-2">
-                        <External href={item.href} className={outLink}>
-                          {item.linkLabel} <span aria-hidden="true">→</span>
-                        </External>
-                        {item.layout === "pair" && (
-                          <External href={AI_2040_URL} className={outLink}>
-                            ai-2040.com <span aria-hidden="true">→</span>
-                          </External>
-                        )}
-                      </div>
-                    </>
-                  )}
-                </article>
+            {watchItems.map((item, index) => (
+              <AnimateIn
+                key={item.title}
+                delay={index * 0.06}
+                className={item.layout === "pair" ? "md:col-span-2" : ""}
+              >
+                <WatchCard item={item} />
               </AnimateIn>
             ))}
           </div>
@@ -227,10 +227,23 @@ export default async function HopePage() {
       {/* books */}
       <section id="books" className="scroll-mt-20 bg-[var(--surface)] px-6 py-16 md:py-24">
         <div className="mx-auto max-w-6xl">
-          <AnimateIn>
-            <p className={eyebrow}>Books</p>
-            <h2 className={`${h2} mb-10`}>Ten books. Start with the newest one I read.</h2>
-          </AnimateIn>
+          <div className="mb-10 grid items-center gap-8 md:grid-cols-[1fr_280px]">
+            <AnimateIn>
+              <p className={eyebrow}>Books</p>
+              <h2 className={h2}>Ten books. Start with the newest one I read.</h2>
+            </AnimateIn>
+            <AnimateIn delay={0.08} direction="right">
+              <div className="relative mx-auto aspect-square w-56 overflow-hidden rounded-2xl md:w-full">
+                <Image
+                  src="/robot/books.webp"
+                  alt="The West Robot reading on top of a stack of books"
+                  fill
+                  sizes="280px"
+                  className="object-cover"
+                />
+              </div>
+            </AnimateIn>
+          </div>
 
           <AnimateIn>
             <article className="mb-5 grid gap-8 rounded-2xl border border-[var(--gold)] bg-white p-6 md:grid-cols-[260px_minmax(0,1fr)] md:items-center md:p-8">

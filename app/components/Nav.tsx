@@ -5,13 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { FREE_CALL_URL } from "../lib/links";
+
 const links = [
-  { label: "Home", href: "/" },
-  { label: "AI Employees", href: "/ai-employees" },
-  { label: "Offers", href: "/services" },
-  { label: "Creative", href: "/creative" },
-  { label: "Workshops", href: "/workshops" },
-  { label: "Atlanta", href: "/atlanta" },
+  { label: "Coaching", href: "/coaching" },
+  { label: "Services", href: "/services" },
+  { label: "Real Estate", href: "/real-estate" },
+  { label: "Work", href: "/builds" },
   { label: "Hope", href: "/hope" },
 ];
 
@@ -63,7 +63,7 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                aria-current={pathname === link.href ? "page" : undefined}
+                aria-current={pathname.startsWith(link.href) ? "page" : undefined}
                 className={`text-sm font-medium transition-colors duration-200 ${
                   useSolidNav
                     ? "text-[var(--ink-secondary)] hover:text-[var(--crimson)]"
@@ -73,12 +73,14 @@ export default function Nav() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/book"
+            <a
+              href={FREE_CALL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm font-semibold px-4 py-2 bg-[var(--crimson)] text-white rounded hover:bg-[var(--crimson-light)] transition-colors duration-200"
             >
-              Book Your Assessment
-            </Link>
+              Book a free call
+            </a>
           </nav>
 
           {/* Mobile menu button */}
@@ -119,20 +121,22 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                aria-current={pathname === link.href ? "page" : undefined}
+                aria-current={pathname.startsWith(link.href) ? "page" : undefined}
                 onClick={() => setMenuOpen(false)}
                 className="text-sm font-medium text-[var(--ink-secondary)] hover:text-[var(--crimson)]"
               >
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/book"
+            <a
+              href={FREE_CALL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
               className="text-sm font-semibold px-4 py-2 bg-[var(--crimson)] text-white rounded text-center"
             >
-              Book Your Assessment
-            </Link>
+              Book a free call
+            </a>
           </nav>
         )}
       </header>

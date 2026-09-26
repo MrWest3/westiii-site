@@ -1,12 +1,9 @@
 import IdentityHero from "./components/IdentityHero";
-import Lanes from "./components/Lanes";
-import HowItWorks from "./components/HowItWorks";
-import AiEmployees from "./components/AiEmployees";
-import CostOfInaction from "./components/CostOfInaction";
-import Offers from "./components/Offers";
+import Doors from "./components/Doors";
+import WhatIDo from "./components/WhatIDo";
+import RealEstateSpotlight from "./components/RealEstateSpotlight";
 import Proof from "./components/Work";
-import About from "./components/About";
-import WorkshopsStrip from "./components/WorkshopsStrip";
+import HopeStrip from "./components/HopeStrip";
 import Connect from "./components/Connect";
 
 const aiAssessmentSchema = {
@@ -41,14 +38,11 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aiAssessmentSchema) }}
       />
       <IdentityHero />
-      <Lanes />
-      <HowItWorks />
-      <AiEmployees />
-      <CostOfInaction />
-      <Offers />
+      <Doors />
+      <WhatIDo />
+      <RealEstateSpotlight />
       <Proof />
-      <About />
-      <WorkshopsStrip />
+      <HopeStrip />
       <Connect />
     </main>
   );
