@@ -59,6 +59,21 @@ const clips = [
   { id: "twilight", label: "Twilight" },
 ];
 
+const reels = [
+  {
+    src: "/real-estate/reel.mp4",
+    poster: "/real-estate/reel-poster.jpg",
+    title: "The listing film, cut vertical",
+    body: "21 seconds of AI motion made from the listing photos. Built one listing at a time.",
+  },
+  {
+    src: "/real-estate/template-reel.mp4",
+    poster: "/real-estate/template-reel-poster.jpg",
+    title: "The Listing Reel Template",
+    body: "30 seconds, rendered in about a minute from photos and details. Your brand is built in once, then every listing gets one.",
+  },
+];
+
 type Offer = {
   name: string;
   body: string;
@@ -85,6 +100,7 @@ const groups: {
         name: "Listing Reel Template",
         body: "Your brand gets built into a reel template once. After that, every new listing gets its own 30-second reel from its photos and details.",
         forWho: ["Brokerages", "Teams"],
+        links: [{ label: "See a sample", href: "#reels" }],
       },
       {
         name: "Listing Film",
@@ -301,31 +317,40 @@ export default function RealEstatePage() {
         </div>
       </section>
 
-      {/* reel */}
-      <section className="bg-[var(--surface)] px-6 py-16 md:py-24">
-        <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-[auto_1fr] md:gap-16">
+      {/* reels */}
+      <section id="reels" className="scroll-mt-20 bg-[var(--surface)] px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl">
           <AnimateIn>
-            <div className="mx-auto w-[240px] overflow-hidden rounded-[2.2rem] border-[7px] border-[var(--ink)] bg-[var(--ink)] shadow-2xl">
-              <video
-                src="/real-estate/reel.mp4"
-                poster="/real-estate/reel-poster.jpg"
-                controls
-                playsInline
-                preload="none"
-                className="aspect-[9/16] w-full object-cover"
-              >
-                <track kind="captions" />
-              </video>
-            </div>
-          </AnimateIn>
-          <AnimateIn delay={0.08}>
-            <p className={eyebrow}>The reel</p>
-            <h2 className={h2}>21 seconds, cut for Instagram.</h2>
+            <p className={eyebrow}>The reels</p>
+            <h2 className={h2}>Two ways to put a listing on Instagram.</h2>
             <p className={lede}>
-              The same house, cut vertical for social and ready to post the day the listing goes
-              live. This is the format the Listing Reel Template makes for every new listing.
+              Same house, cut vertical for social. The film is made for the listings that
+              deserve it. The template makes one for every listing, in your brand, from the photos
+              and details alone.
             </p>
           </AnimateIn>
+          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:gap-16">
+            {reels.map((reel, index) => (
+              <AnimateIn key={reel.src} delay={index * 0.08}>
+                <div className="mx-auto w-[230px] overflow-hidden rounded-[2.2rem] border-[7px] border-[var(--ink)] bg-[var(--ink)] shadow-2xl">
+                  <video
+                    src={reel.src}
+                    poster={reel.poster}
+                    controls
+                    playsInline
+                    preload="none"
+                    className="aspect-[9/16] w-full object-cover"
+                  >
+                    <track kind="captions" />
+                  </video>
+                </div>
+                <div className="mx-auto mt-6 max-w-sm text-center">
+                  <h3 className="text-xl font-black text-[var(--ink)]">{reel.title}</h3>
+                  <p className="mt-1.5 leading-relaxed text-[var(--ink-secondary)]">{reel.body}</p>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
         </div>
       </section>
 
