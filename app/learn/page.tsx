@@ -148,11 +148,11 @@ export default function LearnPage() {
                   controls
                   playsInline
                   preload="none"
-                  aria-label="Six students from my live class, each describing my teaching in one word"
+                  aria-label="Five students from my live class, each describing my teaching in one word"
                 />
               </div>
               <figcaption className="mt-3 text-center text-sm text-[var(--muted)]">
-                Six students, three classes, the same word.
+                Five students, three classes, the same word.
               </figcaption>
             </figure>
           </AnimateIn>
