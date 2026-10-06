@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import AnimateIn from "../components/AnimateIn";
 import AtlantaMeetup from "../components/AtlantaMeetup";
 import WorkshopLadder from "../components/WorkshopLadder";
+import { FREE_CALL_URL } from "../lib/links";
 
 export const metadata: Metadata = {
   title: "Workshops",
@@ -11,7 +12,6 @@ export const metadata: Metadata = {
 
 const MAILTO =
   "mailto:StudioWest3@proton.me?subject=AI%20Workshop%20Inquiry";
-const CALENDLY_URL = "https://calendly.com/davidawest25/ai-audit";
 
 const formats = [
   {
@@ -153,19 +153,19 @@ export default function WorkshopsPage() {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href={MAILTO}
+                  href="/learn#for-team"
                   className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-[var(--crimson)] px-6 py-3.5 text-center text-sm font-semibold text-white transition-colors duration-200 hover:bg-[var(--crimson-light)]"
                 >
-                  Email Me About a Workshop
+                  Tell me about your team
                   <span aria-hidden="true">→</span>
                 </a>
                 <a
-                  href={CALENDLY_URL}
+                  href={FREE_CALL_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex min-h-12 items-center justify-center gap-2 rounded border border-[var(--ink)] px-6 py-3.5 text-center text-sm font-semibold text-[var(--ink)] transition-colors duration-200 hover:border-[var(--crimson)] hover:text-[var(--crimson)]"
                 >
-                  Book an Intro Call
+                  Book a free call
                   <span aria-hidden="true">→</span>
                 </a>
               </div>

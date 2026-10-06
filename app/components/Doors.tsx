@@ -5,14 +5,14 @@ import LoopClip from "./LoopClip";
 
 const doors = [
   {
-    eyebrow: "Coaching",
+    eyebrow: "Learn",
     title: "Learn to do it yourself.",
-    body: "One-on-one sessions with me. Bring your business or your job, and leave with the tools picked, set up, and a plan for next week.",
-    stop: "It starts with a free 15-minute call: one thing you're stuck on, one fix.",
+    body: "Training for your team, live Saturday classes for owners, or one-on-one coaching. Last month I taught 100+ business owners to build with AI.",
+    stop: "If you can't tell which fits, the free 15-minute call sorts it out.",
     image: "/robot/coaching.webp",
     loop: "/robot/loop-coaching.mp4",
     imageAlt: "The West Robot coaching a business owner at her laptop",
-    cta: { label: "How coaching works", href: "/coaching" },
+    cta: { label: "Ways to learn with me", href: "/learn" },
   },
   {
     eyebrow: "Services",

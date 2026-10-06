@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import { FREE_CALL_URL } from "../lib/links";
 
 const links = [
-  { label: "Coaching", href: "/coaching" },
+  { label: "Learn", href: "/learn" },
   { label: "Services", href: "/services" },
   { label: "Real Estate", href: "/real-estate" },
   { label: "Work", href: "/builds" },
