@@ -10,7 +10,9 @@ type Gate = {
 };
 
 const GateContext = createContext<Gate | null>(null);
-const STORE_KEY = "westiii-learn-prices";
+
+/** Pages with gated prices. Each has its own table in /api/prices. */
+export type PricePage = "learn" | "brands";
 
 function readRef(): string {
   try {
@@ -21,34 +23,36 @@ function readRef(): string {
 }
 
 /**
- * Prices on /learn sit behind one email. Unlocking any card unlocks every card,
- * and the browser remembers it so a returning visitor isn't asked twice.
+ * Prices on /learn and /brands sit behind one email. Unlocking any card unlocks
+ * every card on that page, and the browser remembers it so a returning visitor
+ * isn't asked twice.
  */
-export function PriceProvider({ children }: { children: React.ReactNode }) {
+export function PriceProvider({ children, page = "learn" }: { children: React.ReactNode; page?: PricePage }) {
   const [prices, setPrices] = useState<Prices | null>(null);
+  const storeKey = `westiii-${page}-prices`;
 
   useEffect(() => {
     try {
-      const saved = localStorage.getItem(STORE_KEY);
+      const saved = localStorage.getItem(storeKey);
       if (saved) setPrices(JSON.parse(saved));
     } catch {
       // private window or blocked storage: they just enter the email again
     }
-  }, []);
+  }, [storeKey]);
 
   async function unlock(email: string, from: string) {
     try {
       const res = await fetch("/api/prices", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, from, ref: readRef() }),
+        body: JSON.stringify({ email, from, page, ref: readRef() }),
       });
       if (!res.ok) return false;
       const data = (await res.json()) as { prices?: Prices };
       if (!data.prices) return false;
       setPrices(data.prices);
       try {
-        localStorage.setItem(STORE_KEY, JSON.stringify(data.prices));
+        localStorage.setItem(storeKey, JSON.stringify(data.prices));
       } catch {}
       return true;
     } catch {

@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/services`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/speaking`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/workshops`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/brands`, changeFrequency: "monthly", priority: 0.6 },
     ...visiblePosts()
       .filter((post) => post.status === "published")
       .map((post) => ({
