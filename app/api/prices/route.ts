@@ -19,6 +19,7 @@ const PRICES = {
   brands: {
     demo: "From $750",
     episode: "From $1,000",
+    creative: "From $1,500",
   },
 } as const;
 

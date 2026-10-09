@@ -5,18 +5,21 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const FALLBACK_EMAIL = "StudioWest3@proton.me";
 
-type Want = "demo" | "episode" | "unsure";
+type Want = "demo" | "episode" | "creative" | "unsure";
 
-// The offer cards on /brands link to #for-demo or #for-episode. Those anchors
-// sit on top of this form, so the page scrolls here with the dropdown set.
+// The offer cards on /brands link to #for-demo, #for-episode or #for-creative.
+// Those anchors sit on top of this form, so the page scrolls here with the
+// dropdown set.
 const HASH_TO_WANT: Record<string, Want> = {
   "#for-demo": "demo",
   "#for-episode": "episode",
+  "#for-creative": "creative",
 };
 
 const WANT_LABELS: Record<Want, string> = {
   demo: "A demo ad for our accounts",
   episode: "A sponsored episode on your page",
+  creative: "A piece made with our AI tool",
   unsure: "Not sure yet",
 };
 

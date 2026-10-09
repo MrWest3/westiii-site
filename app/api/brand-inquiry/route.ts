@@ -17,6 +17,7 @@ const redis = Redis.fromEnv();
 const WANTS = {
   demo: "DEMO AD",
   episode: "SPONSORED EPISODE",
+  creative: "MADE WITH YOUR TOOL",
   unsure: "NOT SURE YET",
 } as const;
 
