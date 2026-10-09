@@ -10,11 +10,11 @@ import { FREE_CALL_URL } from "../lib/links";
 export const metadata: Metadata = {
   title: "Learn AI",
   description:
-    "AI training for teams and live Saturday classes for business owners, taught by David West III. Last month he taught 100+ business owners to build with AI.",
+    "AI training for teams and live Wednesday classes for business owners, taught by David West III. Last month he taught 100+ business owners to build with AI.",
   alternates: { canonical: "/learn" },
   openGraph: {
     title: "I teach AI to people who say they're not computer people",
-    description: "Team labs, rollouts, talks, and live Saturday classes. Tell David what you want AI to fix.",
+    description: "Team labs, rollouts, talks, and live Wednesday classes. Tell David what you want AI to fix.",
     url: "https://westiii.com/learn",
     images: [{ url: "/og/coaching.jpg", width: 1200, height: 630 }],
   },
@@ -73,8 +73,8 @@ const teamCards: Card[] = [
 const classCards: Card[] = [
   {
     eyebrow: "Monthly",
-    title: "Saturday Session",
-    body: "Three hours on Zoom. You leave with AI that knows your business and your first skill built. Next one: Saturday, November 14.",
+    title: "Wednesday Session",
+    body: "Three hours on Zoom. You leave with AI that knows your business and your first skill built. Next one: Wednesday, November 11.",
     image: "/robot/coaching.webp",
     loop: "/robot/loop-coaching.mp4",
     alt: "The West Robot coaching a business owner at her laptop",
@@ -160,7 +160,7 @@ export default function LearnPage() {
               <AnimateIn delay={0.14}>
                 <p className="mt-6 max-w-xl text-lg leading-relaxed text-[var(--ink-secondary)]">
                   Last month I taught 100+ business owners, most of them over 40, to build with AI. I bring that
-                  class to teams, and I run my own on Saturdays.
+                  class to teams, and I run my own on Wednesdays.
                 </p>
               </AnimateIn>
               <AnimateIn delay={0.2}>
@@ -304,7 +304,7 @@ export default function LearnPage() {
           <div className="mx-auto max-w-6xl">
             <AnimateIn>
               <p className={eyebrow}>For owners</p>
-              <h2 className={h2}>Learn with me on Saturdays.</h2>
+              <h2 className={h2}>Learn with me live.</h2>
               <p className={lede}>Small live classes. You build on your own business while I walk you through it.</p>
             </AnimateIn>
 

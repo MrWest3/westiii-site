@@ -7,7 +7,7 @@ const doors = [
   {
     eyebrow: "Learn",
     title: "Learn to do it yourself.",
-    body: "Training for your team, live Saturday classes for owners, or one-on-one coaching. Last month I taught 100+ business owners to build with AI.",
+    body: "Training for your team, live Wednesday classes for owners, or one-on-one coaching. Last month I taught 100+ business owners to build with AI.",
     stop: "If you can't tell which fits, the free 15-minute call sorts it out.",
     image: "/robot/coaching.webp",
     loop: "/robot/loop-coaching.mp4",
