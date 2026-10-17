@@ -10,7 +10,7 @@ const redis = Redis.fromEnv();
 // for them, and that email is a warm lead. One table per gated page.
 const PRICES = {
   learn: {
-    lab: "From $1,500",
+    lab: "From $1,500 · $2,500 with your CRM connected",
     rollout: "From $7,500",
     gpt: "$1,500",
     session: "$97",

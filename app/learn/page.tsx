@@ -49,7 +49,7 @@ type Card = {
 const teamCards: Card[] = [
   {
     title: "Team Lab",
-    body: "90 minutes, up to 15 people. Everyone leaves with AI set up and one skill they built.",
+    body: "90 minutes, up to 15 people. Everyone leaves with AI set up and one skill they built. Want it reading your leads? I can connect it to the CRM you already use (Follow Up Boss, Lofty, BoldTrail or GoHighLevel).",
     image: "/robot/whiteboard.webp",
     alt: "The West Robot teaching a small team at a whiteboard",
     price: "lab",
