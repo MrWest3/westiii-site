@@ -3,6 +3,7 @@ import { after } from "next/server";
 import { Redis } from "@upstash/redis";
 import { sendNotification } from "../../lib/notify";
 import { cleanEmail, cleanOptionalText, invalid, rateLimitForm, readJson } from "../../lib/formGuard";
+import { checkRealEmail } from "../../lib/realEmail";
 
 const redis = Redis.fromEnv();
 
@@ -51,6 +52,12 @@ export async function POST(req: NextRequest) {
         ? (body.page as Page)
         : null;
   if (!email || !page) return invalid();
+
+  // Prices are traded for a reachable inbox, so fakes get a reason back instead of the prices.
+  const check = await checkRealEmail(email);
+  if (!check.ok) {
+    return NextResponse.json({ error: "email", reason: check.reason, suggestion: check.suggestion ?? null }, { status: 422 });
+  }
 
   await redis.rpush(
     "west-price-unlocks",

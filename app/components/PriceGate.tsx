@@ -4,9 +4,11 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 type Prices = Record<string, string>;
 
+type Unlock = { ok: true } | { ok: false; reason?: string; suggestion?: string | null };
+
 type Gate = {
   prices: Prices | null;
-  unlock: (email: string, from: string) => Promise<boolean>;
+  unlock: (email: string, from: string) => Promise<Unlock>;
 };
 
 const GateContext = createContext<Gate | null>(null);
@@ -40,28 +42,37 @@ export function PriceProvider({ children, page = "learn" }: { children: React.Re
     }
   }, [storeKey]);
 
-  async function unlock(email: string, from: string) {
+  async function unlock(email: string, from: string): Promise<Unlock> {
     try {
       const res = await fetch("/api/prices", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, from, page, ref: readRef() }),
       });
-      if (!res.ok) return false;
+      if (!res.ok) {
+        const err = (await res.json().catch(() => ({}))) as { reason?: string; suggestion?: string | null };
+        return { ok: false, reason: err.reason, suggestion: err.suggestion };
+      }
       const data = (await res.json()) as { prices?: Prices };
-      if (!data.prices) return false;
+      if (!data.prices) return { ok: false };
       setPrices(data.prices);
       try {
         localStorage.setItem(storeKey, JSON.stringify(data.prices));
       } catch {}
-      return true;
+      return { ok: true };
     } catch {
-      return false;
+      return { ok: false };
     }
   }
 
   return <GateContext.Provider value={{ prices, unlock }}>{children}</GateContext.Provider>;
 }
+
+const ERROR_TEXT: Record<string, string> = {
+  placeholder: "Use the email you actually check and the prices show up right away.",
+  disposable: "That looks like a temporary inbox. Use the email you actually check.",
+  no_mail: "That email can't receive mail. Check the spelling and try again.",
+};
 
 /** One price slot on a card: the price once unlocked, else a "See the price" step. */
 export function Price({ id }: { id: string }) {
@@ -69,6 +80,7 @@ export function Price({ id }: { id: string }) {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
+  const [problem, setProblem] = useState<{ reason?: string; suggestion?: string | null }>({});
 
   if (!gate) return null;
   const price = gate.prices?.[id];
@@ -93,8 +105,13 @@ export function Price({ id }: { id: string }) {
     e.preventDefault();
     if (!gate) return;
     setStatus("loading");
-    const ok = await gate.unlock(email, id);
-    setStatus(ok ? "idle" : "error");
+    const result = await gate.unlock(email, id);
+    if (result.ok) {
+      setStatus("idle");
+    } else {
+      setProblem({ reason: result.reason, suggestion: result.suggestion });
+      setStatus("error");
+    }
   }
 
   const inputId = `price-email-${id}`;
@@ -126,7 +143,24 @@ export function Price({ id }: { id: string }) {
       </div>
       {status === "error" ? (
         <p className="text-sm text-[var(--crimson)]" role="alert">
-          That didn&apos;t go through. Check the email and try again.
+          {problem.reason === "typo" && problem.suggestion ? (
+            <>
+              Did you mean{" "}
+              <button
+                type="button"
+                onClick={() => {
+                  setEmail(problem.suggestion ?? "");
+                  setStatus("idle");
+                }}
+                className="font-semibold underline underline-offset-2"
+              >
+                {problem.suggestion}
+              </button>
+              ?
+            </>
+          ) : (
+            ERROR_TEXT[problem.reason ?? ""] ?? "That didn't go through. Check the email and try again."
+          )}
         </p>
       ) : (
         <p className="text-xs text-[var(--muted)]">No spam. At most one email from me.</p>
