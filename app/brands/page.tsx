@@ -106,7 +106,7 @@ const faqs = [
   },
   {
     q: "Is it labeled as paid?",
-    a: "Always. Every sponsored post on my page carries Instagram's paid-partnership label.",
+    a: "Always. Every sponsored post says “Ad” in the caption and on screen, plus Instagram's paid-partnership label.",
   },
   {
     q: "Can you remix a viral clip or a famous character?",
