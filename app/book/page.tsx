@@ -168,33 +168,7 @@ export default function BookPage() {
             </div>
           </AnimateIn>
 
-          <div className="mt-16 grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-            <AnimateIn>
-              <div>
-                <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
-                  The math
-                </p>
-                <h2 className="text-4xl font-black leading-tight tracking-tight text-[var(--ink)] md:text-5xl">
-                  6+ hours back every week.
-                </h2>
-              </div>
-            </AnimateIn>
-
-            <AnimateIn delay={0.1}>
-              <div className="rounded-2xl border border-[var(--border)] bg-white p-6 sm:p-8">
-                <p className="text-lg leading-relaxed text-[var(--ink-secondary)] md:text-xl">
-                  The average client reclaims 6+ hours a week for roughly $40 a month in
-                  tool costs. At $100 an hour of owner time, that is $2,400+ a month back,
-                  every month, for a one-time $999.
-                </p>
-                <p className="mt-6 border-t border-[var(--border)] pt-6 text-2xl font-black leading-tight text-[var(--crimson)] md:text-3xl">
-                  A 25x return on the assessment. Every single month.
-                </p>
-              </div>
-            </AnimateIn>
-          </div>
-
-          <AnimateIn delay={0.16}>
+          <AnimateIn delay={0.08}>
             <div className="mt-8">
               <BookingButton label="Book Your Assessment" />
             </div>
