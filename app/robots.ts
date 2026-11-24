@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/", "/review"],
+      disallow: ["/api/"],
     },
     sitemap: "https://westiii.com/sitemap.xml",
   };

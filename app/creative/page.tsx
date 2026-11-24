@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   },
   description:
     "Send garment cutouts, get a finished campaign. AI digital photoshoots, lookbooks, product campaigns, and brand films produced in Atlanta. See the STYS Factory Motor Co. case study.",
+  alternates: { canonical: "/creative" },
+  openGraph: {
+    title: "AI Digital Photoshoots and Creative Production | David West",
+    description: "Send garment cutouts, get a finished campaign. No studio, no model, no shoot day.",
+    url: "https://westiii.com/creative",
+    images: [{ url: "/og/home.jpg", width: 1200, height: 630 }],
+  },
 };
 
 const MAILTO =

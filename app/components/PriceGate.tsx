@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
+import { track } from "@vercel/analytics";
 
 type Prices = Record<string, string>;
 
@@ -56,6 +57,7 @@ export function PriceProvider({ children, page = "learn" }: { children: React.Re
       const data = (await res.json()) as { prices?: Prices };
       if (!data.prices) return { ok: false };
       setPrices(data.prices);
+      track("price_unlock", { page, from });
       try {
         localStorage.setItem(storeKey, JSON.stringify(data.prices));
       } catch {}

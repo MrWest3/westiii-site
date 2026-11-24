@@ -2,6 +2,21 @@
 export const FREE_CALL_URL =
   "https://calendly.com/davidawest25/free-15-minute-ai-fit-call";
 
+/** The paid $999 AI Assessment booking page. */
+export const ASSESSMENT_URL = "https://calendly.com/davidawest25/ai-audit";
+
+/** My community on Skool (paid; the price lives on Skool, never on this site). */
+export const COMMUNITY_URL = "https://www.skool.com/creative-ai-education-w-west-1549";
+
+// Calendly records these on the booking, so every booked call names the
+// page and button it came from. `placement` reads "<page>-<spot>".
+function withUtm(base: string, placement: string) {
+  return `${base}?utm_source=westiii&utm_medium=site&utm_content=${encodeURIComponent(placement)}`;
+}
+
+export const freeCallUrl = (placement: string) => withUtm(FREE_CALL_URL, placement);
+export const assessmentUrl = (placement: string) => withUtm(ASSESSMENT_URL, placement);
+
 export const socials = [
   { label: "Instagram", handle: "@__dw3", href: "https://www.instagram.com/__dw3/" },
   { label: "YouTube", handle: "@WestTech3", href: "https://www.youtube.com/@WestTech3" },

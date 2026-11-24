@@ -14,7 +14,7 @@ const beats = [
   {
     number: "03",
     title: "I do this work every day.",
-    body: "I work in cybersecurity, on AI agent security specifically. Black Hat 2026 presenter. 6M+ views running AI production pipelines. Based in Atlanta, across the table.",
+    body: "I work in cybersecurity, on AI agent security specifically. 6M+ views running AI production pipelines. Based in Atlanta, across the table.",
   },
 ];
 

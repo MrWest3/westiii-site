@@ -27,7 +27,7 @@ export default function HopeSubscribe() {
           onChange={(event) => setEmail(event.target.value)}
           placeholder="you@email.com"
           autoComplete="email"
-          className="min-h-12 min-w-0 flex-1 rounded border border-[var(--border)] bg-white px-4 py-3 text-sm text-[var(--ink)] placeholder:text-[var(--muted)] focus:border-[var(--gold)] focus:outline-none"
+          className="min-h-12 min-w-0 flex-1 rounded border border-[var(--border)] bg-white px-4 py-3 text-base text-[var(--ink)] placeholder:text-[var(--muted)] focus:border-[var(--crimson)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--crimson)]"
         />
         <button
           type="submit"

@@ -4,7 +4,12 @@ import WhatIDo from "./components/WhatIDo";
 import RealEstateSpotlight from "./components/RealEstateSpotlight";
 import Proof from "./components/Work";
 import HopeStrip from "./components/HopeStrip";
+import type { Metadata } from "next";
 import Connect from "./components/Connect";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const aiAssessmentSchema = {
   "@context": "https://schema.org",

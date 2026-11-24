@@ -14,8 +14,6 @@ const PRICES = {
     lab: "From $1,500 · $2,500 with your CRM connected",
     rollout: "From $7,500",
     gpt: "$1,500",
-    session: "$97",
-    january: "$497 founding seats",
   },
   brands: {
     demo: "From $750",

@@ -33,10 +33,10 @@ export default function NotFound() {
               Home
             </Link>
             <Link
-              href="/coaching"
+              href="/learn"
               className="inline-flex min-h-12 items-center justify-center rounded border border-[var(--border)] px-6 py-3.5 text-sm font-semibold text-[var(--ink)] hover:border-[var(--gold)]"
             >
-              Coaching
+              Learn
             </Link>
             <Link
               href="/services"

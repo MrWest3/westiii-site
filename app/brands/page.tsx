@@ -9,7 +9,7 @@ import { socials } from "../lib/links";
 export const metadata: Metadata = {
   title: "Brand partnerships",
   description:
-    "Demo ads, sponsored Make AI Easy episodes and AI creative pieces for AI and business software brands. David West III teaches AI to small business owners: 16.5K on Instagram, 100+ owners in his last live class.",
+    "Demo ads, sponsored Make AI Easy episodes and AI creative pieces for AI and business software brands. David West III teaches AI to small business owners: 16.4K on Instagram, 100+ owners in his last live class.",
   alternates: { canonical: "/brands" },
   openGraph: {
     title: "Your AI tool, taught to the people who'll pay for it",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   },
 };
 
-// Instagram numbers checked 2026-10-09. Update them here when they move.
+// Instagram numbers checked 2026-11-23. Update them here when they move.
 const proof = [
-  { value: "16.5K", label: "followers on Instagram" },
+  { value: "16.4K", label: "followers on Instagram" },
   { value: "1.7M", label: "views on my top reel" },
   { value: "100+", label: "business owners in my last live class" },
 ];

@@ -5,7 +5,7 @@ import AnimateIn from "../components/AnimateIn";
 import BeforeAfter, { type Comparison } from "../components/BeforeAfter";
 import ListingChat from "../components/ListingChat";
 import LoopClip from "../components/LoopClip";
-import { FREE_CALL_URL, LAUREL_HOUSE_URL, PENTHOUSE_URL } from "../lib/links";
+import { freeCallUrl, LAUREL_HOUSE_URL, PENTHOUSE_URL } from "../lib/links";
 
 export const metadata: Metadata = {
   title: "AI for Real Estate",
@@ -482,11 +482,11 @@ export default function RealEstatePage() {
               leaves with something they made and the steps to do it again.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href={FREE_CALL_URL} target="_blank" rel="noopener noreferrer" className={primaryBtn}>
+              <a href={freeCallUrl("real-estate-build")} target="_blank" rel="noopener noreferrer" className={primaryBtn}>
                 Book a free call
               </a>
               <Link
-                href="/coaching"
+                href="/learn#coaching"
                 className="inline-flex min-h-12 items-center justify-center rounded border border-[var(--border)] px-6 py-3.5 text-sm font-semibold text-[var(--ink)] transition-colors hover:border-[var(--gold)]"
               >
                 How coaching works
@@ -514,7 +514,7 @@ export default function RealEstatePage() {
               A free 15-minute call. One problem, one fix you can act on.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <a href={FREE_CALL_URL} target="_blank" rel="noopener noreferrer" className={primaryBtn}>
+              <a href={freeCallUrl("real-estate-closing")} target="_blank" rel="noopener noreferrer" className={primaryBtn}>
                 Book a free call
               </a>
               <Link

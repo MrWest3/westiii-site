@@ -5,16 +5,16 @@ import AnimateIn from "../components/AnimateIn";
 import LearnInquiry from "../components/LearnInquiry";
 import LoopClip from "../components/LoopClip";
 import { Price, PriceProvider } from "../components/PriceGate";
-import { FREE_CALL_URL } from "../lib/links";
+import { COMMUNITY_URL, freeCallUrl } from "../lib/links";
 
 export const metadata: Metadata = {
   title: "Learn AI",
   description:
-    "AI training for teams and live Wednesday classes for business owners, taught by David West III. Last month he taught 100+ business owners to build with AI.",
+    "AI training for teams and a community for business owners, taught by David West III. In September he taught 100+ business owners to build with AI.",
   alternates: { canonical: "/learn" },
   openGraph: {
     title: "I teach AI to people who say they're not computer people",
-    description: "Team labs, rollouts, talks, and live Wednesday classes. Tell David what you want AI to fix.",
+    description: "Team labs, rollouts and talks. Tell David what you want AI to fix.",
     url: "https://westiii.com/learn",
     images: [{ url: "/og/coaching.jpg", width: 1200, height: 630 }],
   },
@@ -31,7 +31,7 @@ const quotes = [
 
 const proof = [
   { value: "100+", label: "business owners in my last live class" },
-  { value: "425+", label: "people in my free AI community" },
+  { value: "430+", label: "people in my AI community" },
   { value: "6M+", label: "views on my AI content" },
 ];
 
@@ -44,6 +44,9 @@ type Card = {
   eyebrow?: string;
   price?: string;
   note?: string;
+  link?: { label: string; href: string; external?: boolean };
+  topics?: string[];
+  after?: string;
 };
 
 const teamCards: Card[] = [
@@ -70,23 +73,32 @@ const teamCards: Card[] = [
   },
 ];
 
-const classCards: Card[] = [
+const ownerCards: Card[] = [
   {
-    eyebrow: "Monthly",
-    title: "Wednesday Session",
-    body: "Three hours on Zoom. You leave with AI that knows your business and your first skill built. Next one: Wednesday, November 11.",
+    eyebrow: "Community",
+    title: "Make AI Easy",
+    body: "My community on Skool. Lessons on AI agents, making and editing video and art with AI, and AI security. Plus a place to ask me questions.",
+    image: "/robot/books.webp",
+    alt: "The West Robot reading in a library",
+    link: { label: "Join the community", href: COMMUNITY_URL, external: true },
+  },
+  {
+    eyebrow: "Live classes",
+    title: "Classes I teach",
+    body: "Small classes, large groups or one-on-one. No date is set right now. Get on the list and you hear the next one first.",
+    topics: [
+      "Using AI day to day",
+      "AI agents",
+      "AI literacy",
+      "Building websites",
+      "Launching apps",
+      "Technology as a whole",
+    ],
+    after: "I can teach you to do any of it, or you can have me do it.",
     image: "/robot/coaching.webp",
     loop: "/robot/loop-coaching.mp4",
     alt: "The West Robot coaching a business owner at her laptop",
-    price: "session",
-  },
-  {
-    eyebrow: "January",
-    title: "The live class",
-    body: "Three Saturdays plus office hours, for owners who want to go further. 30 seats.",
-    image: "/robot/books.webp",
-    alt: "The West Robot reading in a library",
-    price: "january",
+    link: { label: "Get on the class list", href: "#for-class" },
   },
 ];
 
@@ -128,9 +140,30 @@ function OfferCard({ card }: { card: Card }) {
         ) : null}
         <h3 className="text-2xl font-black leading-tight text-[var(--ink)]">{card.title}</h3>
         <p className="leading-relaxed text-[var(--ink-secondary)]">{card.body}</p>
+        {card.topics ? (
+          <ul className="flex flex-wrap gap-2" aria-label="What I teach">
+            {card.topics.map((topic) => (
+              <li
+                key={topic}
+                className="rounded-full border border-[var(--border)] px-3 py-1.5 text-sm font-semibold text-[var(--ink)]"
+              >
+                {topic}
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        {card.after ? <p className="leading-relaxed text-[var(--ink-secondary)]">{card.after}</p> : null}
         <div className="mt-auto flex flex-col pt-2">
           {card.price ? (
             <Price id={card.price} />
+          ) : card.link ? (
+            <a
+              href={card.link.href}
+              {...(card.link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              className="inline-flex min-h-12 items-center gap-1 self-start text-sm font-bold text-[var(--crimson)] transition-colors hover:text-[var(--crimson-light)]"
+            >
+              {card.link.label} <span aria-hidden="true">→</span>
+            </a>
           ) : (
             <p className="text-sm font-bold text-[var(--crimson)]">{card.note}</p>
           )}
@@ -159,8 +192,8 @@ export default function LearnPage() {
               </AnimateIn>
               <AnimateIn delay={0.14}>
                 <p className="mt-6 max-w-xl text-lg leading-relaxed text-[var(--ink-secondary)]">
-                  Last month I taught 100+ business owners, most of them over 40, to build with AI. I bring that
-                  class to teams, and I run my own on Wednesdays.
+                  In September I taught 100+ business owners to build with AI. Most of them were non-technical and
+                  had never done more with AI than chat with ChatGPT. I bring that class to teams.
                 </p>
               </AnimateIn>
               <AnimateIn delay={0.2}>
@@ -168,8 +201,8 @@ export default function LearnPage() {
                   <a href="#for-team" className={primaryBtn}>
                     Train my team <span aria-hidden="true">→</span>
                   </a>
-                  <a href="#for-class" className={secondaryBtn}>
-                    Join a class
+                  <a href={freeCallUrl("learn-hero")} target="_blank" rel="noopener noreferrer" className={secondaryBtn}>
+                    Book a free call
                   </a>
                 </div>
               </AnimateIn>
@@ -251,7 +284,7 @@ export default function LearnPage() {
               ))}
             </ul>
 
-            <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            <div id="talks" className="mt-10 grid scroll-mt-24 gap-5 lg:grid-cols-3">
               {teamCards.map((card, index) => (
                 <AnimateIn key={card.title} delay={index * 0.06} className="h-full">
                   <OfferCard card={card} />
@@ -299,34 +332,52 @@ export default function LearnPage() {
           </div>
         </section>
 
-        {/* classes */}
+        {/* owners */}
         <section id="class" className="scroll-mt-20 bg-[var(--surface)] px-6 py-16 md:py-24">
           <div className="mx-auto max-w-6xl">
             <AnimateIn>
               <p className={eyebrow}>For owners</p>
               <h2 className={h2}>Learn with me live.</h2>
-              <p className={lede}>Small live classes. You build on your own business while I walk you through it.</p>
+              <p className={lede}>
+                I&apos;m passionate about teaching people to use AI to reach their own goals. Get on the class list,
+                or if there&apos;s something specific you want to learn, reach out and ask for it.
+              </p>
             </AnimateIn>
 
             <div className="mt-10 grid gap-5 md:grid-cols-2">
-              {classCards.map((card, index) => (
+              {ownerCards.map((card, index) => (
                 <AnimateIn key={card.title} delay={index * 0.06} className="h-full">
                   <OfferCard card={card} />
                 </AnimateIn>
               ))}
             </div>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <a href="#for-class" className={primaryBtn}>
-                Get on the class list <span aria-hidden="true">→</span>
-              </a>
-              <Link
-                href="/coaching"
-                className="text-sm font-bold text-[var(--crimson)] transition-colors hover:text-[var(--crimson-light)]"
+            <AnimateIn>
+              <article
+                id="coaching"
+                className="mt-5 flex scroll-mt-24 flex-col gap-3 rounded-2xl border border-[var(--border)] bg-white p-6 sm:p-8"
               >
-                Want one-on-one? See coaching <span aria-hidden="true">→</span>
-              </Link>
-            </div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">One-on-one</p>
+                <h3 className="text-2xl font-black leading-tight text-[var(--ink)]">
+                  Learn AI with someone in your corner.
+                </h3>
+                <p className="max-w-2xl leading-relaxed text-[var(--ink-secondary)]">
+                  One-on-one coaching for business owners, team leads, and anyone who wants AI to make their work
+                  easier. You bring the problem. We solve it together on the call. Two working calls a month, and we
+                  set the price on the free call.
+                </p>
+                <div className="pt-2">
+                  <a
+                    href={freeCallUrl("learn-coaching")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={primaryBtn}
+                  >
+                    Book a free call <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </article>
+            </AnimateIn>
           </div>
         </section>
 
@@ -339,7 +390,7 @@ export default function LearnPage() {
               <p className={lede}>I read every one and reply within a day.</p>
               <div className="mt-8 flex flex-col gap-2 text-sm text-[var(--ink-secondary)]">
                 <a
-                  href={FREE_CALL_URL}
+                  href={freeCallUrl("learn-form")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-bold text-[var(--crimson)] hover:text-[var(--crimson-light)]"

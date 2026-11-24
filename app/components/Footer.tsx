@@ -1,48 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { socials } from "../lib/links";
 import { useNewsletterSubscription } from "./useNewsletterSubscription";
 
 const siteLinks = [
-  { label: "Coaching", href: "/coaching" },
+  { label: "Learn", href: "/learn" },
   { label: "Services", href: "/services" },
   { label: "The $999 Assessment", href: "/book" },
   { label: "Real Estate", href: "/real-estate" },
-  { label: "AI Employees", href: "/ai-employees" },
+  { label: "Work", href: "/builds" },
   { label: "Creative", href: "/creative" },
-  { label: "Workshops", href: "/workshops" },
-  { label: "Speaking", href: "/speaking" },
-  { label: "Atlanta", href: "/atlanta" },
-  { label: "Builds", href: "/builds" },
+  { label: "Brand partnerships", href: "/brands" },
   { label: "Hope", href: "/hope" },
-];
-
-const socials = [
-  {
-    label: "YouTube",
-    handle: "@WestTech3",
-    href: "https://www.youtube.com/@WestTech3",
-  },
-  {
-    label: "Instagram",
-    handle: "@__dw3",
-    href: "https://www.instagram.com/__dw3/",
-  },
-  {
-    label: "X",
-    handle: "@___DW3",
-    href: "https://x.com/___DW3",
-  },
-  {
-    label: "TikTok",
-    handle: "@___dw3",
-    href: "https://www.tiktok.com/@___dw3",
-  },
-  {
-    label: "LinkedIn",
-    handle: "David West III",
-    href: "https://www.linkedin.com/in/david-west-iii-289ba7148",
-  },
 ];
 
 export default function Footer() {
@@ -80,19 +50,20 @@ export default function Footer() {
         </div>
 
         <div className="rounded-xl border border-white/10 bg-white/5 p-6 sm:p-8">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
-            The West Report
+          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
+            Email list
           </p>
           <h2 className="mb-2 text-2xl font-black tracking-tight">
-            Get the next issue.
+            Get a note when I publish.
           </h2>
           <p className="mb-5 max-w-xl text-sm leading-relaxed text-white/60">
-            AI, tech, and what I am building. Short notes you can use.
+            AI, tech, what I&apos;m building, and ideas that future-proof your mind. Things move fast and
+            it&apos;s hard to keep up. I&apos;ll send you what&apos;s worth knowing.
           </p>
 
           {status === "success" ? (
             <p className="mb-5 text-sm font-semibold text-[var(--gold)]" role="status">
-              You are in. Check your inbox soon.
+              You are in. You hear from me when something new is up.
             </p>
           ) : (
             <form className="mb-5 flex flex-col gap-2 sm:flex-row" onSubmit={handleSubscribe}>
@@ -107,14 +78,14 @@ export default function Footer() {
                 onChange={(event) => setEmail(event.target.value)}
                 placeholder="your@email.com"
                 autoComplete="email"
-                className="min-w-0 flex-1 rounded border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-[var(--gold)] focus:outline-none"
+                className="min-h-12 min-w-0 flex-1 rounded border border-white/20 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/50 focus:border-[var(--gold)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--gold)]"
               />
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="rounded bg-[var(--crimson)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--crimson-light)] disabled:opacity-60"
+                className="min-h-12 rounded bg-[var(--crimson)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--crimson-light)] active:scale-[0.97] disabled:opacity-60"
               >
-                {status === "loading" ? "Sending..." : "Subscribe"}
+                {status === "loading" ? "Sending..." : "Add me"}
               </button>
             </form>
           )}
@@ -149,7 +120,7 @@ export default function Footer() {
         ))}
       </nav>
 
-      <div className="mx-auto mt-8 flex max-w-6xl flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto mt-8 flex max-w-6xl flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
         <p>&copy; {new Date().getFullYear()} Studio West Creatives LLC.</p>
         <p>David A. West III. Atlanta, Georgia.</p>
       </div>

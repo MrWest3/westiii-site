@@ -18,6 +18,8 @@ export async function generateMetadata({
     // the root layout appends "| David West III" via its title template
     title: d.title,
     description: d.description,
+    // Reached from a DM link. Kept out of search on purpose.
+    robots: { index: false, follow: true },
   };
 }
 

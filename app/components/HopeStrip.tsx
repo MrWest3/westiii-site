@@ -36,7 +36,7 @@ export default function HopeStrip() {
               href={`/hope/journal/${latest.slug}`}
               className="group mt-6 block max-w-lg rounded-xl border border-[var(--border)] p-4 transition-colors hover:border-[var(--crimson)]"
             >
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[var(--gold)]">
+              <span className="text-xs font-bold uppercase tracking-widest text-[var(--crimson)]">
                 Latest entry
               </span>
               <span className="mt-1 block text-lg font-black leading-snug text-[var(--ink)] group-hover:text-[var(--crimson)]">

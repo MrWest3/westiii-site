@@ -56,10 +56,10 @@ export default function WhatIDo() {
 
         <AnimateIn delay={0.1}>
           <Link
-            href="/ai-employees"
+            href="/services"
             className="mt-10 inline-flex items-center gap-1 text-sm font-bold text-[var(--crimson)] transition-colors hover:text-[var(--crimson-light)]"
           >
-            Meet the AI employees <span aria-hidden="true">→</span>
+            See what I build <span aria-hidden="true">→</span>
           </Link>
         </AnimateIn>
       </div>

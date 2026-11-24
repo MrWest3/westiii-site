@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-import { FREE_CALL_URL, socials } from "../lib/links";
+import { freeCallUrl, socials } from "../lib/links";
 import LoopClip from "./LoopClip";
 
 const rise = (delay: number) => ({
@@ -43,7 +43,7 @@ export default function IdentityHero() {
 
         <motion.div {...rise(0.5)} className="mt-9 flex flex-col gap-3 sm:flex-row sm:gap-4">
           <a
-            href={FREE_CALL_URL}
+            href={freeCallUrl("home-hero")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-[var(--crimson)] px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[var(--crimson-light)]"

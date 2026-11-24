@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { FREE_CALL_URL } from "../lib/links";
+import { freeCallUrl } from "../lib/links";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -123,7 +123,7 @@ export default function ListingChat() {
           <p className="text-sm leading-relaxed text-[var(--ink-secondary)]">
             That&apos;s the end of the demo.{" "}
             <a
-              href={FREE_CALL_URL}
+              href={freeCallUrl("real-estate-chat")}
               target="_blank"
               rel="noopener noreferrer"
               className="font-bold text-[var(--crimson)] underline underline-offset-4"

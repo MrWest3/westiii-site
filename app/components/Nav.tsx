@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { FREE_CALL_URL } from "../lib/links";
+import { freeCallUrl } from "../lib/links";
 
 const links = [
   { label: "Learn", href: "/learn" },
@@ -15,12 +15,20 @@ const links = [
   { label: "Hope", href: "/hope" },
 ];
 
+const callButton =
+  "inline-flex items-center justify-center rounded bg-[var(--crimson)] text-sm font-semibold text-white transition-colors duration-200 hover:bg-[var(--crimson-light)] active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--crimson)]";
+
 export default function Nav() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const isHome = pathname === "/";
   const useSolidNav = !isHome || scrolled || menuOpen;
+  // Names the page in Calendly, so a booked call says where it came from.
+  const page = isHome ? "home" : pathname.slice(1).replaceAll("/", "-");
+  const bar = `block h-0.5 w-6 transition-[transform,opacity,background-color] duration-200 ${
+    useSolidNav ? "bg-[var(--ink)]" : "bg-white"
+  }`;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -37,20 +45,20 @@ export default function Nav() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 border-b transition-colors duration-300 ${
           useSolidNav
-            ? "bg-white/95 backdrop-blur-sm border-b border-[var(--border)]"
-            : "bg-transparent"
+            ? "border-[var(--border)] bg-white/95 backdrop-blur-sm"
+            : "border-transparent bg-transparent"
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" aria-label="Home">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-6">
+          <Link href="/" aria-label="Home" className="shrink-0">
             <Image
               src="/logo.png"
               alt="West III"
               width={80}
               height={40}
-              className={`object-contain transition-all duration-300 ${
+              className={`object-contain transition-[filter] duration-300 ${
                 useSolidNav ? "" : "brightness-0 invert"
               }`}
               priority
@@ -58,7 +66,7 @@ export default function Nav() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
+          <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
             {links.map((link) => (
               <Link
                 key={link.href}
@@ -74,47 +82,45 @@ export default function Nav() {
               </Link>
             ))}
             <a
-              href={FREE_CALL_URL}
+              href={freeCallUrl(`nav-${page}`)}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-semibold px-4 py-2 bg-[var(--crimson)] text-white rounded hover:bg-[var(--crimson-light)] transition-colors duration-200"
+              className={`${callButton} px-4 py-2`}
             >
               Book a free call
             </a>
           </nav>
 
-          {/* Mobile menu button */}
-          <button
-            type="button"
-            className="md:hidden flex flex-col gap-1.5 p-2"
-            onClick={() => setMenuOpen((open) => !open)}
-            aria-label="Toggle menu"
-            aria-expanded={menuOpen}
-            aria-controls="mobile-navigation"
-          >
-            <span
-              className={`block w-6 h-0.5 transition-all duration-200 ${
-                useSolidNav ? "bg-[var(--ink)]" : "bg-white"
-              } ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
-            />
-            <span
-              className={`block w-6 h-0.5 transition-all duration-200 ${
-                useSolidNav ? "bg-[var(--ink)]" : "bg-white"
-              } ${menuOpen ? "opacity-0" : ""}`}
-            />
-            <span
-              className={`block w-6 h-0.5 transition-all duration-200 ${
-                useSolidNav ? "bg-[var(--ink)]" : "bg-white"
-              } ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-            />
-          </button>
+          {/* Phone: the call button stays on the bar, next to the menu. */}
+          <div className="flex items-center gap-1 md:hidden">
+            <a
+              href={freeCallUrl(`nav-phone-${page}`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${callButton} min-h-11 px-3.5`}
+            >
+              Book a free call
+            </a>
+            <button
+              type="button"
+              className="flex h-12 w-12 flex-col items-center justify-center gap-1.5"
+              onClick={() => setMenuOpen((open) => !open)}
+              aria-label="Toggle menu"
+              aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
+            >
+              <span className={`${bar} ${menuOpen ? "translate-y-2 rotate-45" : ""}`} />
+              <span className={`${bar} ${menuOpen ? "opacity-0" : ""}`} />
+              <span className={`${bar} ${menuOpen ? "-translate-y-2 -rotate-45" : ""}`} />
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}
         {menuOpen && (
           <nav
             id="mobile-navigation"
-            className="md:hidden bg-white border-b border-[var(--border)] px-6 py-4 flex flex-col gap-4"
+            className="flex flex-col border-b border-[var(--border)] bg-white px-6 pb-4 md:hidden"
             aria-label="Mobile"
           >
             {links.map((link) => (
@@ -123,20 +129,11 @@ export default function Nav() {
                 href={link.href}
                 aria-current={pathname.startsWith(link.href) ? "page" : undefined}
                 onClick={() => setMenuOpen(false)}
-                className="text-sm font-medium text-[var(--ink-secondary)] hover:text-[var(--crimson)]"
+                className="flex min-h-12 items-center text-base font-medium text-[var(--ink-secondary)] hover:text-[var(--crimson)]"
               >
                 {link.label}
               </Link>
             ))}
-            <a
-              href={FREE_CALL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMenuOpen(false)}
-              className="text-sm font-semibold px-4 py-2 bg-[var(--crimson)] text-white rounded text-center"
-            >
-              Book a free call
-            </a>
           </nav>
         )}
       </header>

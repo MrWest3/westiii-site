@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AnimateIn from "../../../components/AnimateIn";
-import { FREE_CALL_URL } from "../../../lib/links";
+import { freeCallUrl } from "../../../lib/links";
 import type { Block } from "../posts";
 import { findPost, formatDate, visiblePosts } from "../lib";
 
@@ -163,7 +163,7 @@ export default async function JournalPost({
               Want help with AI?
             </p>
             <a
-              href={FREE_CALL_URL}
+              href={freeCallUrl("hope-journal")}
               target="_blank"
               rel="noopener noreferrer"
               className="text-xl font-black text-[var(--ink)] hover:text-[var(--crimson)]"

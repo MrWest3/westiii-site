@@ -8,8 +8,10 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "One public price: the $999 AI Assessment. We map how your business runs, you get a written plan in 48 hours, and I find you 5+ hours a week or you don't pay. What I build after that is scoped on what the assessment finds.",
+  alternates: { canonical: "/services" },
   openGraph: {
     title: "Services | David West III",
+    description: "Every engagement starts with the $999 AI Assessment. What I build after that is scoped on what it finds.",
     url: "https://westiii.com/services",
     images: [{ url: "/og/services.jpg", width: 1200, height: 630 }],
   },
@@ -119,8 +121,8 @@ const offers: Offer[] = [
       "One view of what is coming in and what is falling through",
     ],
     start: "Assessment first. Same starting point as everyone else.",
-    cta: "See AI Practice OS",
-    href: "/practice-os",
+    cta: "Start With the Assessment",
+    href: "/book",
     dark: false,
 
     image: "/robot/whiteboard.webp",
@@ -149,7 +151,7 @@ export default function ServicesPage() {
       <section className="border-b border-[var(--border)] px-6 py-14 md:py-20">
         <div className="mx-auto max-w-6xl">
           <AnimateIn>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
               Services
             </p>
           </AnimateIn>
@@ -227,7 +229,7 @@ export default function ServicesPage() {
             <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
               <AnimateIn>
                 <div>
-                  <p className="mb-6 text-xs font-bold tracking-widest text-[var(--gold)]">
+                  <p className="mb-6 text-xs font-bold tracking-widest text-[var(--crimson)]">
                     {offer.number}
                   </p>
                   <h2 className={`text-4xl font-black leading-tight tracking-tight md:text-5xl ${textColor}`}>
@@ -248,7 +250,7 @@ export default function ServicesPage() {
                   </div>
 
                   <div className={`mt-9 border-t pt-7 ${borderColor}`}>
-                    <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
                       Who it&apos;s for
                     </p>
                     <p className={`max-w-xl text-lg leading-relaxed ${secondaryColor}`}>
@@ -282,7 +284,7 @@ export default function ServicesPage() {
                   </ul>
 
                   <div className={`mt-8 border-t pt-7 ${borderColor}`}>
-                    <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
                       How it starts
                     </p>
                     <p className={`leading-relaxed ${secondaryColor}`}>{offer.start}</p>

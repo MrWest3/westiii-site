@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { track } from "@vercel/analytics";
 
 const FALLBACK_EMAIL = "StudioWest3@proton.me";
 
@@ -99,6 +100,7 @@ export default function LearnInquiry() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, interest, org, size, fix, ref: readRef() }),
       });
+      if (res.ok) track("inquiry_sent", { interest });
       setStatus(res.ok ? "success" : "error");
     } catch {
       setStatus("error");

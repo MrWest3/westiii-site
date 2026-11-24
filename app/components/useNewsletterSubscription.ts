@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { track } from "@vercel/analytics";
 
 export function useNewsletterSubscription(list?: string) {
   const [email, setEmail] = useState("");
@@ -20,6 +21,7 @@ export function useNewsletterSubscription(list?: string) {
       });
 
       if (response.ok) {
+        track("email_signup", { list: list ?? "newsletter" });
         setStatus("success");
         setEmail("");
         return;

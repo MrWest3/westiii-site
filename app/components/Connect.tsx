@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import AnimateIn from "./AnimateIn";
-import { FREE_CALL_URL } from "../lib/links";
+import { freeCallUrl } from "../lib/links";
 
 export default function Connect() {
   return (
@@ -39,7 +39,7 @@ export default function Connect() {
           <AnimateIn delay={0.2}>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row md:justify-start">
               <a
-                href={FREE_CALL_URL}
+                href={freeCallUrl("home-closing")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-[var(--crimson)] px-7 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[var(--crimson-light)]"
@@ -54,7 +54,7 @@ export default function Connect() {
                 Get the $999 Assessment
               </Link>
             </div>
-            <p className="mt-5 text-sm text-white/45">
+            <p className="mt-5 text-sm text-white/50">
               Or DM{" "}
               <a
                 href="https://www.instagram.com/__dw3/"

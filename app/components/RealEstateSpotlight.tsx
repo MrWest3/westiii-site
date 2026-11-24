@@ -16,7 +16,7 @@ export default function RealEstateSpotlight() {
         </AnimateIn>
         <AnimateIn delay={0.08}>
           <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
-            New: Real estate
+            Real estate
           </p>
           <h2 className="text-4xl font-black leading-tight tracking-tight md:text-5xl">
             One listing. A film, a reel, staged rooms, and twilight shots.

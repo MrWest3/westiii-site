@@ -4,6 +4,13 @@ export const metadata = {
   title: "Builds",
   description:
     "Production AI systems shipped in public: multi-agent orchestration, command-center dashboards, video studios, and live client work.",
+  alternates: { canonical: "/builds" },
+  openGraph: {
+    title: "Builds | David West III",
+    description: "The AI systems I have shipped and written up.",
+    url: "https://westiii.com/builds",
+    images: [{ url: "/og/services.jpg", width: 1200, height: 630 }],
+  },
 };
 
 type ClientResult = {

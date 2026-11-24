@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
+import TrackClicks from "./components/TrackClicks";
 import "./globals.css";
 
 const geist = Geist({
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   },
   description:
     "I make AI easy. One-on-one AI coaching, and AI built for your business, starting with a $999 assessment that finds you 5+ hours a week or you don't pay.",
-  alternates: {
-    canonical: "/",
-  },
+  // No canonical here on purpose. Metadata merges shallowly, so a root
+  // canonical of "/" told search engines every page without its own was a
+  // copy of the homepage. Each page sets its own.
   openGraph: {
     title: "David West III | AI Coach and Consultant in Atlanta",
     description:
@@ -99,19 +99,7 @@ export default function RootLayout({
         <Nav />
         {children}
         <Footer />
-        <Script
-          src="https://link.msgsndr.com/js/external-tracking.js"
-          data-tracking-id="tk_654d2a8260d3499dbd56e94a2f9ef659"
-          strategy="lazyOnload"
-        />
-        {/* GHL chat widget: SMS opt-in surface for A2P sole-prop registration (Studio West sub-account) */}
-        <Script
-          src="https://widgets.leadconnectorhq.com/loader.js"
-          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-          data-widget-id="6a84747faf859fb1da5b0ded"
-          data-source="WEB_USER"
-          strategy="lazyOnload"
-        />
+        <TrackClicks />
         <Analytics />
       </body>
     </html>

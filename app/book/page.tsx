@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AnimateIn from "../components/AnimateIn";
+import { assessmentUrl } from "../lib/links";
 
 export const metadata: Metadata = {
   title: {
@@ -8,9 +9,14 @@ export const metadata: Metadata = {
   },
   description:
     "The $999 AI Assessment is a 60-minute call, a written plan and a 7-minute video in 48 hours, and a review call. I find 5+ hours a week, or you don't pay.",
+  alternates: { canonical: "/book" },
+  openGraph: {
+    title: "The $999 AI Assessment | 5+ Hours or You Don't Pay",
+    description: "A 60-minute call, a written plan in 48 hours, and a review call. I find 5+ hours a week, or you don't pay.",
+    url: "https://westiii.com/book",
+    images: [{ url: "/og/services.jpg", width: 1200, height: 630 }],
+  },
 };
-
-const CALENDLY_URL = "https://calendly.com/davidawest25/ai-audit";
 
 const deliverables = [
   {
@@ -80,7 +86,7 @@ const faqItems = [
 function BookingButton({ label }: { label: string }) {
   return (
     <a
-      href={CALENDLY_URL}
+      href={assessmentUrl("book")}
       target="_blank"
       rel="noopener noreferrer"
       className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-[var(--crimson)] px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[var(--crimson-light)]"
@@ -97,7 +103,7 @@ export default function BookPage() {
       <section className="border-b border-[var(--border)] px-6 py-10 sm:py-14 md:py-20">
         <div className="mx-auto max-w-6xl">
           <AnimateIn>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
               The $999 AI Assessment
             </p>
           </AnimateIn>
@@ -140,7 +146,7 @@ export default function BookPage() {
             {deliverables.map((item, index) => (
               <AnimateIn key={item.number} delay={index * 0.06}>
                 <article className="h-full rounded-2xl border border-[var(--border)] bg-white p-6 md:p-8">
-                  <p className="mb-7 text-xs font-bold tracking-widest text-[var(--gold)]">
+                  <p className="mb-7 text-xs font-bold tracking-widest text-[var(--crimson)]">
                     {item.number}
                   </p>
                   <h3 className="mb-3 text-xl font-black text-[var(--ink)] md:text-2xl">
@@ -179,7 +185,7 @@ export default function BookPage() {
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-6xl rounded-2xl border border-[var(--crimson)] bg-white p-7 sm:p-9 md:p-12">
           <AnimateIn>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
               Build credit
             </p>
             <p className="max-w-5xl text-3xl font-black leading-tight tracking-tight text-[var(--ink)] md:text-5xl">
@@ -204,7 +210,7 @@ export default function BookPage() {
           <div className="grid gap-4 md:grid-cols-2">
             <AnimateIn>
               <article className="h-full rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-7 md:p-9">
-                <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
+                <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--crimson)]">
                   This is for you
                 </p>
                 <h3 className="mb-3 text-2xl font-black text-[var(--ink)]">
@@ -272,7 +278,7 @@ export default function BookPage() {
       <section className="px-6 py-16 md:py-24">
         <AnimateIn>
           <div className="mx-auto max-w-6xl rounded-2xl bg-[var(--ink)] px-7 py-12 text-center sm:px-10 md:py-16">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--crimson)]">
               Start here
             </p>
             <h2 className="mx-auto max-w-3xl text-4xl font-black leading-tight tracking-tight text-white md:text-5xl">
